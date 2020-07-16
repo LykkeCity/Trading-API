@@ -10,7 +10,7 @@ Content
 * [Documtntation web site.](https://lykkecity.github.io/Trading-API)
 
 * Documentation MD format
-  * [Index page](https://github.com/swisschain/Lykke-HftApi-Docs/blob/master/source/index.html.md)
+  * [Index page](https://github.com/LykkeCity/Trading-API/blob/master/source/index.html.md)
   * [Change log](https://github.com/LykkeCity/Trading-API/blob/master/source/includes/_change-log.md)
   * [Api usage](https://github.com/LykkeCity/Trading-API/blob/master/source/includes/_api_usage.md)
   * [public api](https://github.com/LykkeCity/Trading-API/blob/master/source/includes/_public-api.md)
