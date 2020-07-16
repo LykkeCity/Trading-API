@@ -19,10 +19,10 @@ A useful tool for manual gRPC API requests: [BloomRPC](https://github.com/uw-lab
 
 **Proto files**
 
-* [common.proto](https://github.com/swisschain/Lykke-HftApi-Docs/blob/master/grpc_proto_contracts/common.proto) :Common data models
-* [isalive.proto](https://github.com/swisschain/Lykke-HftApi-Docs/blob/master/grpc_proto_contracts/isalive.proto) : Is Alive API service
-* [publicService.proto](https://github.com/swisschain/Lykke-HftApi-Docs/blob/master/grpc_proto_contracts/publicService.proto) : Public API service
-* [privateService.proto](https://github.com/swisschain/Lykke-HftApi-Docs/blob/master/grpc_proto_contracts/privateService.proto) : Private API service
+* [common.proto](https://github.com/LykkeCity/Trading-API/blob/master/grpc_proto_contracts/common.proto) :Common data models
+* [isalive.proto](https://github.com/LykkeCity/Trading-API/blob/master/grpc_proto_contracts/isalive.proto) : Is Alive API service
+* [publicService.proto](https://github.com/LykkeCity/Trading-API/blob/master/grpc_proto_contracts/publicService.proto) : Public API service
+* [privateService.proto](https://github.com/LykkeCity/Trading-API/blob/master/grpc_proto_contracts/privateService.proto) : Private API service
 
 ## Rest API
 
