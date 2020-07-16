@@ -10,7 +10,10 @@ The gRCP API utilizes a new generation of RPC framework that includes working wi
 
 Read more about `gRPC framework`: [https://grpc.io/](https://grpc.io/)
 
-A useful tool for manual gRPC API requests: [BloomRPC](https://github.com/uw-labs/bloomrpc)
+A useful tool for manual gRPC API requests: 
+
+* [BloomRPC](https://github.com/uw-labs/bloomrpc) - UI tool to interact with gRPC servers
+* [grpcurl](https://github.com/fullstorydev/grpcurl) - a command-line tool that lets you interact with gRPC servers
 
 **API Endpoint**: 
 
