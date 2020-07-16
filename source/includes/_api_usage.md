@@ -4,7 +4,7 @@ Lykke HFT API allows users to use 2 kinds of protocol `gRPC API` and `Rest API`.
 
 ## gRPC API
 
-The gRCP API utilizes a new generation of RPC framework that includes working with `HTTP 2`, `ProtoBuf`, and `WebSocket` for faster and more efficient interaction with the platform. The `gRPC framework` uses the declarative description of the contract in the `.proto` files. On the basis of which you can easily generate a client library in many [programming languages](https://grpc.io/docs/languages/). Also, the `gRPC framework` supports working with `stream`, which makes it easy to receive events from the server.
+The gRPC API utilizes a new generation of RPC framework that includes working with `HTTP 2`, `ProtoBuf`, and `WebSocket` for faster and more efficient interaction with the platform. The `gRPC framework` uses the declarative description of the contract in the `.proto` files. On the basis of which you can easily generate a client library in many [programming languages](https://grpc.io/docs/languages/). Also, the `gRPC framework` supports working with `stream`, which makes it easy to receive events from the server.
 
  **Lykke team strongly recommends using gRPC API protocol to communicate with the platform** 
 
