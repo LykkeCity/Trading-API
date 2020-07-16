@@ -20,9 +20,8 @@ service PrivateService {
 	rpc GetTrades (TradesRequest) returns (TradesResponse);
 	rpc GetOrderTrades (OrderTradesRequest) returns (TradesResponse);
 
-    rpc GetBalanceUpdates (google.protobuf.Empty) returns (stream BalanceUpdate);
-    rpc GetOrderUpdates (google.protobuf.Empty) returns (stream OrderUpdate);
-    rpc GetTradeUpdates (google.protobuf.Empty) returns (stream TradeUpdate);
+  rpc GetBalanceUpdates (google.protobuf.Empty) returns (stream BalanceUpdate);
+  rpc GetTradeUpdates (google.protobuf.Empty) returns (stream TradeUpdate);
 }
 
 message LimitOrderRequest {
@@ -207,10 +206,6 @@ message TradeFee {
 
 message BalanceUpdate {
     repeated Balance balances = 1;
-}
-
-message OrderUpdate {
-    repeated Order orders = 1;
 }
 
 message TradeUpdate {
