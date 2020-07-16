@@ -220,7 +220,7 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#lykke-trading-api" class="toc-h1 toc-link" data-title="Lykke trading API">Lykke trading API</a>
+            <a href="#lykke-high-frequency-trading-api" class="toc-h1 toc-link" data-title="Lykke High-Frequency Trading API">Lykke High-Frequency Trading API</a>
           </li>
           <li>
             <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
@@ -366,49 +366,50 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='lykke-trading-api'>Lykke trading API</h1>
+        <h1 id='lykke-high-frequency-trading-api'>Lykke High-Frequency Trading API</h1>
 <p>Lykke high-frequency trading API.</p>
 
-<p>This API allows Lykke clients to carry out automated trading on special sub-accounts. Also, the API allows you to get public data about the Lykke market, such as current prices, order books, and other parameters for trading instruments.</p>
+<p>Lykke High-Frequency Trading API allows all our clients to carry out automated trading on specially designed sub-accounts. This API enables clients to get public Lykke Market data such as current prices, book orders and other parameters of the trading instruments.</p>
 
-<p>If you are interested in API trading, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!.</p>
+<p>If you are interested in API trading, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!</p>
 
 <p>For more information about Lykke, please visit <a href="http://lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">www.lykke.com</a>.</p>
 <h1 id='change-log'>Change Log</h1><h2 id='2020-07-01-the-release-of-a-new-hft-api'>2020-07-01 | The release of a new HFT API.</h2>
-<p>The new APIs now support the <strong>gRPC</strong> protocol. This protocol uses HTTP 2.0 standard, WebSocket, and ProtoBuf, helping to reduce latency, more efficient use of the CPU, and network resources on the client-side. </p>
+<p>The new release of the updated APIs now supports <strong>gRPC protocol</strong>. This protocol uses HTTP 2.0 Standard, WebSocket, and ProtoBuf, which helps to reduce latency, allows more efficient use of the CPU and provides access to network resources on the client&#39;s side.</p>
 
 <p>The best part of the <strong>gRPC</strong> protocol is how easy it is to integrate the Lykke APIs in many programming languages by using the proto-files which generates a client library.<a href="https://github.com/LykkeCity/Trading-API/tree/master/grpc_proto_contracts">Proto files with contracts</a>. This generates a new response format, abstracted from the protocol itself, allowing you to work in a custom manner with the Lykke APIs regardless of the protocol.</p>
 
-<p>A new response format from the server, abstracted from the protocol. Allows you to work in a custom manner with the API regardless of the protocol.
-The contracts in the Rest API protocol have been updated as well. A new set of functions and models is being used, very similar to gRPC protocol. We have removed deprecated methods and created new methods. You can find them in <a href="https://hft-apiv2.lykke.com/swagger/ui/index.html">Swagger UI</a>.</p>
+<p>The best part of the <strong>gRPC protocol</strong> how easy it is integration with Lykke APIs. The protocol supports many programming languages that create a Client Library by merely using the proto-files. <a href="https://github.com/LykkeCity/Trading-API/tree/master/grpc_proto_contracts">Proto files with contracts</a>.</p>
 
-<p>Thanks to the <strong>gRCP</strong> protocol we added the ability to receive a market data stream from the server:</p>
+<p>The New Response of the server is no longer included in the <strong>gRPC protocol</strong>, enabling each user to work with the API in their unique manner. Additionally, the contracts in the <strong>Rest API protocol</strong> also had been updated. A new set of functions and models is being used, very similar to those of <strong>gRPC protocol</strong>.</p>
+
+<p>Because of the <strong>gRCP protocol</strong>, the user now is able to receive Market Data Stream directly from the server:</p>
 
 <ul>
-<li><strong>Order books</strong> - Getting snapshots and changes in the order book.</li>
-<li><strong>Prices</strong> - Getting snapshots and changes in current prices.</li>
-<li><strong>24hr Ticker Statistics</strong> - Getting a snapshot of the current ticker statistics and the stream of data updates.</li>
+<li><strong>Order book</strong> - Get snapshots and changes in the orders book.</li>
+<li><strong>Prices</strong> - Get snapshots and changes in current prices.</li>
+<li><strong>24hr Ticker Statistics</strong> - Get a snapshot of the current ticker statistics and the stream of data updates.</li>
 </ul>
 
-<p>We have also added the ability to receive data flow from your API account  using <strong>gRPC</strong> protocol:</p>
+<p>We have also added the capability to receive data flow from your API account using <strong>gRPC protocol</strong>:</p>
 
 <ul>
-<li><strong>Balances</strong> - Gets a snapshot of your account balance and the flow of balance changes.</li>
-<li><strong>Transactions</strong> - Gets a flow of completed trades on your API account.</li>
-<li><strong>Orders</strong> - Gets a flow of changes in active orders on your API account.</li>
+<li><strong>Balances</strong> - Get a snapshot of your account balance and the flow of balance changes.</li>
+<li><strong>Transactions</strong> - Get a flow of completed trades of your API account.</li>
+<li><strong>Orders</strong> - Get a flow of changes in active orders of your API account.</li>
 </ul>
 
-<p>We have enhanced the overall performance of the APIs by optimizing different areas such as: reducing data backlogs, prices, order books, balances, and active orders.</p>
+<p>We have enhanced the overall performance of the APIs by optimising different areas such as: reducing data backlogs, prices, book orders, balances and active orders.</p>
 
-<p>We have also optimized the API Keys management and increased the overall security.</p>
+<p>We have also optimised the API Keys management and enhanced overall security.</p>
 
 <ul>
-<li>You will be receiving the secret key of the HFT account only after creating or regenerating the key.</li>
+<li>The secret key of the HFT account can only be received after creating or regenerating the key.</li>
 <li>The secret key of HFT account will only be regenerated when using 2FA.</li>
 <li>The transfer of funds between the HFT account and the Lykke Wallet Trading account will require 2FA authentication.</li>
 </ul>
 
-<p>We have also increased the optimization of internal serves and bug fixes.</p>
+<p>We have also increased the optimisation of internal serves and bug fixes.</p>
 <h1 id='protocol-description'>Protocol description</h1>
 <p>Lykke HFT API allows users to use 2 kinds of protocol <code>gRPC API</code> and <code>Rest API</code>. Both kinds of APIs support the same methods with the same data format, but only gRPC API supports receiving streaming data from the platform.</p>
 <h2 id='grpc-api'>gRPC API</h2>
