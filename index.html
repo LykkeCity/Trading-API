@@ -1,0 +1,3000 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-ff9a2c76.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;protobuf&quot;,&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/Lykke_White-3c1b3a40.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="protobuf">protobuf</a>
+              <a href="#" data-language-name="json">json</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#lykke-trading-api" class="toc-h1 toc-link" data-title="Lykke trading API">Lykke trading API</a>
+          </li>
+          <li>
+            <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#2020-07-01-the-release-of-a-new-hft-api" class="toc-h2 toc-link" data-title="2020-07-01 | The release of a new HFT API.">2020-07-01 | The release of a new HFT API.</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#protocol-description" class="toc-h1 toc-link" data-title="Protocol description">Protocol description</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#grpc-api" class="toc-h2 toc-link" data-title="gRPC API">gRPC API</a>
+                  </li>
+                  <li>
+                    <a href="#rest-api" class="toc-h2 toc-link" data-title="Rest API">Rest API</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-usage" class="toc-h1 toc-link" data-title="API usage">API usage</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#allowed-http-verbs" class="toc-h2 toc-link" data-title="Allowed HTTP Verbs">Allowed HTTP Verbs</a>
+                  </li>
+                  <li>
+                    <a href="#description-of-usual-http-server-responses" class="toc-h2 toc-link" data-title="Description Of Usual HTTP Server Responses">Description Of Usual HTTP Server Responses</a>
+                  </li>
+                  <li>
+                    <a href="#response-structure" class="toc-h2 toc-link" data-title="Response structure">Response structure</a>
+                  </li>
+                  <li>
+                    <a href="#authorization" class="toc-h2 toc-link" data-title="Authorization">Authorization</a>
+                  </li>
+                  <li>
+                    <a href="#decimal-type" class="toc-h2 toc-link" data-title="Decimal type">Decimal type</a>
+                  </li>
+                  <li>
+                    <a href="#timestamp-type" class="toc-h2 toc-link" data-title="Timestamp type">Timestamp type</a>
+                  </li>
+                  <li>
+                    <a href="#order-statuses" class="toc-h2 toc-link" data-title="Order statuses">Order statuses</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#public-apis" class="toc-h1 toc-link" data-title="Public APIs">Public APIs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-assets" class="toc-h2 toc-link" data-title="Get all assets">Get all assets</a>
+                  </li>
+                  <li>
+                    <a href="#get-asset-by-id" class="toc-h2 toc-link" data-title="Get Asset by ID">Get Asset by ID</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-asset-pairs" class="toc-h2 toc-link" data-title="Get all asset pairs">Get all asset pairs</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-asset-pair" class="toc-h2 toc-link" data-title="Get a specific asset pair">Get a specific asset pair</a>
+                  </li>
+                  <li>
+                    <a href="#asset-pair-order-book-ticker" class="toc-h2 toc-link" data-title="Asset Pair Order Book Ticker">Asset Pair Order Book Ticker</a>
+                  </li>
+                  <li>
+                    <a href="#24hr-ticker-price-change-statistics" class="toc-h2 toc-link" data-title="24hr Ticker Price Change Statistics">24hr Ticker Price Change Statistics</a>
+                  </li>
+                  <li>
+                    <a href="#get-current-prices" class="toc-h2 toc-link" data-title="Get current prices">Get current prices</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#private-apis" class="toc-h1 toc-link" data-title="Private APIs">Private APIs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-the-current-balance" class="toc-h2 toc-link" data-title="Get the current balance">Get the current balance</a>
+                  </li>
+                  <li>
+                    <a href="#get-trade-history" class="toc-h2 toc-link" data-title="Get trade history">Get trade history</a>
+                  </li>
+                  <li>
+                    <a href="#get-active-or-closed-orders" class="toc-h2 toc-link" data-title="Get active or closed orders">Get active or closed orders</a>
+                  </li>
+                  <li>
+                    <a href="#place-a-limit-order" class="toc-h2 toc-link" data-title="Place a limit order">Place a limit order</a>
+                  </li>
+                  <li>
+                    <a href="#place-a-market-order" class="toc-h2 toc-link" data-title="Place a market order">Place a market order</a>
+                  </li>
+                  <li>
+                    <a href="#place-multiple-limit-orders" class="toc-h2 toc-link" data-title="Place multiple limit orders">Place multiple limit orders</a>
+                  </li>
+                  <li>
+                    <a href="#mass-cancel-orders" class="toc-h2 toc-link" data-title="Mass cancel orders">Mass cancel orders</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-orders-by-id" class="toc-h2 toc-link" data-title="Cancel orders by ID">Cancel orders by ID</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#public-stream-apis" class="toc-h1 toc-link" data-title="Public Stream APIs">Public Stream APIs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#follow-the-current-prices" class="toc-h2 toc-link" data-title="Follow the current prices">Follow the current prices</a>
+                  </li>
+                  <li>
+                    <a href="#follow-current-24hr-statistics" class="toc-h2 toc-link" data-title="Follow current 24hr Statistics">Follow current 24hr Statistics</a>
+                  </li>
+                  <li>
+                    <a href="#follow-order-book-ticker" class="toc-h2 toc-link" data-title="Follow Order Book Ticker">Follow Order Book Ticker</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#private-stream-apis" class="toc-h1 toc-link" data-title="Private Stream APIs">Private Stream APIs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#follow-the-current-balance" class="toc-h2 toc-link" data-title="Follow the current balance">Follow the current balance</a>
+                  </li>
+                  <li>
+                    <a href="#follow-trades" class="toc-h2 toc-link" data-title="Follow trades">Follow trades</a>
+                  </li>
+                  <li>
+                    <a href="#follow-updates-by-orders" class="toc-h2 toc-link" data-title="Follow updates by orders">Follow updates by orders</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#error-codes" class="toc-h1 toc-link" data-title="Error codes">Error codes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#general-network-errors-10xx" class="toc-h2 toc-link" data-title="General network errors (10xx)">General network errors (10xx)</a>
+                  </li>
+                  <li>
+                    <a href="#validation-errors-11xx" class="toc-h2 toc-link" data-title="Validation errors(11xx)">Validation errors(11xx)</a>
+                  </li>
+                  <li>
+                    <a href="#logic-errors-2xxx" class="toc-h2 toc-link" data-title="Logic errors(2xxx)">Logic errors(2xxx)</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='lykke-trading-api'>Lykke trading API</h1>
+<p>Lykke high-frequency trading API.</p>
+
+<p>This API allows Lykke clients to carry out automated trading on special sub-accounts. Also, the API allows you to get public data about the Lykke market, such as current prices, order books, and other parameters for trading instruments.</p>
+
+<p>If you are interested in API trading, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!.</p>
+
+<p>For more information about Lykke, please visit <a href="http://lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">www.lykke.com</a>.</p>
+<h1 id='change-log'>Change Log</h1><h2 id='2020-07-01-the-release-of-a-new-hft-api'>2020-07-01 | The release of a new HFT API.</h2>
+<p>The new APIs now support the <strong>gRPC</strong> protocol. This protocol uses HTTP 2.0 standard, WebSocket, and ProtoBuf, helping to reduce latency, more efficient use of the CPU, and network resources on the client-side. </p>
+
+<p>The best part of the <strong>gRPC</strong> protocol is how easy it is to integrate the Lykke APIs in many programming languages by using the proto-files which generates a client library.<a href="https://github.com/swisschain/Lykke-HftApi-Docs/tree/master/grpc_proto_contracts">Proto files with contracts</a>. This generates a new response format, abstracted from the protocol itself, allowing you to work in a custom manner with the Lykke APIs regardless of the protocol.</p>
+
+<p>A new response format from the server, abstracted from the protocol. Allows you to work in a custom manner with the API regardless of the protocol.
+The contracts in the Rest API protocol have been updated as well. A new set of functions and models is being used, very similar to gRPC protocol. We have removed deprecated methods and created new methods. You can find them in <a href="https://hft-apiv2.lykke.com/swagger/ui/index.html">Swagger UI</a>.</p>
+
+<p>Thanks to the <strong>gRCP</strong> protocol we added the ability to receive a market data stream from the server:</p>
+
+<ul>
+<li><strong>Order books</strong> - Getting snapshots and changes in the order book.</li>
+<li><strong>Prices</strong> - Getting snapshots and changes in current prices.</li>
+<li><strong>24hr Ticker Statistics</strong> - Getting a snapshot of the current ticker statistics and the stream of data updates.</li>
+</ul>
+
+<p>We have also added the ability to receive data flow from your API account  using <strong>gRPC</strong> protocol:</p>
+
+<ul>
+<li><strong>Balances</strong> - Gets a snapshot of your account balance and the flow of balance changes.</li>
+<li><strong>Transactions</strong> - Gets a flow of completed trades on your API account.</li>
+<li><strong>Orders</strong> - Gets a flow of changes in active orders on your API account.</li>
+</ul>
+
+<p>We have enhanced the overall performance of the APIs by optimizing different areas such as: reducing data backlogs, prices, order books, balances, and active orders.</p>
+
+<p>We have also optimized the API Keys management and increased the overall security.</p>
+
+<ul>
+<li>You will be receiving the secret key of the HFT account only after creating or regenerating the key.</li>
+<li>The secret key of HFT account will only be regenerated when using 2FA.</li>
+<li>The transfer of funds between the HFT account and the Lykke Wallet Trading account will require 2FA authentication.</li>
+</ul>
+
+<p>We have also increased the optimization of internal serves and bug fixes.</p>
+<h1 id='protocol-description'>Protocol description</h1>
+<p>Lykke HFT API allows users to use 2 kinds of protocol <code>gRPC API</code> and <code>Rest API</code>. Both kinds of APIs support the same methods with the same data format, but only gRPC API supports receiving streaming data from the platform.</p>
+<h2 id='grpc-api'>gRPC API</h2>
+<p>The gRCP API utilizes a new generation of RPC framework that includes working with <code>HTTP 2</code>, <code>ProtoBuf</code>, and <code>WebSocket</code> for faster and more efficient interaction with the platform. The <code>gRPC framework</code> uses the declarative description of the contract in the <code>.proto</code> files. On the basis of which you can easily generate a client library in many <a href="https://grpc.io/docs/languages/">programming languages</a>. Also, the <code>gRPC framework</code> supports working with <code>stream</code>, which makes it easy to receive events from the server.</p>
+
+<p><strong>Lykke team strongly recommends using gRPC API protocol to communicate with the platform</strong> </p>
+
+<p>Read more about <code>gRPC framework</code>: <a href="https://grpc.io/">https://grpc.io/</a></p>
+
+<p>A useful tool for manual gRPC API requests: <a href="https://github.com/uw-labs/bloomrpc">BloomRPC</a></p>
+
+<p><strong>API Endpoint</strong>: </p>
+
+<ul>
+<li>https://hft-apiv2-grpc.lykke.com - url format</li>
+<li><code>hft-apiv2-grpc.lykke.com:443</code>   - host format</li>
+</ul>
+
+<p><strong>Proto files</strong></p>
+
+<ul>
+<li><a href="https://github.com/swisschain/Lykke-HftApi-Docs/blob/master/grpc_proto_contracts/common.proto">common.proto</a> :Common data models</li>
+<li><a href="https://github.com/swisschain/Lykke-HftApi-Docs/blob/master/grpc_proto_contracts/isalive.proto">isalive.proto</a> : Is Alive API service</li>
+<li><a href="https://github.com/swisschain/Lykke-HftApi-Docs/blob/master/grpc_proto_contracts/publicService.proto">publicService.proto</a> : Public API service</li>
+<li><a href="https://github.com/swisschain/Lykke-HftApi-Docs/blob/master/grpc_proto_contracts/privateService.proto">privateService.proto</a> : Private API service</li>
+</ul>
+<h2 id='rest-api'>Rest API</h2>
+<p>The rest API uses the classic HTTP based framework that includes working with <code>HTTP 1.1</code>, and <code>JSON</code>. Rest API allows users to just call RPC methods without streaming data from the server.</p>
+
+<p><strong>Disclaimer:</strong> The rest API has been added for backward compatibility. <strong>The Lykke team recommends against using the Rest API protocol in favor of the gRPC protocol.</strong></p>
+
+<p>A useful tool for manual rest API requests: <a href="https://hft-apiv2.lykke.com/swagger/ui/index.html">HFT API Swagger</a></p>
+
+<p><strong>API Endpoint</strong>: </p>
+
+<ul>
+<li>https://hft-apiv2.lykke.com/api</li>
+</ul>
+<h1 id='api-usage'>API usage</h1><h2 id='allowed-http-verbs'>Allowed HTTP Verbs</h2>
+<ul>
+<li><code>PUT</code> : Updates a resource.</li>
+<li><code>POST</code> : Creates a resource.</li>
+<li><code>GET</code> : Gets a resource or a list of resources.</li>
+<li><code>DELETE</code> : Deletes a resource.</li>
+</ul>
+<h2 id='description-of-usual-http-server-responses'>Description Of Usual HTTP Server Responses</h2>
+<ul>
+<li>200 <code>OK</code> : The request was successful.</li>
+<li>401 <code>Unauthorized</code> : Authentication failed.</li>
+<li>404 <code>Not Found</code> : Endpoint was not found.</li>
+<li>500 <code>Internal Server Error</code> : Server error.</li>
+</ul>
+<h2 id='response-structure'>Response structure</h2>
+<p>Every response contains two fields - <code>payload</code> and <code>error</code>. A successful response will contain the response data in the <code>payload</code> field and the <em>null</em> in the <code>error</code> field, and vice versa for the error response.</p>
+
+<p>Here you have a list of errors you might encounter in the paragraph <strong>Error codes</strong> at the end of the document.</p>
+
+<blockquote>
+<p>Successful response. Property <code>error</code> is null.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Response</span> <span class="p">{</span>
+    <span class="n">PayloadType</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// error is NULL</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Error response. Property <code>error</code> is not null.</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"itemNotFound"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asset not found"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asset not found"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="o">.</span><span class="n">common</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Error</span> <span class="p">{</span>
+    <span class="n">ErrorCode</span> <span class="na">code</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                  <span class="c1">// 1100</span>
+    <span class="kt">string</span> <span class="kd">message</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>              <span class="c1">// "Asset not found"</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">string</span><span class="err">&gt;</span> <span class="na">fields</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">// "assetId" : "Asset not found"</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="n">ErrorCode</span> <span class="p">{</span>
+    <span class="na">success</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="na">runtimeError</span> <span class="o">=</span> <span class="mi">1001</span><span class="p">;</span>
+    <span class="na">itemNotFound</span> <span class="o">=</span> <span class="mi">1100</span><span class="p">;</span>
+
+<span class="cm">/* Full list in the paragraph **Error codes** at the end of the document */</span>
+
+<span class="p">}</span>
+
+<span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">Response</span> <span class="p">{</span>
+    <span class="n">PayloadType</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>      <span class="c1">// error is NOT NULL</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='authorization'>Authorization</h2>
+<p>You can create your API keys in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a>. You can also check our step by step guide <a href="https://support.lykke.com/hc/en-us/articles/360000552605-How-do-I-create-an-API-Wallet-">here</a>.</p>
+
+<p>To use the API keys you should just add a header <code>Authorization: Bearer &lt;your API Key&gt;</code> with the bearer token on your request.</p>
+
+<blockquote>
+<p>Request Header</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="nl">"Authorization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer **********************************"</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code>  <span class="s">"Authorization"</span><span class="o">:</span> <span class="s">"Bearer **********************************"</span>
+</code></pre></div><h2 id='decimal-type'>Decimal type</h2>
+<p>Here you can see: How to manage decimal types (Price, Volume, Amount, etc) in API contract.</p>
+
+<p>In the gRPC API contract, the decimal type is presented as a string type, with a textual representation of the number. This is done in order to avoid problems with the non-strict precision &quot;double&quot; type.</p>
+
+<p>In the Rest API contact, the decimal type is presented as <code>number</code> with strict precision.</p>
+
+<blockquote>
+<p>Example with decimal type</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">222231.33420001911</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0000001</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kd">message</span> <span class="nc">Body</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>   <span class="c1">// "222231.33420001911"</span>
+    <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// "0.0000001"</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='timestamp-type'>Timestamp type</h2>
+<p>Here you can see: How to manage the <code>TimeStamp</code> type in the API contract.</p>
+
+<p><i>The timestamp is always used in the <b>time zone UTC+0</b></i></p>
+
+<p>In the Rest API contact, the <code>TimeStamp</code> type is presented as a <code>number</code> with &quot;Milliseconds in Unix Epoch&quot; format of date-time.</p>
+
+<p>In the gRPC API contract, the <code>TimeStamp</code> type is presented as a <code>google.protobuf.Timestamp</code> type.</p>
+
+<blockquote>
+<p>Example with timestamp</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"Timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1592903724406</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="k">import</span> <span class="s">"google/protobuf/timestamp.proto"</span><span class="p">;</span>
+
+<span class="n">google.protobuf.Timestamp</span> <span class="na">time_name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// 1592903724406</span>
+</code></pre></div><h2 id='order-statuses'>Order statuses</h2>
+<p>List of possible order states</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Placed</td>
+<td>Order in order book.</td>
+</tr>
+<tr>
+<td>PartiallyMatched</td>
+<td>Order in order book and partially filled.</td>
+</tr>
+<tr>
+<td>Matched</td>
+<td>Order is filled.</td>
+</tr>
+<tr>
+<td>Pending</td>
+<td>An order is pending a trigger to be placed in the order book.</td>
+</tr>
+<tr>
+<td>Cancelled</td>
+<td>Order is cancelled by user.</td>
+</tr>
+<tr>
+<td>Replaced</td>
+<td>Order is replaced (canceled) by the user.</td>
+</tr>
+<tr>
+<td>Rejected</td>
+<td>Order rejectd by the system.</td>
+</tr>
+</tbody></table>
+<h1 id='public-apis'>Public APIs</h1><h2 id='get-all-assets'>Get all assets</h2>
+<p>Get a list of supported assets with parameters.</p>
+<h3 id='request'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetAssets</code></p>
+
+<p><strong>Rest API:</strong> <code>GET /api/assets</code></p>
+<h3 id='response'>Response</h3>
+<p>Array of assets:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>Asset unique identifier.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Asset name.</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Asset symbol.</td>
+</tr>
+<tr>
+<td>accuracy</td>
+<td>uint</td>
+<td>Maximum number of digits after the decimal point which are supported by the asset.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/assets</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetAssets</span> <span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">AssetsResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AssetsResponse</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">Asset</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// NULL</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Asset</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// BTC</span>
+    <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>     <span class="c1">// Bitcoin</span>
+    <span class="kt">string</span> <span class="na">symbol</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// BTC</span>
+    <span class="kt">int32</span> <span class="na">accuracy</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>  <span class="c1">// 8</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='get-asset-by-id'>Get Asset by ID</h2>
+<p>Get information about specific asset.</p>
+<h3 id='request-2'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetAsset</code></p>
+
+<p><strong>RestAPI:</strong> <code>GET /api/assets/{assetId}</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>path</td>
+<td>Asset uniquie ID</td>
+</tr>
+</tbody></table>
+<h3 id='response-2'>Response</h3>
+<p>Asset description:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>Asset unique identifier.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Asset name.</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Asset symbol.</td>
+</tr>
+<tr>
+<td>accuracy</td>
+<td>uint</td>
+<td>Maximum number of digits after the decimal point which are supported by the asset.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/assets/</span><span class="p">{</span><span class="err">assetId</span><span class="p">}</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bitcoin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"accuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetAsset</span> <span class="p">(</span><span class="n">AssetRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">AssetResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AssetRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>   <span class="c1">// BTC</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AssetResponse</span> <span class="p">{</span>
+    <span class="n">Asset</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// NULL</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Asset</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// BTC</span>
+    <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>     <span class="c1">// Bitcoin</span>
+    <span class="kt">string</span> <span class="na">symbol</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// BTC</span>
+    <span class="kt">int32</span> <span class="na">accuracy</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>  <span class="c1">// 8</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='get-all-asset-pairs'>Get all asset pairs</h2>
+<p>Get all supported asset pairs (symbols).</p>
+<h3 id='request-3'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetAssetPairs</code></p>
+
+<p><strong>RestAPI:</strong> <code>GET /api/assetpairs</code></p>
+<h3 id='response-3'>Response</h3>
+<p>Array of trading instruments.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>baseAssetId</td>
+<td>string</td>
+<td>Base asset unique identifier.</td>
+</tr>
+<tr>
+<td>quoteAssetId</td>
+<td>string</td>
+<td>Quote asset unique identifier.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Trading instrument name.</td>
+</tr>
+<tr>
+<td>priceAccuracy</td>
+<td>uint</td>
+<td>Trading instrument price accuracy.</td>
+</tr>
+<tr>
+<td>baseAssetAccuracy</td>
+<td>uint</td>
+<td>Base asset accuracy.</td>
+</tr>
+<tr>
+<td>quoteAssetAccuracy</td>
+<td>uint</td>
+<td>Quote asset accuracy.</td>
+</tr>
+<tr>
+<td>minVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Minimum order volume in base currency.</td>
+</tr>
+<tr>
+<td>minOppositeVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Minimum order volume in quote currency.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/assetpairs</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91960f78-7ea1-49f7-be27-34221a763b02"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"priceAccuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAssetAccuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAssetAccuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minOppositeVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCLKK1Y"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LKK1Y"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/LKK1Y"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"priceAccuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAssetAccuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAssetAccuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minOppositeVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetAssetPairs</span> <span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">AssetPairsResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AssetPairsResponse</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">AssetPair</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>      <span class="c1">// NULL</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AssetPair</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// "BTCLKK1Y"</span>
+    <span class="kt">string</span> <span class="na">baseAssetId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>          <span class="c1">// "BTC"</span>
+    <span class="kt">string</span> <span class="na">quoteAssetId</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>         <span class="c1">// "LKK1Y"</span>
+    <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                 <span class="c1">// "BTC/LKK1Y"</span>
+    <span class="kt">int32</span> <span class="na">priceAccuracy</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>         <span class="c1">// 2</span>
+    <span class="kt">int32</span> <span class="na">baseAssetAccuracy</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>     <span class="c1">// 8</span>
+    <span class="kt">int32</span> <span class="na">quoteAssetAccuracy</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>    <span class="c1">// 2</span>
+    <span class="kt">string</span> <span class="na">minVolume</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>            <span class="c1">// 0.0001</span>
+    <span class="kt">string</span> <span class="na">minOppositeVolume</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>    <span class="c1">// 4</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='get-a-specific-asset-pair'>Get a specific asset pair</h2>
+<p>Get a specific asset pair.</p>
+<h3 id='request-4'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetAssetPair</code></p>
+
+<p><strong>RestAPI:</strong> <code>GET /api/assetpairs/{assetPairId}</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>path</td>
+<td>Symbol unique ID</td>
+</tr>
+</tbody></table>
+<h3 id='responce'>Responce</h3>
+<p>Trading instrument:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>baseAssetId</td>
+<td>string</td>
+<td>Base asset unique identifier.</td>
+</tr>
+<tr>
+<td>quoteAssetId</td>
+<td>string</td>
+<td>Quote asset unique identifier.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Trading instrument name.</td>
+</tr>
+<tr>
+<td>priceAccuracy</td>
+<td>uint</td>
+<td>Trading instrument price accuracy.</td>
+</tr>
+<tr>
+<td>baseAssetAccuracy</td>
+<td>uint</td>
+<td>Base asset accuracy.</td>
+</tr>
+<tr>
+<td>quoteAssetAccuracy</td>
+<td>uint</td>
+<td>Quote asset accuracy.</td>
+</tr>
+<tr>
+<td>minVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Minimum order volume in base currency.</td>
+</tr>
+<tr>
+<td>minOppositeVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Minimum order volume in quote currency.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/assetpairs/</span><span class="p">{</span><span class="err">assetPairId</span><span class="p">}</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91960f78-7ea1-49f7-be27-34221a763b02"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"priceAccuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAssetAccuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAssetAccuracy"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minOppositeVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetAssetPair</span> <span class="p">(</span><span class="n">AssetPairRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">AssetPairResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AssetPairResponse</span> <span class="p">{</span>
+    <span class="n">AssetPair</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>      <span class="c1">// NULL</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">AssetPair</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>          <span class="c1">// "BTCLKK1Y"</span>
+    <span class="kt">string</span> <span class="na">baseAssetId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>          <span class="c1">// "BTC"</span>
+    <span class="kt">string</span> <span class="na">quoteAssetId</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>         <span class="c1">// "LKK1Y"</span>
+    <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>                 <span class="c1">// "BTC/LKK1Y"</span>
+    <span class="kt">int32</span> <span class="na">priceAccuracy</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>         <span class="c1">// 2</span>
+    <span class="kt">int32</span> <span class="na">baseAssetAccuracy</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>     <span class="c1">// 8</span>
+    <span class="kt">int32</span> <span class="na">quoteAssetAccuracy</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>    <span class="c1">// 2</span>
+    <span class="kt">string</span> <span class="na">minVolume</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>            <span class="c1">// 0.0001</span>
+    <span class="kt">string</span> <span class="na">minOppositeVolume</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>    <span class="c1">// 4</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='asset-pair-order-book-ticker'>Asset Pair Order Book Ticker</h2>
+<p>Get the order book by asset pair. The order books contain a list of Buy(Bid) and Sell(Ask) orders with their corresponding price and volume.</p>
+<h3 id='request-5'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetOrderbooks</code></p>
+
+<p><strong>RestAPI:</strong> </p>
+
+<p><code>GET /api/orderbooks</code>
+<code>GET /api/orderbooks?assetPairId={assetPairId}&amp;depth={depth}</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>query</td>
+<td><em>(Optional)</em> Identificator of specific symbol. By default return all symbols.</td>
+</tr>
+<tr>
+<td>depth</td>
+<td>uint</td>
+<td>query</td>
+<td><em>(Optional)</em> How many levels need to include in order books. By default include all levels.</td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response</h3>
+<p>Array of order books by instruments:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp of last order book update.</td>
+</tr>
+<tr>
+<td>bids</td>
+<td>Array of PriceLevel</td>
+<td>List of buy orders.</td>
+</tr>
+<tr>
+<td>asks</td>
+<td>Array of PriceLevel</td>
+<td>List of sell orders.</td>
+</tr>
+</tbody></table>
+
+<p><strong>PriceLevel</strong>:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>p</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order price indicated in quoted asset per unit of base asset.</td>
+</tr>
+<tr>
+<td>v</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order volume indicated in base asset.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/orderbooks</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/api/orderbooks?assetPairId=</span><span class="p">{</span><span class="err">assetPairId</span><span class="p">}</span><span class="err">&amp;depth=</span><span class="p">{</span><span class="err">depth</span><span class="p">}</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1594725117313</span><span class="w">
+      </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06771538</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"p"</span><span class="p">:</span><span class="w"> </span><span class="mi">9599</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05210805</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"p"</span><span class="p">:</span><span class="w"> </span><span class="mi">9599</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.67230494</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"p"</span><span class="p">:</span><span class="w"> </span><span class="mf">9633.613</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.1</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"p"</span><span class="p">:</span><span class="w"> </span><span class="mf">9641.42</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetOrderbooks</span> <span class="p">(</span><span class="n">OrderbookRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">OrderbookResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OrderbookRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int32</span> <span class="na">depth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OrderbookResponse</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">Orderbook</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>       <span class="c1">// NULL</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Orderbook</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>           <span class="c1">// "BTCUSD"</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>  <span class="c1">// "seconds": "1594742656", "nanos": 167000000</span>
+    <span class="k">repeated</span> <span class="n">PriceVolume</span> <span class="na">bids</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>    <span class="c1">// {p="9010", v="0.01"}, {p="9000", v="1.0"}</span>
+    <span class="k">repeated</span> <span class="n">PriceVolume</span> <span class="na">asks</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>    <span class="c1">// {p="9020", v="0.12"}, {p="9030", v="0.71001"}</span>
+
+    <span class="kd">message</span> <span class="nc">PriceVolume</span> <span class="p">{</span>
+        <span class="kt">string</span> <span class="na">p</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">string</span> <span class="na">v</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='24hr-ticker-price-change-statistics'>24hr Ticker Price Change Statistics</h2>
+<p>24 hour rolling-window price change statistics.</p>
+<h3 id='request-6'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetTickers</code></p>
+
+<p><strong>RestAPI:</strong> </p>
+
+<p><code>GET /api/tickers</code>
+<code>GET /api/tickers?assetPairIds=BTCUSD&amp;assetPairIds=BTCEUR</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairIds</td>
+<td>string</td>
+<td>query</td>
+<td><em>(Optional)</em> Filter by symbols. By default returns all asset pairs information.</td>
+</tr>
+</tbody></table>
+<h3 id='response-5'>Response</h3>
+<p>Asset description:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>volumeBase</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trading volume for the last 24h in base asset.</td>
+</tr>
+<tr>
+<td>volumeQuote</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trading volume for the last 24h in quote asset.</td>
+</tr>
+<tr>
+<td>priceChange</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Price changes(in %) in the last 24h.</td>
+</tr>
+<tr>
+<td>lastPrice</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>The last trade price.</td>
+</tr>
+<tr>
+<td>high</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>The maximum trade price from the last 24h.</td>
+</tr>
+<tr>
+<td>low</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>The minimum trade price from the last 24h.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Last update timestamp.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">`GET</span><span class="w"> </span><span class="err">/api/tickers`</span><span class="w">
+</span><span class="err">`GET</span><span class="w"> </span><span class="err">/api/tickers?assetPairIds=BTCUSD&amp;assetPairIds=BTCEUR`</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCEUR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volumeBase"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.98657285</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volumeQuote"</span><span class="p">:</span><span class="w"> </span><span class="mf">8350.5868</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"priceChange"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.036057567781542336</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">8620</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">8620</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">8320</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1594725117313</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volumeBase"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.15139075</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volumeQuote"</span><span class="p">:</span><span class="w"> </span><span class="mf">20649.0296</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"priceChange"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.023048622404312356</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">9637.117</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">9700</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">9397.999</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1594725117313</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetTickers</span> <span class="p">(</span><span class="n">TickersRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">TickersResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TickersRequest</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="kt">string</span> <span class="na">assetPairIds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TickersResponse</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">TickerUpdate</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>    <span class="c1">// NULL</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TickerUpdate</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volumeBase</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volumeQuote</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">priceChange</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">lastPrice</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">high</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">low</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='get-current-prices'>Get current prices</h2>
+<p>Get current prices by symbols.</p>
+<h3 id='request-7'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetPrices</code></p>
+
+<p><strong>RestAPI:</strong> </p>
+
+<p><code>GET /api/prices</code></p>
+
+<p><code>GET /api/prices?assetPairIds={AssetPairID-1}&amp;assetPairIds={AssetPairID-2}&amp;...</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairIds</td>
+<td>array of string</td>
+<td>query</td>
+<td><em>(Optional)</em> List of identificators of specific symbols. By default return all symbols.</td>
+</tr>
+</tbody></table>
+<h3 id='response-6'>Response</h3>
+<p>Array of prices by symbols:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp of last order book update.</td>
+</tr>
+<tr>
+<td>bid</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Bid price.</td>
+</tr>
+<tr>
+<td>ask</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Ask price.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/prices</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/api/prices?assetPairId=</span><span class="p">{</span><span class="err">assetPairId</span><span class="p">}</span><span class="err">&amp;depth=</span><span class="p">{</span><span class="err">depth</span><span class="p">}</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+</span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCEUR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bid"</span><span class="p">:</span><span class="w"> </span><span class="mf">8089.122</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ask"</span><span class="p">:</span><span class="w"> </span><span class="mf">8149.614</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1594750211438</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bid"</span><span class="p">:</span><span class="w"> </span><span class="mf">9243.277</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ask"</span><span class="p">:</span><span class="w"> </span><span class="mf">9283.495</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1594750214503</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetPrices</span> <span class="p">(</span><span class="n">PricesRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">PricesResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">PricesRequest</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="kt">string</span> <span class="na">assetPairIds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">PricesResponse</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">PriceUpdate</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">PriceUpdate</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">bid</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">ask</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h1 id='private-apis'>Private APIs</h1>
+<p>This group method requires API Key Authentication.</p>
+
+<p>If you would like to create your API key, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!. If you need a step by step guide you may check our Help Center in <a href="https://support.lykke.com/hc/en-us/articles/360000552605-How-do-I-create-an-API-Wallet-">here</a>.</p>
+<h2 id='get-the-current-balance'>Get the current balance</h2>
+<p>Get the current balance from the API Key account.</p>
+<h3 id='request'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.GetBalances</code></p>
+
+<p><strong>Rest API:</strong> <code>GET /api/balance</code></p>
+<h3 id='response'>Response</h3>
+<p>The array of balance by assets.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>Asset unique identifier.</td>
+</tr>
+<tr>
+<td>available</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Available amount.</td>
+</tr>
+<tr>
+<td>reserved</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Amount reserved in active orders.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Last balance update on current asset.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/balance</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.433002</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reserved"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.35</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1592928606187</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"available"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reserved"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1592928506187</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetBalances</span> <span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">BalancesResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">BalancesResponse</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">Balance</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Balance</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">available</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">reserved</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='get-trade-history'>Get trade history</h2>
+<p>Gets the trading history of an account. Also, with the use of parameters, it can returns a single order.</p>
+<h3 id='request-2'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.GetTrades</code></p>
+
+<p><strong>Rest API:</strong></p>
+
+<p><code>GET /api/trades</code>
+<code>GET /api/trades/order/{orderId}</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>query</td>
+<td><em>(optional)</em> Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>query</td>
+<td><em>(optional)</em> Side of trade: <code>buy</code> or <code>sell</code>.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>uint</td>
+<td>query</td>
+<td><em>(optional)</em> Skip the specified number of elements.</td>
+</tr>
+<tr>
+<td>take</td>
+<td>uint</td>
+<td>query</td>
+<td><em>(optional)</em> Take the specified number of elements.</td>
+</tr>
+<tr>
+<td>from</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>query</td>
+<td><em>(optional)</em> From timestamp.</td>
+</tr>
+<tr>
+<td>to</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>query</td>
+<td><em>(optional)</em> To timestamp.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>path</td>
+<td>Unique Order ID</td>
+</tr>
+</tbody></table>
+<h3 id='response-2'>Response</h3>
+<p>Array of trades:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Trade ID.</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>Order ID of this trade.</td>
+</tr>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Trade asset pair ID (symbol).</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Trade tamestamp.</td>
+</tr>
+<tr>
+<td>role</td>
+<td>string</td>
+<td>Trade role. <code>Maker</code> or <code>Taker</code>.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trade price.</td>
+</tr>
+<tr>
+<td>baseVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trade volume in base asset.</td>
+</tr>
+<tr>
+<td>quoteVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trade volume in quote asset.</td>
+</tr>
+<tr>
+<td>baseAssetId</td>
+<td>string</td>
+<td>Base asset ID.</td>
+</tr>
+<tr>
+<td>quoteAssetId</td>
+<td>string</td>
+<td>Quote asset ID.</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>TradeFee</td>
+<td><em>(optional)</em> Trade Fee description.</td>
+</tr>
+</tbody></table>
+
+<p><strong>TradeFee</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>Asset ID</td>
+</tr>
+<tr>
+<td>size</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Fee size</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/trades</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/api/trades/order/</span><span class="p">{</span><span class="err">orderId</span><span class="p">}</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b3a25228-5384-4b5f-95c3-3eb31f7e9aee"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1592938116360</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"616374a2-02d0-4f01-8dce-6266fc30d4a1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Taker"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">9575.823</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9576</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ebceb096-7766-437a-8e98-e1f6532f0268"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1592938016360</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTGUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fa19c315-b8b2-49bd-a426-45f9384fbad3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Taker"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.085</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a4954205-48eb-4286-9c82-07792169f4db"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAssetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetTrades</span> <span class="p">(</span><span class="n">TradesRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">TradesResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TradesRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">oneof</span> <span class="n">optional_side</span> <span class="p">{</span>
+        <span class="n">Side</span> <span class="na">side</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int32</span> <span class="na">offset</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">int32</span> <span class="na">take</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">from</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="k">to</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TradesResponse</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">Trade</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Trade</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">orderId</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">role</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">baseVolume</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">quoteVolume</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">baseAssetId</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">quoteAssetId</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">TradeFee</span> <span class="na">fee</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TradeFee</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='get-active-or-closed-orders'>Get active or closed orders</h2>
+<p>Get active orders or closed orders from history.</p>
+<h3 id='request-3'>Request</h3>
+<p><strong>gRPC:</strong> </p>
+
+<p><code>hft.PrivateService.GetActiveOrders</code>
+<code>hft.PrivateService.GetClosedOrders</code></p>
+
+<p><strong>Rest API:</strong></p>
+
+<p><code>GET /api/orders/active</code>
+<code>GET /api/orders/closed</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>query</td>
+<td><em>(optional)</em> Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>uint</td>
+<td>query</td>
+<td><em>(optional)</em> Skip the specified number of elements.</td>
+</tr>
+<tr>
+<td>take</td>
+<td>uint</td>
+<td>query</td>
+<td><em>(optional)</em> Take the specified number of elements.</td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response</h3>
+<p>Asset description:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Unique Order ID.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp for order creation.</td>
+</tr>
+<tr>
+<td>lastTradeTimestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp for last trade by order.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Order status. List of statuses <a href="#order-statuses">here</a>.</td>
+</tr>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Order type: <code>Market</code> or <code>Limit</code>.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order price (in quote asset for one unit of base asset).</td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order volume (in base asset).</td>
+</tr>
+<tr>
+<td>filledVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order filled volume (in base asset).</td>
+</tr>
+<tr>
+<td>remainingVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order remaining volume to be filled (in base asset).</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/orders/active</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/api/orders/closed</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c336213-0a64-44a8-9599-e88bf6aa1b69"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1592928606187</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastTradeTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Placed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"filledVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remainingVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetActiveOrders</span> <span class="p">(</span><span class="n">OrdersRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">OrdersResponse</span><span class="p">);</span>
+    <span class="k">rpc</span> <span class="n">GetClosedOrders</span> <span class="p">(</span><span class="n">OrdersRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">OrdersResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OrdersRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int32</span> <span class="na">offset</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int32</span> <span class="na">take</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OrdersResponse</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">Order</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Order</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">oneof</span> <span class="n">optional_lastTradeTimestamp</span> <span class="p">{</span>
+        <span class="n">google.protobuf.Timestamp</span> <span class="na">lastTradeTimestamp</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">string</span> <span class="na">status</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">type</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="n">Side</span> <span class="na">side</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">filledVolume</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">remainingVolume</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">cost</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='place-a-limit-order'>Place a limit order</h2>
+<p>Place a limit order.</p>
+<h3 id='request-4'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.PlaceLimitOrder</code></p>
+
+<p><strong>Rest API:</strong> <code>POST /api/orders/limit</code></p>
+<h3 id='request-5'>Request</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>body</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>body</td>
+<td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>body</td>
+<td>Order volume (in base asset).</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>body</td>
+<td>Order price(in quote asset for one unit of base asset).</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">&gt;</span><span class="w"> </span><span class="err">Request</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">limit</span><span class="w"> </span><span class="err">order</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-4'>Response</h3>
+<p>Response description:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>Unique order ID</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">/api/orders/limit</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c336213-0a64-44a8-9599-e88bf6aa1b69"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">PlaceLimitOrder</span> <span class="p">(</span><span class="n">LimitOrderRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">LimitOrderResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">LimitOrderRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">Side</span> <span class="na">side</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">LimitOrderResponse</span> <span class="p">{</span>
+    <span class="n">LimitOrderPayload</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">message</span> <span class="nc">LimitOrderPayload</span> <span class="p">{</span>
+        <span class="kt">string</span> <span class="na">orderId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='place-a-market-order'>Place a market order</h2>
+<p>Place a <a href="https://en.wikipedia.org/wiki/Fill_or_kill">Fill-Or-Kill</a> market order.</p>
+<h3 id='request-6'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.PlaceLimitOrder</code></p>
+
+<p><strong>Rest API:</strong> <code>POST /api/orders/market</code></p>
+<h3 id='request-7'>Request</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>body</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>body</td>
+<td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>body</td>
+<td>Order volume (in base asset).</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">&gt;</span><span class="w"> </span><span class="err">Request</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">market</span><span class="w"> </span><span class="err">order</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.554</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-5'>Response</h3>
+<p>Response description:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>Unique order ID.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Market order result price.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">/api/orders/market</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">6445.222311</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">PlaceMarketOrder</span> <span class="p">(</span><span class="n">MarketOrderRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">MarketOrderResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">MarketOrderRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">Side</span> <span class="na">side</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">MarketOrderResponse</span> <span class="p">{</span>
+    <span class="n">MarketOrderPayload</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">message</span> <span class="nc">MarketOrderPayload</span> <span class="p">{</span>
+        <span class="kt">string</span> <span class="na">orderId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='place-multiple-limit-orders'>Place multiple limit orders</h2>
+<p>Place multiple limit orders in one package.
+The method also allows you to replace orders in the order book. You can replace all orders completely, or each separately.</p>
+<h3 id='request-8'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.PlaceBulkLimitOrder</code></p>
+
+<p><strong>Rest API:</strong> <code>POST /api/orders/bulk</code></p>
+<h3 id='request-9'>Request</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>body</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>cancelPreviousOrders</td>
+<td>bool</td>
+<td>body</td>
+<td>Cancel existing orders by AssetPair before placing new orders. Default: False.</td>
+</tr>
+<tr>
+<td>cancelMode</td>
+<td>string</td>
+<td>body</td>
+<td>Strategy for canceling orders if the &quot;cancelPreviousOrders&quot; parameter is activated. <code>bothSides</code>, <code>sellSide</code>, <code>buySide</code>.</td>
+</tr>
+<tr>
+<td>orders</td>
+<td>array of BulkOrder</td>
+<td>body</td>
+<td>List of new orders to place.</td>
+</tr>
+</tbody></table>
+
+<p><strong>BulkOrder:</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderAction</td>
+<td>string</td>
+<td>body</td>
+<td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>body</td>
+<td>Order volume (in base asset).</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>body</td>
+<td>Order price(in quote asset for one unit of base asset).</td>
+</tr>
+<tr>
+<td>oldId</td>
+<td>string</td>
+<td>body</td>
+<td>Identifier of the order to be replaced. If the parameter is specified, the new order will replace the existing order with the specified ID. If there is no order with the specified ID, then the new order will not be placed.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">&gt;</span><span class="w"> </span><span class="err">Request</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">limit</span><span class="w"> </span><span class="err">order</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cancelPreviousOrders"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cancelMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bothSides"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"orderAction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">9600</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"oldId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c336213-0a64-44a8-9599-e88bf6aa1b69"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='response-6'>Response</h3>
+<p>Response description:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>statuses</td>
+<td>array of BulkOrderItemStatus</td>
+<td>Array with report about each new order.</td>
+</tr>
+</tbody></table>
+
+<p><strong>BulkOrderItemStatus:</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Order ID</td>
+</tr>
+<tr>
+<td>error</td>
+<td><a href="#error-codes">ErrorCode</a></td>
+<td>Order result.</td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order volume (in base asset).</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>body</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">/api/orders/bulk</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c113553-0a64-35a1-3221-a12bf6ba1564"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">9600</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">PlaceBulkLimitOrder</span> <span class="p">(</span><span class="n">BulkLimitOrderRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">BulkLimitOrderResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">BulkLimitOrderRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="na">cancelPreviousOrders</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">oneof</span> <span class="n">optional_cancelMode</span> <span class="p">{</span>
+        <span class="n">CancelMode</span> <span class="na">cancelMode</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">repeated</span> <span class="n">BulkOrder</span> <span class="na">orders</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">BulkLimitOrderResponse</span> <span class="p">{</span>
+    <span class="n">BulkLimitOrderPayload</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+    <span class="kd">message</span> <span class="nc">BulkLimitOrderPayload</span> <span class="p">{</span>
+        <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">repeated</span> <span class="n">BulkOrderItemStatus</span> <span class="na">statuses</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">BulkOrderItemStatus</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.ErrorCode</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='mass-cancel-orders'>Mass cancel orders</h2>
+<p>Cancel all active orders or filter order to cancel by AssetPair or Side.</p>
+<h3 id='request-10'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.CancelAllOrders</code></p>
+
+<p><strong>Rest API:</strong> <code>DELETE /api/orders</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>query</td>
+<td><em>(Optional)</em> Symbol unique identifier (All asset pairs by default).</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>query</td>
+<td><em>(Optional)</em> Order side <code>Buy</code> or <code>Sell</code> (both sides by default).</td>
+</tr>
+</tbody></table>
+<h3 id='response-7'>Response</h3>
+<p>No content</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">DELETE</span><span class="w"> </span><span class="err">/api/orders</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">CancelAllOrders</span> <span class="p">(</span><span class="n">CancelOrdersRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">CancelOrderResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">CancelOrdersRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">Side</span> <span class="na">side</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">CancelOrderResponse</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='cancel-orders-by-id'>Cancel orders by ID</h2>
+<p>Cancel a specific order by order ID.</p>
+<h3 id='request-11'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.CancelAllOrders</code></p>
+
+<p><strong>Rest API:</strong> <code>DELETE /api/orders/{orderId}</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>path</td>
+<td>Unique Order ID.</td>
+</tr>
+</tbody></table>
+<h3 id='response-8'>Response</h3>
+<p>No content</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">DELETE</span><span class="w"> </span><span class="err">/api/orders/</span><span class="p">{</span><span class="err">orderId</span><span class="p">}</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">CancelOrder</span> <span class="p">(</span><span class="n">CancelOrderRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">CancelOrderResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">CancelOrderRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">orderId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">CancelOrderResponse</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h1 id='public-stream-apis'>Public Stream APIs</h1>
+<p><strong>Streaming API</strong> allows you to subscribe to events from the server and receive them in streaming mode upon the occurrence of the event.</p>
+
+<p><strong>Streaming API</strong> is available only when working with the <strong>gRPC protocol</strong>. In the RestAPI protocol, streaming APIs are not available.</p>
+
+<p>Public <strong>Streaming API</strong> allows you to receive live market data without authorization.</p>
+<h2 id='follow-the-current-prices'>Follow the current prices</h2>
+<p>Get current prices online.</p>
+
+<p>After subscribing you will get a data stream. The first packet in the stream will always contain a complete snapshot with the current prices. The following packages in the data stream will come after an asset price change.</p>
+<h3 id='request'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetPriceUpdates</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairIds</td>
+<td>array of string</td>
+<td>Filter by Symbol unique ID. If the array is empty then the server return prices by all symbols.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<p>Array of prices by symbols:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp of last order book update.</td>
+</tr>
+<tr>
+<td>bid</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Bid price.</td>
+</tr>
+<tr>
+<td>ask</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Ask price.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetPriceUpdates</span> <span class="p">(</span><span class="n">PriceUpdatesRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">PriceUpdate</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">PriceUpdatesRequest</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="kt">string</span> <span class="na">assetPairIds</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">PriceUpdate</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">bid</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">ask</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='follow-current-24hr-statistics'>Follow current 24hr Statistics</h2>
+<p>Get current 24hr Ticker Price Change Statistics online.</p>
+
+<p>After subscribing you will get a data stream. The first packet in the stream will always contain a complete snapshot with the current 24hr Ticker Price Change Statistics. The following packages in the data stream will come after a data change.</p>
+<h3 id='request-2'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetTickerUpdates</code></p>
+<h3 id='response-2'>Response</h3>
+<p>Array with asset description:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>volumeBase</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trading volume for the last 24h in base asset.</td>
+</tr>
+<tr>
+<td>volumeQuote</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trading volume for the last 24h in quote asset.</td>
+</tr>
+<tr>
+<td>priceChange</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Price changes(in %) in the last 24h.</td>
+</tr>
+<tr>
+<td>lastPrice</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>The last trade price.</td>
+</tr>
+<tr>
+<td>high</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>The maximum trade price from the last 24h.</td>
+</tr>
+<tr>
+<td>low</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>The minimum trade price from the last 24h.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Last update timestamp.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetTickerUpdates</span> <span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">TickerUpdate</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TickerUpdate</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volumeBase</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volumeQuote</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">priceChange</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">lastPrice</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">high</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">low</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='follow-order-book-ticker'>Follow Order Book Ticker</h2>
+<p>Get current asset pair order books online.</p>
+
+<p>After subscribing you will get a data stream. The first packet in the stream will always contain a complete snapshot with current order books. The follow packages in data stream will only contain changed levels in the order book.</p>
+
+<p>Please note that if a level is deleted at a specific price, a packet containing the level with the specified price will be sent to the stream with zero volume.</p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td><em>(Optional)</em> Identificator of specific symbol. By default return all symbols.</td>
+</tr>
+</tbody></table>
+<h3 id='request-3'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetOrderbookUpdates</code></p>
+<h3 id='response-3'>Response</h3>
+<p>Array with order books:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp of last order book update.</td>
+</tr>
+<tr>
+<td>bids</td>
+<td>Array of PriceLevel</td>
+<td>List of changed buy orders.</td>
+</tr>
+<tr>
+<td>asks</td>
+<td>Array of PriceLevel</td>
+<td>List of changed sell orders.</td>
+</tr>
+</tbody></table>
+
+<p><strong>PriceLevel</strong>:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>p</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order price indicated in quoted asset per unit of base asset.</td>
+</tr>
+<tr>
+<td>v</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order volume indicated in base asset.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetOrderbookUpdates</span> <span class="p">(</span><span class="n">OrderbookUpdatesRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">Orderbook</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OrderbookUpdatesRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Orderbook</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">PriceVolume</span> <span class="na">bids</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="n">PriceVolume</span> <span class="na">asks</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+    <span class="kd">message</span> <span class="nc">PriceVolume</span> <span class="p">{</span>
+        <span class="kt">string</span> <span class="na">p</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">string</span> <span class="na">v</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h1 id='private-stream-apis'>Private Stream APIs</h1>
+<p><strong>Streaming API</strong> allows you to subscribe to events from the server and receive them in streaming mode upon the occurrence of the event.</p>
+
+<p><strong>Streaming API</strong> is available only when working with the <strong>gRPC protocol</strong>. In the RestAPI protocol, streaming APIs are not available.</p>
+
+<p>Private <strong>Streaming API</strong> allows you to receive your live API account data.</p>
+<h2 id='follow-the-current-balance'>Follow the current balance</h2>
+<p>Get the current balance from the account.</p>
+
+<p>After subscribing you will get a data stream. The first packet in the stream will always contain a complete snapshot with the current balances of your API account. The following packages in the data stream will come after an asset balance change.</p>
+<h3 id='request'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetBalanceUpdates</code></p>
+<h3 id='response'>Response</h3>
+<p>The array of balance by assets.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>Asset unique identifier.</td>
+</tr>
+<tr>
+<td>available</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Available amount.</td>
+</tr>
+<tr>
+<td>reserved</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Amount reserved in active orders.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Last balance update on current asset.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetBalanceUpdates</span> <span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">BalanceUpdate</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">BalanceUpdate</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">Balance</span> <span class="na">balances</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Balance</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">available</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">reserved</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='follow-trades'>Follow trades</h2>
+<p>Get the flow of trades on the account.</p>
+
+<p>After subscribing you will get a data stream. The packages in the data stream will come after the trade happen.</p>
+<h3 id='request-2'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetTradeUpdates</code></p>
+<h3 id='response-2'>Response</h3>
+<p>Array of trades:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Trade ID.</td>
+</tr>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>Order ID of this trade.</td>
+</tr>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Trade asset pair ID (symbol).</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Trade timestamp.</td>
+</tr>
+<tr>
+<td>role</td>
+<td>string</td>
+<td>Trade role. <code>Maker</code> or <code>Taker</code>.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trade price.</td>
+</tr>
+<tr>
+<td>baseVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trade volume in base asset.</td>
+</tr>
+<tr>
+<td>quoteVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Trade volume in quote asset.</td>
+</tr>
+<tr>
+<td>baseAssetId</td>
+<td>string</td>
+<td>Base asset ID.</td>
+</tr>
+<tr>
+<td>quoteAssetId</td>
+<td>string</td>
+<td>Quote asset ID.</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>TradeFee</td>
+<td><em>(optional)</em> Trade Fee description.</td>
+</tr>
+</tbody></table>
+
+<p><strong>TradeFee</strong></p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>Asset ID</td>
+</tr>
+<tr>
+<td>size</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Fee size</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetTradeUpdates</span> <span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">TradeUpdate</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TradeUpdate</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">Trade</span> <span class="na">trades</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Trade</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">orderId</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">role</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">baseVolume</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">quoteVolume</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">baseAssetId</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">quoteAssetId</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">TradeFee</span> <span class="na">fee</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">TradeFee</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='follow-updates-by-orders'>Follow updates by orders</h2>
+<p>Get the flow of orders updates from your API account.</p>
+
+<p>After subscribing you will receive a data stream. Packets in the data stream will come after any changes with the active order - placing, matching, canceling, etc.</p>
+<h3 id='request-3'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetOrderUpdates</code></p>
+<h3 id='response-3'>Response</h3>
+<p>Array with order state:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Unique Order ID.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp for order creation.</td>
+</tr>
+<tr>
+<td>lastTradeTimestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp for last trade by order.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Order status. List of statuses <a href="#order-statuses">here</a>.</td>
+</tr>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Order type: <code>Market</code> or <code>Limit</code>.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order price (in quote asset for one unit of base asset).</td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order volume (in base asset).</td>
+</tr>
+<tr>
+<td>filledVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order filled volume (in base asset).</td>
+</tr>
+<tr>
+<td>remainingVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order remaining volume to be filled (in base asset).</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetOrderUpdates</span> <span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">OrderUpdate</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OrderUpdate</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">Order</span> <span class="na">orders</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Order</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">oneof</span> <span class="n">optional_lastTradeTimestamp</span> <span class="p">{</span>
+        <span class="n">google.protobuf.Timestamp</span> <span class="na">lastTradeTimestamp</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">string</span> <span class="na">status</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">type</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="n">Side</span> <span class="na">side</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">filledVolume</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">remainingVolume</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">cost</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h1 id='error-codes'>Error codes</h1>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>0</code></td>
+<td>Success</td>
+</tr>
+</tbody></table>
+<h2 id='general-network-errors-10xx'>General network errors (10xx)</h2>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>1001</code></td>
+<td>RuntimeError</td>
+<td>Internal Server Error</td>
+</tr>
+</tbody></table>
+<h2 id='validation-errors-11xx'>Validation errors(11xx)</h2>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>1100</code></td>
+<td>ItemNotFound</td>
+<td>resource not found (i.e. asset not found by provided ID)</td>
+</tr>
+<tr>
+<td><code>1101</code></td>
+<td>InvalidField</td>
+<td>invalid field in the request (i.e. Price must be &gt; 0)</td>
+</tr>
+</tbody></table>
+<h2 id='logic-errors-2xxx'>Logic errors(2xxx)</h2>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>2000</code></td>
+<td>MeBadRequest</td>
+</tr>
+<tr>
+<td><code>2001</code></td>
+<td>MeLowBalance</td>
+</tr>
+<tr>
+<td><code>2202</code></td>
+<td>MeAlreadyProcessed</td>
+</tr>
+<tr>
+<td><code>2003</code></td>
+<td>MeDisabledAsset</td>
+</tr>
+<tr>
+<td><code>2004</code></td>
+<td>MeUnknownAsset</td>
+</tr>
+<tr>
+<td><code>2005</code></td>
+<td>MeNoLiquidity</td>
+</tr>
+<tr>
+<td><code>2006</code></td>
+<td>MeNotEnoughFunds</td>
+</tr>
+<tr>
+<td><code>2007</code></td>
+<td>MeDust</td>
+</tr>
+<tr>
+<td><code>2008</code></td>
+<td>MeReservedVolumeHigherThanBalance</td>
+</tr>
+<tr>
+<td><code>2009</code></td>
+<td>MeNotFound</td>
+</tr>
+<tr>
+<td><code>2010</code></td>
+<td>MeBalanceLowerThanReserved</td>
+</tr>
+<tr>
+<td><code>2011</code></td>
+<td>MeLeadToNegativeSpread</td>
+</tr>
+<tr>
+<td><code>2012</code></td>
+<td>MeTooSmallVolume</td>
+</tr>
+<tr>
+<td><code>2013</code></td>
+<td>MeInvalidFee</td>
+</tr>
+<tr>
+<td><code>2014</code></td>
+<td>MeInvalidPrice</td>
+</tr>
+<tr>
+<td><code>2015</code></td>
+<td>MeReplaced</td>
+</tr>
+<tr>
+<td><code>2016</code></td>
+<td>MeNotFoundPrevious</td>
+</tr>
+<tr>
+<td><code>2017</code></td>
+<td>MeDuplicate</td>
+</tr>
+<tr>
+<td><code>2018</code></td>
+<td>MeInvalidVolumeAccuracy</td>
+</tr>
+<tr>
+<td><code>2019</code></td>
+<td>MeInvalidPriceAccuracy</td>
+</tr>
+<tr>
+<td><code>2020</code></td>
+<td>MeInvalidVolume</td>
+</tr>
+<tr>
+<td><code>2021</code></td>
+<td>MeTooHighPriceDeviation</td>
+</tr>
+<tr>
+<td><code>2022</code></td>
+<td>MeInvalidOrderValue</td>
+</tr>
+<tr>
+<td><code>2023</code></td>
+<td>MeRuntime</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="protobuf">protobuf</a>
+                <a href="#" data-language-name="json">json</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
