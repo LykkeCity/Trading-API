@@ -4,7 +4,7 @@
 
 The new APIs now support the **gRPC** protocol. This protocol uses HTTP 2.0 standard, WebSocket, and ProtoBuf, helping to reduce latency, more efficient use of the CPU, and network resources on the client-side. 
 
-The best part of the **gRPC** protocol is how easy it is to integrate the Lykke APIs in many programming languages by using the proto-files which generates a client library.[Proto files with contracts](https://github.com/swisschain/Lykke-HftApi-Docs/tree/master/grpc_proto_contracts). This generates a new response format, abstracted from the protocol itself, allowing you to work in a custom manner with the Lykke APIs regardless of the protocol.
+The best part of the **gRPC** protocol is how easy it is to integrate the Lykke APIs in many programming languages by using the proto-files which generates a client library.[Proto files with contracts](https://github.com/LykkeCity/Trading-API/tree/master/grpc_proto_contracts). This generates a new response format, abstracted from the protocol itself, allowing you to work in a custom manner with the Lykke APIs regardless of the protocol.
 
 A new response format from the server, abstracted from the protocol. Allows you to work in a custom manner with the API regardless of the protocol.
 The contracts in the Rest API protocol have been updated as well. A new set of functions and models is being used, very similar to gRPC protocol. We have removed deprecated methods and created new methods. You can find them in [Swagger UI](https://hft-apiv2.lykke.com/swagger/ui/index.html).
