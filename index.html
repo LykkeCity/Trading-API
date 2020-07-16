@@ -345,9 +345,6 @@
                   <li>
                     <a href="#follow-trades" class="toc-h2 toc-link" data-title="Follow trades">Follow trades</a>
                   </li>
-                  <li>
-                    <a href="#follow-updates-by-orders" class="toc-h2 toc-link" data-title="Follow updates by orders">Follow updates by orders</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -2739,104 +2736,6 @@ The method also allows you to replace orders in the order book. You can replace 
 <span class="kd">message</span> <span class="nc">TradeFee</span> <span class="p">{</span>
     <span class="kt">string</span> <span class="na">size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><h2 id='follow-updates-by-orders'>Follow updates by orders</h2>
-<p>Get the flow of orders updates from your API account.</p>
-
-<p>After subscribing you will receive a data stream. Packets in the data stream will come after any changes with the active order - placing, matching, canceling, etc.</p>
-<h3 id='request-3'>Request</h3>
-<p><strong>gRPC:</strong> <code>hft.PublicService.GetOrderUpdates</code></p>
-<h3 id='response-3'>Response</h3>
-<p>Array with order state:</p>
-
-<table><thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>Unique Order ID.</td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td><a href="#timestamp-type">TimeStamp</a></td>
-<td>Timestamp for order creation.</td>
-</tr>
-<tr>
-<td>lastTradeTimestamp</td>
-<td><a href="#timestamp-type">TimeStamp</a></td>
-<td>Timestamp for last trade by order.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>string</td>
-<td>Order status. List of statuses <a href="#order-statuses">here</a>.</td>
-</tr>
-<tr>
-<td>assetPairId</td>
-<td>string</td>
-<td>Symbol unique identifier.</td>
-</tr>
-<tr>
-<td>type</td>
-<td>string</td>
-<td>Order type: <code>Market</code> or <code>Limit</code>.</td>
-</tr>
-<tr>
-<td>side</td>
-<td>string</td>
-<td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
-</tr>
-<tr>
-<td>price</td>
-<td><a href="#decimal-type">decimal</a></td>
-<td>Order price (in quote asset for one unit of base asset).</td>
-</tr>
-<tr>
-<td>volume</td>
-<td><a href="#decimal-type">decimal</a></td>
-<td>Order volume (in base asset).</td>
-</tr>
-<tr>
-<td>filledVolume</td>
-<td><a href="#decimal-type">decimal</a></td>
-<td>Order filled volume (in base asset).</td>
-</tr>
-<tr>
-<td>remainingVolume</td>
-<td><a href="#decimal-type">decimal</a></td>
-<td>Order remaining volume to be filled (in base asset).</td>
-</tr>
-</tbody></table>
-<div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
-
-<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
-  <span class="k">rpc</span> <span class="n">GetOrderUpdates</span> <span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">OrderUpdate</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">message</span> <span class="nc">OrderUpdate</span> <span class="p">{</span>
-    <span class="k">repeated</span> <span class="n">Order</span> <span class="na">orders</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">message</span> <span class="nc">Order</span> <span class="p">{</span>
-    <span class="kt">string</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="k">oneof</span> <span class="n">optional_lastTradeTimestamp</span> <span class="p">{</span>
-        <span class="n">google.protobuf.Timestamp</span> <span class="na">lastTradeTimestamp</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kt">string</span> <span class="na">status</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="na">type</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
-    <span class="n">Side</span> <span class="na">side</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="na">filledVolume</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="na">remainingVolume</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
-    <span class="kt">string</span> <span class="na">cost</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><h1 id='error-codes'>Error codes</h1>
 <table><thead>
