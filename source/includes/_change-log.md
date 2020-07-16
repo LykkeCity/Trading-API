@@ -10,7 +10,7 @@ The best part of the **gRPC protocol** how easy it is integration with Lykke API
 
 The New Response of the server is no longer included in the **gRPC protocol**, enabling each user to work with the API in their unique manner. Additionally, the contracts in the **Rest API protocol** also had been updated. A new set of functions and models is being used, very similar to those of **gRPC protocol**.
 
-Because of the **gRCP protocol**, the user now is able to receive Market Data Stream directly from the server:
+Because of the **gRPC protocol**, the user now is able to receive Market Data Stream directly from the server:
 
 * **Order book** - Get snapshots and changes in the orders book.
 * **Prices** - Get snapshots and changes in current prices.
