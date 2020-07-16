@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option csharp_namespace = "Lykke.HftApi.ApiContract";
+
+package hft.common;
+
+message Error {
+    ErrorCode code = 1;
+    string message = 2;
+    map<string, string> fields = 3;
+}
+
+enum ErrorCode {
+    success = 0;
+    runtimeError = 1001;
+    itemNotFound = 1100;
+    invalidField = 1101;
+    //meErrors
+    meBadRequest = 2000;
+    meLowBalance = 2001;
+    meAlreadyProcessed = 2002;
+    meDisabledAsset = 2003;
+    meUnknownAsset = 2004;
+    meNoLiquidity = 2005;
+    meNotEnoughFunds = 2006;
+    meDust = 2007;
+    meReservedVolumeHigherThanBalance = 2008;
+    meNotFound = 2009;
+    meBalanceLowerThanReserved = 2010;
+    meLeadToNegativeSpread = 2011;
+    meTooSmallVolume = 2012;
+    meInvalidFee = 2013;
+    meInvalidPrice = 2014;
+    meReplaced = 2015;
+    meNotFoundPrevious = 2016;
+    meDuplicate = 2017;
+    meInvalidVolumeAccuracy = 2018;
+    meInvalidPriceAccuracy = 2019;
+    meInvalidVolume = 2020;
+    meTooHighPriceDeviation = 2021;
+    meInvalidOrderValue = 2022;
+    meRuntime = 2023;
+}

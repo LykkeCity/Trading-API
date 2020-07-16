@@ -1,0 +1,218 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "common.proto";
+
+option csharp_namespace = "Lykke.HftApi.ApiContract";
+
+package hft;
+
+service PrivateService {
+	rpc GetBalances (google.protobuf.Empty) returns (BalancesResponse);
+	rpc PlaceLimitOrder (LimitOrderRequest) returns (LimitOrderResponse);
+	rpc PlaceBulkLimitOrder (BulkLimitOrderRequest) returns (BulkLimitOrderResponse);
+	rpc PlaceMarketOrder (MarketOrderRequest) returns (MarketOrderResponse);
+	rpc GetActiveOrders (OrdersRequest) returns (OrdersResponse);
+	rpc GetClosedOrders (OrdersRequest) returns (OrdersResponse);
+	rpc CancelAllOrders (CancelOrdersRequest) returns (CancelOrderResponse);
+	rpc CancelOrder (CancelOrderRequest) returns (CancelOrderResponse);
+	rpc GetTrades (TradesRequest) returns (TradesResponse);
+	rpc GetOrderTrades (OrderTradesRequest) returns (TradesResponse);
+
+    rpc GetBalanceUpdates (google.protobuf.Empty) returns (stream BalanceUpdate);
+    rpc GetOrderUpdates (google.protobuf.Empty) returns (stream OrderUpdate);
+    rpc GetTradeUpdates (google.protobuf.Empty) returns (stream TradeUpdate);
+}
+
+message LimitOrderRequest {
+    string assetPairId = 1;
+    Side side = 2;
+    string volume = 3;
+    string price = 4;
+}
+
+message BulkLimitOrderRequest {
+    string assetPairId = 1;
+    bool cancelPreviousOrders = 2;
+    oneof optional_cancelMode {
+        CancelMode cancelMode = 3;
+    }
+    repeated BulkOrder orders = 4;
+}
+
+message BulkOrder {
+    Side side = 1;
+    string volume = 2;
+    string price = 3;
+    string oldId = 4;
+}
+
+enum Side {
+    buy = 0;
+    sell = 1;
+}
+
+enum CancelMode {
+    notEmptySide = 0;
+    bothSides = 1;
+    sellSide = 2;
+    buySide = 3;
+}
+
+message MarketOrderRequest {
+    string assetPairId = 1;
+    Side side = 2;
+    string volume = 3;
+}
+
+message OrdersRequest {
+    string assetPairId = 1;
+    int32 offset = 2;
+    int32 take = 3;
+}
+
+message CancelOrdersRequest {
+    string assetPairId = 1;
+    Side side = 2;
+}
+
+message CancelOrderRequest {
+    string orderId = 1;
+}
+
+message TradesRequest {
+    string assetPairId = 1;
+    oneof optional_side {
+        Side side = 2;
+    }
+    int32 offset = 3;
+    int32 take = 4;
+    oneof optional_from {
+        google.protobuf.Timestamp from = 5;
+    }
+    oneof optional_to {
+        google.protobuf.Timestamp to = 6;
+    }
+}
+
+message OrderTradesRequest {
+    string orderId = 1;
+}
+
+message BalancesResponse {
+    repeated Balance payload = 1;
+    hft.common.Error error = 2;
+}
+
+message LimitOrderResponse {
+    LimitOrderPayload payload = 1;
+    hft.common.Error error = 2;
+
+    message LimitOrderPayload {
+        string orderId = 1;
+    }
+}
+
+message BulkLimitOrderResponse {
+    BulkLimitOrderPayload payload = 1;
+    hft.common.Error error = 2;
+
+    message BulkLimitOrderPayload {
+        string assetPairId = 1;
+        repeated BulkOrderItemStatus statuses = 3;
+    }
+}
+
+message BulkOrderItemStatus {
+    string id = 1;
+    hft.common.ErrorCode error = 2;
+    string volume = 3;
+    string price = 4;
+}
+
+enum BulkErrorCode {
+    invalidInputField = 0;
+    rejected = 1;
+    runtime = 500;
+}
+
+message MarketOrderResponse {
+    MarketOrderPayload payload = 1;
+    hft.common.Error error = 2;
+
+    message MarketOrderPayload {
+        string orderId = 1;
+        string price = 2;
+    }
+}
+
+message OrdersResponse {
+    repeated Order payload = 1;
+    hft.common.Error error = 2;
+}
+
+message CancelOrderResponse {
+    bool payload = 1;
+    hft.common.Error error = 2;
+}
+
+message TradesResponse {
+    repeated Trade payload = 1;
+    hft.common.Error error = 2;
+}
+
+message Balance {
+    string assetId = 1;
+    string available = 2;
+    string reserved = 3;
+    google.protobuf.Timestamp timestamp = 4;
+}
+
+message Order {
+    string id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    oneof optional_lastTradeTimestamp {
+        google.protobuf.Timestamp lastTradeTimestamp = 3;
+    }
+    string status = 4;
+    string assetPairId = 5;
+    string type = 6;
+    Side side = 7;
+    string price = 8;
+    string volume = 9;
+    string filledVolume = 10;//> Volume - RemainingVolume;
+    string remainingVolume = 11;
+    string cost = 12;// FilledVolume * Price;
+}
+
+message Trade {
+    string id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    string assetPairId = 3;
+    string orderId = 4;
+    string role = 5;
+    string price = 6;
+    string baseVolume = 7;
+    string quoteVolume = 8;
+    string baseAssetId = 9;
+    string quoteAssetId = 10;
+    TradeFee fee = 11;
+}
+
+message TradeFee {
+    string size = 1;
+    string assetId = 2;
+}
+
+message BalanceUpdate {
+    repeated Balance balances = 1;
+}
+
+message OrderUpdate {
+    repeated Order orders = 1;
+}
+
+message TradeUpdate {
+    repeated Trade trades = 1;
+}

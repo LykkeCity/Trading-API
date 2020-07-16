@@ -1,0 +1,138 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "common.proto";
+
+option csharp_namespace = "Lykke.HftApi.ApiContract";
+
+package hft;
+
+service PublicService {
+	rpc GetAssetPairs (google.protobuf.Empty) returns (AssetPairsResponse);
+	rpc GetAssetPair (AssetPairRequest) returns (AssetPairResponse);
+
+    rpc GetAssets (google.protobuf.Empty) returns (AssetsResponse);
+	rpc GetAsset (AssetRequest) returns (AssetResponse);
+
+	rpc GetOrderbooks (OrderbookRequest) returns (OrderbookResponse);
+	rpc GetTickers (TickersRequest) returns (TickersResponse);
+	rpc GetPrices (PricesRequest) returns (PricesResponse);
+
+    rpc GetPriceUpdates (PriceUpdatesRequest) returns (stream PriceUpdate);
+    rpc GetTickerUpdates (google.protobuf.Empty) returns (stream TickerUpdate);
+    rpc GetOrderbookUpdates (OrderbookUpdatesRequest) returns (stream Orderbook);
+}
+
+message AssetPairRequest {
+    string assetPairId = 1;
+}
+
+message AssetRequest {
+    string assetId = 1;
+}
+
+message OrderbookRequest {
+    string assetPairId = 1;
+    int32 depth = 2;
+}
+
+message TickersRequest {
+    repeated string assetPairIds = 1;
+}
+
+message PricesRequest {
+    repeated string assetPairIds = 1;
+}
+
+message PriceUpdatesRequest {
+    repeated string assetPairIds = 1;
+}
+
+message OrderbookUpdatesRequest {
+    string assetPairId = 1;
+}
+
+message AssetPairResponse {
+    AssetPair payload = 1;
+    hft.common.Error error = 2;
+}
+
+message AssetPairsResponse {
+    repeated AssetPair payload = 1;
+    hft.common.Error error = 2;
+}
+
+message AssetResponse {
+    Asset payload = 1;
+    hft.common.Error error = 2;
+}
+
+message AssetsResponse {
+    repeated Asset payload = 1;
+    hft.common.Error error = 2;
+}
+
+message OrderbookResponse {
+    repeated Orderbook payload = 1;
+    hft.common.Error error = 2;
+}
+
+message TickersResponse {
+    repeated TickerUpdate payload = 1;
+    hft.common.Error error = 2;
+}
+
+message PricesResponse {
+    repeated PriceUpdate payload = 1;
+    hft.common.Error error = 2;
+}
+
+message AssetPair {
+    string assetPairId = 1;
+    string baseAssetId = 2;
+    string quoteAssetId = 3;
+    string name = 4;
+    int32 priceAccuracy = 5;
+    int32 baseAssetAccuracy = 6;
+    int32 quoteAssetAccuracy = 7;
+    string minVolume = 8;
+    string minOppositeVolume = 9;
+}
+
+message Asset {
+    string assetId = 1;
+    string name = 2;
+    string symbol = 3;
+    int32 accuracy = 4;
+}
+
+message Orderbook {
+    string assetPairId = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    repeated PriceVolume bids = 3;
+    repeated PriceVolume asks = 4;
+
+    message PriceVolume {
+        string p = 1;
+        string v = 2;
+    }
+}
+
+message PriceUpdate {
+    string assetPairId = 1;
+    string bid = 2;
+    string ask = 3;
+    google.protobuf.Timestamp timestamp = 4;
+}
+
+message TickerUpdate {
+    string assetPairId = 1;
+    string volumeBase = 2;
+    string volumeQuote = 3;
+    string priceChange = 4;
+    string lastPrice = 5;
+    string high = 6;
+    string low = 7;
+    google.protobuf.Timestamp timestamp = 8;
+}
