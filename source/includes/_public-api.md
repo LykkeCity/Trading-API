@@ -66,7 +66,7 @@ message Asset {
 
 ## Get Asset by ID
 
-Get information about specific asset.
+Get information about a specific asset.
 
 ### Request
 
@@ -293,7 +293,7 @@ message AssetPair {
 
 ## Asset Pair Order Book Ticker
 
-Get the order book by asset pair. The order books contain a list of Buy(Bid) and Sell(Ask) orders with their corresponding price and volume.
+Get the Order Book by asset pair. The order books contain a list of Buy(Bid) and Sell(Ask) orders with their corresponding price and volume.
 
 ### Request
 
@@ -313,7 +313,7 @@ depth | uint | query | *(Optional)* How many levels need to include in order boo
 
 ### Response
 
-Array of order books by instruments:
+Array of Order Books by instruments:
 
 Property | Type | Description
 -------- | ---- | -----------
@@ -327,7 +327,7 @@ asks | Array of PriceLevel | List of sell orders.
 Property | Type | Description
 -------- | ---- | -----------
 p | [decimal](#decimal-type) | Order price indicated in quoted asset per unit of base asset.
-v | [decimal](#decimal-type) | Order volume indicated in base asset.
+v | [decimal](#decimal-type) | Order volume indicated in the base asset.
 
 ```json
 GET /api/orderbooks
@@ -397,7 +397,7 @@ message Orderbook {
 
 ## 24hr Ticker Price Change Statistics
 
-24 hour rolling-window price change statistics.
+24-hour rolling-window price change statistics.
 
 ### Request
 
