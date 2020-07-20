@@ -165,7 +165,7 @@ Here you can see: How to manage the `TimeStamp` type in the API contract.
 
 <i>The timestamp is always used in the <b>time zone UTC+0</b></i>
 
-In the `Rest API` contact, the `TimeStamp` type is presented as a number with "Milliseconds in Unix Epoch" format of date-time.
+In the `Rest API` contact, the `TimeStamp` type is presented as a `number` with "Milliseconds in Unix Epoch" format of date-time.
 
 In the `gRPC API` contract, the `TimeStamp` type is presented as a `google.protobuf.TimeStamp` type.
 
