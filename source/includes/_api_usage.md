@@ -137,11 +137,12 @@ To use the API keys, you should just add a header `Authorisation: Bearer <your A
 ```
 
 ## Decimal type
-Here you can see: How to manage decimal types (Price, Volume, Amount, etc) in API contract.
 
-In the gRPC API contract, the decimal type is presented as a string type, with a textual representation of the number. This is done in order to avoid problems with the non-strict precision "double" type.
+Here you can see how to manage `decimal` types (Price, Volume, Amount, etc) in API contract.
 
-In the Rest API contact, the decimal type is presented as `number` with strict precision.
+In the `gRPC API` contract, the `decimal` type is presented as a `string` type, with a textual representation of the number. This is done in order to avoid issues with the non-strict precision `double` type.
+
+In the `Rest API` contact, the decimal type is presented as a number with strict precision.
 
 > Example with decimal type
 
@@ -164,9 +165,9 @@ Here you can see: How to manage the `TimeStamp` type in the API contract.
 
 <i>The timestamp is always used in the <b>time zone UTC+0</b></i>
 
-In the Rest API contact, the `TimeStamp` type is presented as a `number` with "Milliseconds in Unix Epoch" format of date-time.
+In the `Rest API` contact, the `TimeStamp` type is presented as a number with "Milliseconds in Unix Epoch" format of date-time.
 
-In the gRPC API contract, the `TimeStamp` type is presented as a `google.protobuf.Timestamp` type.
+In the `gRPC API` contract, the `TimeStamp` type is presented as a `google.protobuf.TimeStamp` type.
 
 > Example with timestamp
 
@@ -189,11 +190,11 @@ List of possible order states
 
 Name | Meaning
 ---- | -------
-Placed | Order in order book.
-PartiallyMatched | Order in order book and partially filled.
+Placed | Order in the Order Book.
+PartiallyMatched | Order in the Order Book and partially filled.
 Matched | Order is filled.
-Pending | An order is pending a trigger to be placed in the order book.
-Cancelled | Order is cancelled by user.
+Pending | Order is pending a trigger to be placed in the Order Book.
+Cancelled | Order is cancelled by the User.
 Replaced | Order is replaced (canceled) by the user.
-Rejected | Order rejectd by the system.
+Rejected | Order rejected by the System.
 
