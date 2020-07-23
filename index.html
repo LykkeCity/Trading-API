@@ -411,25 +411,25 @@
 
 <p>We have also increased the optimisation of internal serves and bug fixes.</p>
 <h1 id='protocol-description'>Protocol description</h1>
-<p>Lykke HFT API allows users to use 2 kinds of protocol <code>gRPC API</code> and <code>Rest API</code>. Both kinds of APIs support the same methods with the same data format, but only gRPC API supports receiving streaming data from the platform.</p>
+<p>Lykke HFT API allows users to use two kinds of protocols: <code>gRPC API</code> and <code>Rest API</code>. Both APIs support the same methods and data format, however, only <code>gRPC API</code> is able to receive streaming data from the platform.</p>
 <h2 id='grpc-api'>gRPC API</h2>
-<p>The gRPC API utilizes a new generation of RPC framework that includes working with <code>HTTP 2</code>, <code>ProtoBuf</code>, and <code>WebSocket</code> for faster and more efficient interaction with the platform. The <code>gRPC framework</code> uses the declarative description of the contract in the <code>.proto</code> files. On the basis of which you can easily generate a client library in many <a href="https://grpc.io/docs/languages/">programming languages</a>. Also, the <code>gRPC framework</code> supports working with <code>stream</code>, which makes it easy to receive events from the server.</p>
+<p>The <code>gRPC API</code> utilises a new generation of RPC framework that includes working with <code>HTTP 2</code>, <code>ProtoBuf</code>, and <code>WebSocket</code> for faster and more efficient interaction with the platform. The <a href="https://grpc.io">gRPC framework</a> uses the declarative description of the contract in the .proto files, on the basis of which it is simple to generate Client Library using numerous <a href="https://grpc.io/docs/languages/">programming languages</a>. Furthermore, the gRPC framework supports working with stream making it easy to receive events directly from the server.</p>
 
 <p><strong>Lykke team strongly recommends using gRPC API protocol to communicate with the platform</strong> </p>
 
 <p>Read more about <code>gRPC framework</code>: <a href="https://grpc.io/">https://grpc.io/</a></p>
 
-<p>A useful tool for manual gRPC API requests: </p>
+<p>A useful tool for manual gRPC API requests:</p>
 
 <ul>
 <li><a href="https://github.com/uw-labs/bloomrpc">BloomRPC</a> - UI tool to interact with gRPC servers (when using BloomRPC make sure to use TLS with server certificate (TLS button))</li>
-<li><a href="https://github.com/fullstorydev/grpcurl">grpcurl</a> - a command-line tool that lets you interact with gRPC servers</li>
+<li><a href="https://github.com/fullstorydev/grpcurl">grpcurl</a> - a command-line tool that lets you communicate with gRPC servers</li>
 </ul>
 
 <p><strong>API Endpoint</strong>: </p>
 
 <ul>
-<li><code>hft-apiv2-grpc.lykke.com:443</code></li>
+<li><code>hft-apiv2-grpc.lykke.com:443</code>   - host format </li>
 </ul>
 
 <p><strong>Proto files</strong></p>
@@ -441,17 +441,18 @@
 <li><a href="https://github.com/LykkeCity/Trading-API/blob/master/grpc_proto_contracts/privateService.proto">privateService.proto</a> : Private API service</li>
 </ul>
 <h2 id='rest-api'>Rest API</h2>
-<p>The rest API uses the classic HTTP based framework that includes working with <code>HTTP 1.1</code>, and <code>JSON</code>. Rest API allows users to just call RPC methods without streaming data from the server.</p>
+<p><code>Rest API</code> uses a classic HTTP based framework that entails working with <code>HTTP 1.1</code> and <code>JSON</code>. <code>Rest API</code> allows users to call RPC methods <strong>without streaming</strong> data from the server.</p>
 
-<p><strong>Disclaimer:</strong> The rest API has been added for backward compatibility. <strong>The Lykke team recommends against using the Rest API protocol in favor of the gRPC protocol.</strong></p>
-
-<p>A useful tool for manual rest API requests: <a href="https://hft-apiv2.lykke.com/swagger/ui/index.html">HFT API Swagger</a></p>
+<p><strong>Disclaimer:</strong> The rest API has been added for backward compatibility. 
+<strong>Lykke team recommends against using the Rest API protocol in favour of the <code>gRPC protocol</code>.</strong></p>
 
 <p><strong>API Endpoint</strong>: </p>
 
 <ul>
 <li>https://hft-apiv2.lykke.com/api</li>
 </ul>
+
+<p>A useful tool for manual rest API requests: <a href="https://hft-apiv2.lykke.com/swagger/ui/index.html">HFT API Swagger</a></p>
 <h1 id='api-usage'>API usage</h1><h2 id='allowed-http-verbs'>Allowed HTTP Verbs</h2>
 <ul>
 <li><code>PUT</code> : Updates a resource.</li>
@@ -467,9 +468,9 @@
 <li>500 <code>Internal Server Error</code> : Server error.</li>
 </ul>
 <h2 id='response-structure'>Response structure</h2>
-<p>Every response contains two fields - <code>payload</code> and <code>error</code>. A successful response will contain the response data in the <code>payload</code> field and the <em>null</em> in the <code>error</code> field, and vice versa for the error response.</p>
+<p>Every response contains two fields - <code>payload</code> and <code>error</code>. A successful response will contain the response data in the <code>payload</code> field and the <em>null</em> in the <code>error</code> field and vice versa for the error response.</p>
 
-<p>Here you have a list of errors you might encounter in the paragraph <strong>Error codes</strong> at the end of the document.</p>
+<p>Here you have a list of errors you might encounter in the paragraph <a href="#error-codes">Error codes</a> at the end of the document.</p>
 
 <blockquote>
 <p>Successful response. Property <code>error</code> is null.</p>
@@ -524,9 +525,8 @@
     <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>      <span class="c1">// error is NOT NULL</span>
 <span class="p">}</span>
 </code></pre></div><h2 id='authorization'>Authorization</h2>
-<p>You can create your API keys in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a>. You can also check our step by step guide <a href="https://support.lykke.com/hc/en-us/articles/360000552605-How-do-I-create-an-API-Wallet-">here</a>.</p>
-
-<p>To use the API keys you should just add a header <code>Authorization: Bearer &lt;your API Key&gt;</code> with the bearer token on your request.</p>
+<p>You can create your API keys in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a>. You can also check our step by step guide <a href="https://support.lykke.com/hc/en-us/articles/360000552605-How-do-I-create-an-API-Wallet-">here</a>.
+To use the API keys, you should just add a header <code>Authorisation: Bearer &lt;your API Key&gt;</code> with the bearer token on your request.</p>
 
 <blockquote>
 <p>Request Header</p>
@@ -534,11 +534,11 @@
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="nl">"Authorization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer **********************************"</span><span class="w">
 </span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code>  <span class="s">"Authorization"</span><span class="o">:</span> <span class="s">"Bearer **********************************"</span>
 </code></pre></div><h2 id='decimal-type'>Decimal type</h2>
-<p>Here you can see: How to manage decimal types (Price, Volume, Amount, etc) in API contract.</p>
+<p>Here you can see how to manage <code>decimal</code> types (Price, Volume, Amount, etc) in API contract.</p>
 
-<p>In the gRPC API contract, the decimal type is presented as a string type, with a textual representation of the number. This is done in order to avoid problems with the non-strict precision &quot;double&quot; type.</p>
+<p>In the <code>gRPC API</code> contract, the <code>decimal</code> type is presented as a <code>string</code> type, with a textual representation of the number. This is done in order to avoid issues with the non-strict precision <code>double</code> type.</p>
 
-<p>In the Rest API contact, the decimal type is presented as <code>number</code> with strict precision.</p>
+<p>In the <code>Rest API</code> contact, the decimal type is presented as a number with strict precision.</p>
 
 <blockquote>
 <p>Example with decimal type</p>
@@ -556,9 +556,9 @@
 
 <p><i>The timestamp is always used in the <b>time zone UTC+0</b></i></p>
 
-<p>In the Rest API contact, the <code>TimeStamp</code> type is presented as a <code>number</code> with &quot;Milliseconds in Unix Epoch&quot; format of date-time.</p>
+<p>In the <code>Rest API</code> contact, the <code>TimeStamp</code> type is presented as a <code>number</code> with &quot;Milliseconds in Unix Epoch&quot; format of date-time.</p>
 
-<p>In the gRPC API contract, the <code>TimeStamp</code> type is presented as a <code>google.protobuf.Timestamp</code> type.</p>
+<p>In the <code>gRPC API</code> contract, the <code>TimeStamp</code> type is presented as a <code>google.protobuf.TimeStamp</code> type.</p>
 
 <blockquote>
 <p>Example with timestamp</p>
@@ -580,11 +580,11 @@
 </thead><tbody>
 <tr>
 <td>Placed</td>
-<td>Order in order book.</td>
+<td>Order in the Order Book.</td>
 </tr>
 <tr>
 <td>PartiallyMatched</td>
-<td>Order in order book and partially filled.</td>
+<td>Order in the Order Book and partially filled.</td>
 </tr>
 <tr>
 <td>Matched</td>
@@ -592,11 +592,11 @@
 </tr>
 <tr>
 <td>Pending</td>
-<td>An order is pending a trigger to be placed in the order book.</td>
+<td>Order is pending a trigger to be placed in the Order Book.</td>
 </tr>
 <tr>
 <td>Cancelled</td>
-<td>Order is cancelled by user.</td>
+<td>Order is cancelled by the User.</td>
 </tr>
 <tr>
 <td>Replaced</td>
@@ -604,7 +604,7 @@
 </tr>
 <tr>
 <td>Rejected</td>
-<td>Order rejectd by the system.</td>
+<td>Order rejected by the System.</td>
 </tr>
 </tbody></table>
 <h1 id='public-apis'>Public APIs</h1><h2 id='get-all-assets'>Get all assets</h2>
@@ -682,7 +682,7 @@
     <span class="kt">int32</span> <span class="na">accuracy</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>  <span class="c1">// 8</span>
 <span class="p">}</span>
 </code></pre></div><h2 id='get-asset-by-id'>Get Asset by ID</h2>
-<p>Get information about specific asset.</p>
+<p>Get information about a specific asset.</p>
 <h3 id='request-2'>Request</h3>
 <p><strong>gRPC:</strong> <code>hft.PublicService.GetAsset</code></p>
 
@@ -1000,7 +1000,7 @@
     <span class="kt">string</span> <span class="na">minOppositeVolume</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>    <span class="c1">// 4</span>
 <span class="p">}</span>
 </code></pre></div><h2 id='asset-pair-order-book-ticker'>Asset Pair Order Book Ticker</h2>
-<p>Get the order book by asset pair. The order books contain a list of Buy(Bid) and Sell(Ask) orders with their corresponding price and volume.</p>
+<p>Get the Order Book by asset pair. The order books contain a list of Buy(Bid) and Sell(Ask) orders with their corresponding price and volume.</p>
 <h3 id='request-5'>Request</h3>
 <p><strong>gRPC:</strong> <code>hft.PublicService.GetOrderbooks</code></p>
 
@@ -1031,7 +1031,7 @@
 </tr>
 </tbody></table>
 <h3 id='response-4'>Response</h3>
-<p>Array of order books by instruments:</p>
+<p>Array of Order Books by instruments:</p>
 
 <table><thead>
 <tr>
@@ -1079,7 +1079,7 @@
 <tr>
 <td>v</td>
 <td><a href="#decimal-type">decimal</a></td>
-<td>Order volume indicated in base asset.</td>
+<td>Order volume indicated in the base asset.</td>
 </tr>
 </tbody></table>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/orderbooks</span><span class="w">
@@ -1143,7 +1143,7 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><h2 id='24hr-ticker-price-change-statistics'>24hr Ticker Price Change Statistics</h2>
-<p>24 hour rolling-window price change statistics.</p>
+<p>24-hour rolling-window price change statistics.</p>
 <h3 id='request-6'>Request</h3>
 <p><strong>gRPC:</strong> <code>hft.PublicService.GetTickers</code></p>
 
