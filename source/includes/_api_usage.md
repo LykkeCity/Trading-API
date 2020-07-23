@@ -17,8 +17,7 @@ A useful tool for manual gRPC API requests:
 
 **API Endpoint**: 
 
-* https://hft-apiv2-grpc.lykke.com - url format
-* `hft-apiv2-grpc.lykke.com:443`   - host format
+* `hft-apiv2-grpc.lykke.com:443`
 
 **Proto files**
 
