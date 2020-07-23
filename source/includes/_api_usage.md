@@ -12,12 +12,11 @@ Read more about `gRPC framework`: [https://grpc.io/](https://grpc.io/)
 
 A useful tool for manual gRPC API requests:
 
-* [BloomRPC](https://github.com/uw-labs/bloomrpc) - UI tool to interact with gRPC servers
+* [BloomRPC](https://github.com/uw-labs/bloomrpc) - UI tool to interact with gRPC servers (when using BloomRPC make sure to use TLS with server certificate (TLS button))
 * [grpcurl](https://github.com/fullstorydev/grpcurl) - a command-line tool that lets you communicate with gRPC servers
 
 **API Endpoint**: 
 
-* https://hft-apiv2-grpc.lykke.com - url format 
 * `hft-apiv2-grpc.lykke.com:443`   - host format 
 
 **Proto files**
