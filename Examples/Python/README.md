@@ -112,12 +112,17 @@ credentials = grpc.composite_channel_credentials(ssl_credentials, token_credenti
 #create a channel
 channel = grpc.secure_channel("hft-apiv2-grpc.lykke.com:443", credentials)
 
-monitoring = isalive_pb2_grpc.MonitoringStub(channel)
+private_api = privateService_pb2_grpc.PrivateServiceStub(channel)
 
-isalive = monitoring.IsAlive(isalive_pb2.IsAliveRequest())
+balances = private_api.GetBalances(google.protobuf.empty_pb2.Empty())
 
-print("API description: " + isalive.name + " " + isalive.version)
-```
+print("------------------------------------")
+print("Error: " + balances.error.message)
+print("------------------------------------")
+print("Balances:")
+for balance in balances.payload:
+    print("  " + balance.assetId + ": " + balance.available)
+print("------------------------------------")```
 
 
 
