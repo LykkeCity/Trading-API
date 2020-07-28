@@ -1,5 +1,9 @@
 # Installation and preparation
 
+Mode details you can see in official page: [Python - Quick Start](https://grpc.io/docs/languages/python/quickstart/)
+
+Example you can see here: [test_app.py](https://github.com/LykkeCity/Trading-API/blob/master/Examples/Python/test_app.py)
+
 **Prerequisites**
 
 * Python 2.7, or Python 3.4 or higher
