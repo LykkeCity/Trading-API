@@ -6,7 +6,6 @@ The new release of the updated APIs now supports **gRPC protocol**. This protoco
 
 The best part of the **gRPC** protocol is how easy it is to integrate the Lykke APIs in many programming languages by using the proto-files which generates a client library.[Proto files with contracts](https://github.com/LykkeCity/Trading-API/tree/master/grpc_proto_contracts). This generates a new response format, abstracted from the protocol itself, allowing you to work in a custom manner with the Lykke APIs regardless of the protocol.
 
-The best part of the **gRPC protocol** how easy it is integration with Lykke APIs. The protocol supports many programming languages that create a Client Library by merely using the proto-files. [Proto files with contracts](https://github.com/LykkeCity/Trading-API/tree/master/grpc_proto_contracts).
 
 The New Response of the server is no longer included in the **gRPC protocol**, enabling each user to work with the API in their unique manner. Additionally, the contracts in the **Rest API protocol** also had been updated. A new set of functions and models is being used, very similar to those of **gRPC protocol**.
 
