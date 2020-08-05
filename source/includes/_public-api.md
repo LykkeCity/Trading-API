@@ -76,9 +76,9 @@ Get information about a specific asset.
 
 ### Query Parameters
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetId | string | path | Asset uniquie ID
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetId | string | path | - | Asset uniquie ID
 
 ### Response
 
@@ -225,9 +225,9 @@ Get a specific asset pair.
 
 ### Query Parameters
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairId | string | path | Symbol unique ID
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairId | string | path | - | Symbol unique ID
 
 ### Responce
 
@@ -306,10 +306,10 @@ Get the Order Book by asset pair. The order books contain a list of Buy(Bid) and
 
 ### Query Parameters
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairId | string | query | *(Optional)* Identificator of specific symbol. By default return all symbols.
-depth | uint | query | *(Optional)* How many levels need to include in order books. By default include all levels.
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairId | string | query | null | *(Optional)* Identificator of specific symbol. By default return all symbols.
+depth | uint | query | 0 | *(Optional)* How many levels need to include in order books. By default include all levels.
 
 ### Response
 
@@ -411,9 +411,9 @@ message Orderbook {
 ### Query Parameters
 
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairIds | string | query | *(Optional)* Filter by symbols. By default returns all asset pairs information.
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairIds | string | query | null | *(Optional)* Filter by symbols. By default returns all asset pairs information.
 
 ### Response
 
@@ -507,9 +507,9 @@ Get current prices by symbols.
 
 ### Query Parameters
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairIds | array of string | query | *(Optional)* List of identificators of specific symbols. By default return all symbols.
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairIds | array of string | query | null | *(Optional)* List of identificators of specific symbols. By default return all symbols.
 
 ### Response
 
