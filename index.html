@@ -691,6 +691,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -698,6 +699,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>assetId</td>
 <td>string</td>
 <td>path</td>
+<td>-</td>
 <td>Asset uniquie ID</td>
 </tr>
 </tbody></table>
@@ -891,6 +893,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -898,6 +901,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>assetPairId</td>
 <td>string</td>
 <td>path</td>
+<td>-</td>
 <td>Symbol unique ID</td>
 </tr>
 </tbody></table>
@@ -1012,6 +1016,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1019,12 +1024,14 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>assetPairId</td>
 <td>string</td>
 <td>query</td>
+<td>null</td>
 <td><em>(Optional)</em> Identificator of specific symbol. By default return all symbols.</td>
 </tr>
 <tr>
 <td>depth</td>
 <td>uint</td>
 <td>query</td>
+<td>0</td>
 <td><em>(Optional)</em> How many levels need to include in order books. By default include all levels.</td>
 </tr>
 </tbody></table>
@@ -1155,6 +1162,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1162,6 +1170,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>assetPairIds</td>
 <td>string</td>
 <td>query</td>
+<td>null</td>
 <td><em>(Optional)</em> Filter by symbols. By default returns all asset pairs information.</td>
 </tr>
 </tbody></table>
@@ -1286,6 +1295,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1293,6 +1303,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>assetPairIds</td>
 <td>array of string</td>
 <td>query</td>
+<td>null</td>
 <td><em>(Optional)</em> List of identificators of specific symbols. By default return all symbols.</td>
 </tr>
 </tbody></table>
