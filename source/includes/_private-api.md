@@ -80,24 +80,25 @@ Gets the trading history of an account. Also, with the use of parameters, it can
 **Rest API:**
 
 `GET /api/trades`
+
 `GET /api/trades/order/{orderId}`
 
 ### Query Parameters
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairId | string | query | *(optional)* Symbol unique identifier.
-side | string | query | *(optional)* Side of trade: `buy` or `sell`.
-offset | uint | query | *(optional)* Skip the specified number of elements.
-take | uint | query | *(optional)* Take the specified number of elements.
-from | [TimeStamp](#timestamp-type) | query | *(optional)* From timestamp.
-to | [TimeStamp](#timestamp-type) | query | *(optional)* To timestamp.
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairId | string | query | null| *(optional)* Symbol unique identifier.
+side | string | query | null | *(optional)* Side of trade: `buy` or `sell`.
+offset | uint | query | 0 | *(optional)* Skip the specified number of elements.
+take | uint | query | 100 |*(optional)* Take the specified number of elements.
+from | [TimeStamp](#timestamp-type) | query | null | *(optional)* From timestamp.
+to | [TimeStamp](#timestamp-type) | query | null | *(optional)* To timestamp.
 
 ### Query Parameters
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-orderId | string | path | Unique Order ID
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+orderId | string | path | - | Unique Order ID
 
 ### Response
 
@@ -215,26 +216,28 @@ Get active orders or closed orders from history.
 **gRPC:** 
 
 `hft.PrivateService.GetActiveOrders`
+
 `hft.PrivateService.GetClosedOrders`
 
 **Rest API:**
 
 `GET /api/orders/active`
+
 `GET /api/orders/closed`
 
 ### Query Parameters
 
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairId | string | query | *(optional)* Symbol unique identifier.
-offset | uint | query | *(optional)* Skip the specified number of elements.
-take | uint | query | *(optional)* Take the specified number of elements.
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairId | string | query | null | *(optional)* Symbol unique identifier.
+offset | uint | query | 0 | *(optional)* Skip the specified number of elements.
+take | uint | query | 100 | *(optional)* Take the specified number of elements.
 
 
 ### Response
 
-Asset description:
+Response description:
 
 Property | Type | Description
 -------- | ---- | -----------
@@ -280,7 +283,7 @@ package hft;
 
 service PrivateService {
   rpc GetActiveOrders (OrdersRequest) returns (OrdersResponse);
-	rpc GetClosedOrders (OrdersRequest) returns (OrdersResponse);
+  rpc GetClosedOrders (OrdersRequest) returns (OrdersResponse);
 }
 
 message OrdersRequest {
@@ -291,6 +294,102 @@ message OrdersRequest {
 
 message OrdersResponse {
     repeated Order payload = 1;
+    hft.common.Error error = 2;
+}
+
+message Order {
+    string id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    oneof optional_lastTradeTimestamp {
+        google.protobuf.Timestamp lastTradeTimestamp = 3;
+    }
+    string status = 4;
+    string assetPairId = 5;
+    string type = 6;
+    Side side = 7;
+    string price = 8;
+    string volume = 9;
+    string filledVolume = 10;
+    string remainingVolume = 11;
+    string cost = 12;
+}
+```
+
+## Get order by Id
+
+Get order by id from history.
+
+### Request
+
+**gRPC:** 
+
+`hft.PrivateService.GetOrder`
+
+**Rest API:**
+
+`GET /api/orders/{orderId}`
+
+### Query Parameters
+
+
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+orderId | string | query | null | Unique Order ID.
+
+### Response
+
+Response description:
+
+Property | Type | Description
+-------- | ---- | -----------
+id | string | Unique Order ID.
+timestamp |  [TimeStamp](#timestamp-type) | Timestamp for order creation.
+lastTradeTimestamp | [TimeStamp](#timestamp-type) | Timestamp for last trade by order.
+status | string | Order status. List of statuses [here](#order-statuses).
+assetPairId | string | Symbol unique identifier.
+type | string | Order type: `Market` or `Limit`.
+side | string | Order side: `Sell` or `Buy`.
+price | [decimal](#decimal-type) | Order price (in quote asset for one unit of base asset).
+volume | [decimal](#decimal-type) | Order volume (in base asset).
+filledVolume | [decimal](#decimal-type) | Order filled volume (in base asset).
+remainingVolume | [decimal](#decimal-type) | Order remaining volume to be filled (in base asset).
+
+```json
+GET /api/orders/0c336213-0a64-44a8-9599-e88bf6aa1b69
+
+> Response 200 (application/json) - success response
+
+{
+  "payload":
+    {
+      "id": "0c336213-0a64-44a8-9599-e88bf6aa1b69",
+      "timestamp": 1592928606187,
+      "lastTradeTimestamp": null,
+      "status": "Placed",
+      "assetPairId": "BTCUSD",
+      "type": "Limit",
+      "side": "Buy",
+      "price": 4000,
+      "volume": 0.0001,
+      "filledVolume": 0,
+      "remainingVolume": 0.0001
+    }
+}
+```
+
+```protobuf
+package hft;
+
+service PrivateService {
+  rpc GetOrder (OrderRequest) returns (OrderResponse);
+}
+
+message OrderRequest {
+    string orderId = 1;
+}
+
+message OrderResponse {
+    Order payload = 1;
     hft.common.Error error = 2;
 }
 
@@ -324,12 +423,12 @@ Place a limit order.
 
 ### Request
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairId | string | body | Symbol unique identifier.
-side | string | body | Order side: `Sell` or `Buy`.
-volume | [decimal](#decimal-type) | body | Order volume (in base asset).
-price | [decimal](#decimal-type) | body | Order price(in quote asset for one unit of base asset).
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairId | string | body | - | Symbol unique identifier.
+side | string | body | - | Order side: `Sell` or `Buy`.
+volume | [decimal](#decimal-type) | body | - | Order volume (in base asset).
+price | [decimal](#decimal-type) | body | - | Order price(in quote asset for one unit of base asset).
   
 ```json
 > Request to create a limit order
@@ -400,11 +499,11 @@ Place a [Fill-Or-Kill](https://en.wikipedia.org/wiki/Fill_or_kill) market order.
 
 ### Request
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairId | string | body | Symbol unique identifier.
-side | string | body | Order side: `Sell` or `Buy`.
-volume | [decimal](#decimal-type) | body | Order volume (in base asset).
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairId | string | body | - | Symbol unique identifier.
+side | string | body | - | Order side: `Sell` or `Buy`.
+volume | [decimal](#decimal-type) | body | - | Order volume (in base asset).
 
 ```json
 > Request to create a market order
@@ -475,21 +574,21 @@ The method also allows you to replace orders in the order book. You can replace 
 
 ### Request
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairId | string | body | Symbol unique identifier.
-cancelPreviousOrders | bool | body | Cancel existing orders by AssetPair before placing new orders. Default: False.
-cancelMode | string | body | Strategy for canceling orders if the "cancelPreviousOrders" parameter is activated. `bothSides`, `sellSide`, `buySide`.
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairId | string | body | - | Symbol unique identifier.
+cancelPreviousOrders | bool | body | false | Cancel existing orders by AssetPair before placing new orders. Default: False.
+cancelMode | string | body | null | Strategy for canceling orders if the "cancelPreviousOrders" parameter is activated. `bothSides`, `sellSide`, `buySide`.
 orders | array of BulkOrder | body | List of new orders to place.
 
 **BulkOrder:**
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-orderAction | string | body | Order side: `Sell` or `Buy`.
-volume | [decimal](#decimal-type) | body | Order volume (in base asset).
-price | [decimal](#decimal-type) | body | Order price(in quote asset for one unit of base asset).
-oldId | string | body | Identifier of the order to be replaced. If the parameter is specified, the new order will replace the existing order with the specified ID. If there is no order with the specified ID, then the new order will not be placed.
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+orderAction | string | body | - | order side: `Sell` or `Buy`.
+volume | [decimal](#decimal-type) | body | - | Order volume (in base asset).
+price | [decimal](#decimal-type) | body | - | Order price(in quote asset for one unit of base asset).
+oldId | string | body | null | Identifier of the order to be replaced. If the parameter is specified, the new order will replace the existing order with the specified ID. If there is no order with the specified ID, then the new order will not be placed.
 
   
 ```json
@@ -596,10 +695,10 @@ Cancel all active orders or filter order to cancel by AssetPair or Side.
 
 ### Query Parameters
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-assetPairId | string | query | *(Optional)* Symbol unique identifier (All asset pairs by default).
-side | string | query | *(Optional)* Order side `Buy` or `Sell` (both sides by default).
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+assetPairId | string | query | null | *(Optional)* Symbol unique identifier (All asset pairs by default).
+side | string | query | null | *(Optional)* Order side `Buy` or `Sell` (both sides by default).
 
 
 ### Response
@@ -647,9 +746,9 @@ Cancel a specific order by order ID.
 ### Query Parameters
 
 
-Parameter | Type | Place | Description
---------- | ---- | ----- | -----------
-orderId | string | path | Unique Order ID.
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+orderId | string | path | - | Unique Order ID.
 
 ### Response
 
@@ -681,6 +780,3 @@ message CancelOrderResponse {
     hft.common.Error error = 2;
 }
 ```
-
-
-

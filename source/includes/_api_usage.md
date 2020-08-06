@@ -197,3 +197,10 @@ Cancelled | Order is cancelled by the User.
 Replaced | Order is replaced (canceled) by the user.
 Rejected | Order rejected by the System.
 
+## Request limits
+
+HTTP methods:
+
+/api/orders/* - 1000 requests/min
+
+all other endpoints - 300 requests/min

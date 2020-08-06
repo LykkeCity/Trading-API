@@ -18,9 +18,9 @@ After subscribing you will get a data stream. The first packet in the stream wil
 
 ### Query Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-assetPairIds | array of string | Filter by Symbol unique ID. If the array is empty then the server return prices by all symbols.
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+assetPairIds | array of string | null | Filter by Symbol unique ID. If the array is empty then the server return prices by all symbols.
 
 ### Response
 
@@ -107,9 +107,9 @@ Please note that if a level is deleted at a specific price, a packet containing 
 
 ### Query Parameters
 
-Parameter | Type | Description
---------- | ---- | -----------
-assetPairId | string | *(Optional)* Identificator of specific symbol. By default return all symbols.
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+assetPairId | string | null | *(Optional)* Identificator of specific symbol. By default return all symbols.
 
 ### Request
 

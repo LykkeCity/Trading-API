@@ -13,6 +13,7 @@ service PrivateService {
 	rpc PlaceLimitOrder (LimitOrderRequest) returns (LimitOrderResponse);
 	rpc PlaceBulkLimitOrder (BulkLimitOrderRequest) returns (BulkLimitOrderResponse);
 	rpc PlaceMarketOrder (MarketOrderRequest) returns (MarketOrderResponse);
+	rpc GetOrder (OrderRequest) returns (OrderResponse);
 	rpc GetActiveOrders (OrdersRequest) returns (OrdersResponse);
 	rpc GetClosedOrders (OrdersRequest) returns (OrdersResponse);
 	rpc CancelAllOrders (CancelOrdersRequest) returns (CancelOrderResponse);
@@ -20,8 +21,8 @@ service PrivateService {
 	rpc GetTrades (TradesRequest) returns (TradesResponse);
 	rpc GetOrderTrades (OrderTradesRequest) returns (TradesResponse);
 
-  rpc GetBalanceUpdates (google.protobuf.Empty) returns (stream BalanceUpdate);
-  rpc GetTradeUpdates (google.protobuf.Empty) returns (stream TradeUpdate);
+	rpc GetBalanceUpdates (google.protobuf.Empty) returns (stream BalanceUpdate);
+	rpc GetTradeUpdates (google.protobuf.Empty) returns (stream TradeUpdate);
 }
 
 message LimitOrderRequest {
@@ -63,6 +64,10 @@ message MarketOrderRequest {
     string assetPairId = 1;
     Side side = 2;
     string volume = 3;
+}
+
+message OrderRequest {
+    string orderId = 1;
 }
 
 message OrdersRequest {
@@ -144,6 +149,11 @@ message MarketOrderResponse {
         string orderId = 1;
         string price = 2;
     }
+}
+
+message OrderResponse {
+    Order payload = 1;
+    hft.common.Error error = 2;
 }
 
 message OrdersResponse {
