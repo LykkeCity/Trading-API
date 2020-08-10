@@ -226,6 +226,9 @@
             <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#2020-08-10-the-new-method-in-private-api" class="toc-h2 toc-link" data-title="2020-08-10 | The new method in Private API">2020-08-10 | The new method in Private API</a>
+                  </li>
+                  <li>
                     <a href="#2020-07-01-the-release-of-a-new-hft-api" class="toc-h2 toc-link" data-title="2020-07-01 | The release of a new HFT API.">2020-07-01 | The release of a new HFT API.</a>
                   </li>
               </ul>
@@ -264,6 +267,9 @@
                   </li>
                   <li>
                     <a href="#order-statuses" class="toc-h2 toc-link" data-title="Order statuses">Order statuses</a>
+                  </li>
+                  <li>
+                    <a href="#request-rate-limits" class="toc-h2 toc-link" data-title="Request rate limits">Request rate limits</a>
                   </li>
               </ul>
           </li>
@@ -304,6 +310,9 @@
                   </li>
                   <li>
                     <a href="#get-active-or-closed-orders" class="toc-h2 toc-link" data-title="Get active or closed orders">Get active or closed orders</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-by-id" class="toc-h2 toc-link" data-title="Get order by Id">Get order by Id</a>
                   </li>
                   <li>
                     <a href="#place-a-limit-order" class="toc-h2 toc-link" data-title="Place a limit order">Place a limit order</a>
@@ -374,7 +383,13 @@
 <p>If you are interested in API trading, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!</p>
 
 <p>For more information about Lykke, please visit <a href="http://lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">www.lykke.com</a>.</p>
-<h1 id='change-log'>Change Log</h1><h2 id='2020-07-01-the-release-of-a-new-hft-api'>2020-07-01 | The release of a new HFT API.</h2>
+<h1 id='change-log'>Change Log</h1><h2 id='2020-08-10-the-new-method-in-private-api'>2020-08-10 | The new method in Private API</h2>
+<p>Added a new method <a href="#get-order-by-id">Get order by Id</a> to search an order by ID.</p>
+
+<p>Added to documentation details about default values to existing methods.</p>
+
+<p>Added tp documentation information about <a href="#request-limits">Request Rate Limits</a></p>
+<h2 id='2020-07-01-the-release-of-a-new-hft-api'>2020-07-01 | The release of a new HFT API.</h2>
 <p>The new release of the updated APIs now supports <strong>gRPC protocol</strong>. This protocol uses HTTP 2.0 Standard, WebSocket, and ProtoBuf, which helps to reduce latency, allows more efficient use of the CPU and provides access to network resources on the client&#39;s side.</p>
 
 <p>The best part of the <strong>gRPC</strong> protocol is how easy it is to integrate the Lykke APIs in many programming languages by using the proto-files which generates a client library.<a href="https://github.com/LykkeCity/Trading-API/tree/master/grpc_proto_contracts">Proto files with contracts</a>. This generates a new response format, abstracted from the protocol itself, allowing you to work in a custom manner with the Lykke APIs regardless of the protocol.</p>
@@ -605,6 +620,40 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>Order rejected by the System.</td>
 </tr>
 </tbody></table>
+<h2 id='request-rate-limits'>Request rate limits</h2>
+<p>API has a request rate limits.
+If client hit limit then API return error: <code>429 Too Many Requests</code></p>
+
+<p><strong>Rate Limit settings:</strong></p>
+
+<table><thead>
+<tr>
+<th>API type</th>
+<th>methods</th>
+<th>Request rate limits</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>gRPC API</code></td>
+<td>hft.PrivateService.*</td>
+<td>300 request per minute per method</td>
+</tr>
+<tr>
+<td><code>gRPC API</code></td>
+<td>hft.PublicService.*</td>
+<td>1000 request per minute per method</td>
+</tr>
+<tr>
+<td><code>Rest API</code></td>
+<td>/api/orders/*</td>
+<td>300 request per minute per method</td>
+</tr>
+<tr>
+<td><code>Rest API</code></td>
+<td>/api/*</td>
+<td>120 request per minute per method</td>
+</tr>
+</tbody></table>
 <h1 id='public-apis'>Public APIs</h1><h2 id='get-all-assets'>Get all assets</h2>
 <p>Get a list of supported assets with parameters.</p>
 <h3 id='request'>Request</h3>
@@ -617,7 +666,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1465,14 +1514,16 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 
 <p><strong>Rest API:</strong></p>
 
-<p><code>GET /api/trades</code>
-<code>GET /api/trades/order/{orderId}</code></p>
+<p><code>GET /api/trades</code></p>
+
+<p><code>GET /api/trades/order/{orderId}</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1480,36 +1531,42 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>assetPairId</td>
 <td>string</td>
 <td>query</td>
+<td>null</td>
 <td><em>(optional)</em> Symbol unique identifier.</td>
 </tr>
 <tr>
 <td>side</td>
 <td>string</td>
 <td>query</td>
+<td>null</td>
 <td><em>(optional)</em> Side of trade: <code>buy</code> or <code>sell</code>.</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>uint</td>
 <td>query</td>
+<td>0</td>
 <td><em>(optional)</em> Skip the specified number of elements.</td>
 </tr>
 <tr>
 <td>take</td>
 <td>uint</td>
 <td>query</td>
+<td>100</td>
 <td><em>(optional)</em> Take the specified number of elements.</td>
 </tr>
 <tr>
 <td>from</td>
 <td><a href="#timestamp-type">TimeStamp</a></td>
 <td>query</td>
+<td>null</td>
 <td><em>(optional)</em> From timestamp.</td>
 </tr>
 <tr>
 <td>to</td>
 <td><a href="#timestamp-type">TimeStamp</a></td>
 <td>query</td>
+<td>null</td>
 <td><em>(optional)</em> To timestamp.</td>
 </tr>
 </tbody></table>
@@ -1519,6 +1576,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1526,6 +1584,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>orderId</td>
 <td>string</td>
 <td>path</td>
+<td>-</td>
 <td>Unique Order ID</td>
 </tr>
 </tbody></table>
@@ -1695,19 +1754,22 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <h3 id='request-3'>Request</h3>
 <p><strong>gRPC:</strong> </p>
 
-<p><code>hft.PrivateService.GetActiveOrders</code>
-<code>hft.PrivateService.GetClosedOrders</code></p>
+<p><code>hft.PrivateService.GetActiveOrders</code></p>
+
+<p><code>hft.PrivateService.GetClosedOrders</code></p>
 
 <p><strong>Rest API:</strong></p>
 
-<p><code>GET /api/orders/active</code>
-<code>GET /api/orders/closed</code></p>
+<p><code>GET /api/orders/active</code></p>
+
+<p><code>GET /api/orders/closed</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1715,23 +1777,26 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>assetPairId</td>
 <td>string</td>
 <td>query</td>
+<td>null</td>
 <td><em>(optional)</em> Symbol unique identifier.</td>
 </tr>
 <tr>
 <td>offset</td>
 <td>uint</td>
 <td>query</td>
+<td>0</td>
 <td><em>(optional)</em> Skip the specified number of elements.</td>
 </tr>
 <tr>
 <td>take</td>
 <td>uint</td>
 <td>query</td>
+<td>100</td>
 <td><em>(optional)</em> Take the specified number of elements.</td>
 </tr>
 </tbody></table>
 <h3 id='response-3'>Response</h3>
-<p>Asset description:</p>
+<p>Response description:</p>
 
 <table><thead>
 <tr>
@@ -1822,7 +1887,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 
 <span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
   <span class="k">rpc</span> <span class="n">GetActiveOrders</span> <span class="p">(</span><span class="n">OrdersRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">OrdersResponse</span><span class="p">);</span>
-    <span class="k">rpc</span> <span class="n">GetClosedOrders</span> <span class="p">(</span><span class="n">OrdersRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">OrdersResponse</span><span class="p">);</span>
+  <span class="k">rpc</span> <span class="n">GetClosedOrders</span> <span class="p">(</span><span class="n">OrdersRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">OrdersResponse</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kd">message</span> <span class="nc">OrdersRequest</span> <span class="p">{</span>
@@ -1852,18 +1917,164 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
     <span class="kt">string</span> <span class="na">remainingVolume</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
     <span class="kt">string</span> <span class="na">cost</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><h2 id='place-a-limit-order'>Place a limit order</h2>
-<p>Place a limit order.</p>
+</code></pre></div><h2 id='get-order-by-id'>Get order by Id</h2>
+<p>Get order by id from history.</p>
 <h3 id='request-4'>Request</h3>
-<p><strong>gRPC:</strong> <code>hft.PrivateService.PlaceLimitOrder</code></p>
+<p><strong>gRPC:</strong> </p>
 
-<p><strong>Rest API:</strong> <code>POST /api/orders/limit</code></p>
-<h3 id='request-5'>Request</h3>
+<p><code>hft.PrivateService.GetOrder</code></p>
+
+<p><strong>Rest API:</strong></p>
+
+<p><code>GET /api/orders/{orderId}</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>string</td>
+<td>query</td>
+<td>null</td>
+<td>Unique Order ID.</td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response</h3>
+<p>Response description:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Unique Order ID.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp for order creation.</td>
+</tr>
+<tr>
+<td>lastTradeTimestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp for last trade by order.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Order status. List of statuses <a href="#order-statuses">here</a>.</td>
+</tr>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Order type: <code>Market</code> or <code>Limit</code>.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order price (in quote asset for one unit of base asset).</td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order volume (in base asset).</td>
+</tr>
+<tr>
+<td>filledVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order filled volume (in base asset).</td>
+</tr>
+<tr>
+<td>remainingVolume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Order remaining volume to be filled (in base asset).</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/orders/</span><span class="mi">0</span><span class="err">c</span><span class="mi">336213-0</span><span class="err">a</span><span class="mi">64-44</span><span class="err">a</span><span class="mi">8-9599</span><span class="err">-e</span><span class="mi">88</span><span class="err">bf</span><span class="mi">6</span><span class="err">aa</span><span class="mi">1</span><span class="err">b</span><span class="mi">69</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0c336213-0a64-44a8-9599-e88bf6aa1b69"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1592928606187</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastTradeTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Placed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"filledVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"remainingVolume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetOrder</span> <span class="p">(</span><span class="n">OrderRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">OrderResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OrderRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">orderId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OrderResponse</span> <span class="p">{</span>
+    <span class="n">Order</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">Order</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">oneof</span> <span class="n">optional_lastTradeTimestamp</span> <span class="p">{</span>
+        <span class="n">google.protobuf.Timestamp</span> <span class="na">lastTradeTimestamp</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">string</span> <span class="na">status</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">type</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+    <span class="n">Side</span> <span class="na">side</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">filledVolume</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">remainingVolume</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">cost</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='place-a-limit-order'>Place a limit order</h2>
+<p>Place a limit order.</p>
+<h3 id='request-5'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.PlaceLimitOrder</code></p>
+
+<p><strong>Rest API:</strong> <code>POST /api/orders/limit</code></p>
+<h3 id='request-6'>Request</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1871,24 +2082,28 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>assetPairId</td>
 <td>string</td>
 <td>body</td>
+<td>-</td>
 <td>Symbol unique identifier.</td>
 </tr>
 <tr>
 <td>side</td>
 <td>string</td>
 <td>body</td>
+<td>-</td>
 <td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
 </tr>
 <tr>
 <td>volume</td>
 <td><a href="#decimal-type">decimal</a></td>
 <td>body</td>
+<td>-</td>
 <td>Order volume (in base asset).</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#decimal-type">decimal</a></td>
 <td>body</td>
+<td>-</td>
 <td>Order price(in quote asset for one unit of base asset).</td>
 </tr>
 </tbody></table>
@@ -1900,7 +2115,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
   </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
   </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='response-4'>Response</h3>
+</span></code></pre></div><h3 id='response-5'>Response</h3>
 <p>Response description:</p>
 
 <table><thead>
@@ -1949,16 +2164,17 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <span class="p">}</span>
 </code></pre></div><h2 id='place-a-market-order'>Place a market order</h2>
 <p>Place a <a href="https://en.wikipedia.org/wiki/Fill_or_kill">Fill-Or-Kill</a> market order.</p>
-<h3 id='request-6'>Request</h3>
+<h3 id='request-7'>Request</h3>
 <p><strong>gRPC:</strong> <code>hft.PrivateService.PlaceLimitOrder</code></p>
 
 <p><strong>Rest API:</strong> <code>POST /api/orders/market</code></p>
-<h3 id='request-7'>Request</h3>
+<h3 id='request-8'>Request</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1966,18 +2182,21 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 <td>assetPairId</td>
 <td>string</td>
 <td>body</td>
+<td>-</td>
 <td>Symbol unique identifier.</td>
 </tr>
 <tr>
 <td>side</td>
 <td>string</td>
 <td>body</td>
+<td>-</td>
 <td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
 </tr>
 <tr>
 <td>volume</td>
 <td><a href="#decimal-type">decimal</a></td>
 <td>body</td>
+<td>-</td>
 <td>Order volume (in base asset).</td>
 </tr>
 </tbody></table>
@@ -1988,7 +2207,7 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
   </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.554</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='response-5'>Response</h3>
+</span></code></pre></div><h3 id='response-6'>Response</h3>
 <p>Response description:</p>
 
 <table><thead>
@@ -2043,16 +2262,17 @@ To use the API keys, you should just add a header <code>Authorisation: Bearer &l
 </code></pre></div><h2 id='place-multiple-limit-orders'>Place multiple limit orders</h2>
 <p>Place multiple limit orders in one package.
 The method also allows you to replace orders in the order book. You can replace all orders completely, or each separately.</p>
-<h3 id='request-8'>Request</h3>
+<h3 id='request-9'>Request</h3>
 <p><strong>gRPC:</strong> <code>hft.PrivateService.PlaceBulkLimitOrder</code></p>
 
 <p><strong>Rest API:</strong> <code>POST /api/orders/bulk</code></p>
-<h3 id='request-9'>Request</h3>
+<h3 id='request-10'>Request</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -2060,18 +2280,21 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>assetPairId</td>
 <td>string</td>
 <td>body</td>
+<td>-</td>
 <td>Symbol unique identifier.</td>
 </tr>
 <tr>
 <td>cancelPreviousOrders</td>
 <td>bool</td>
 <td>body</td>
+<td>false</td>
 <td>Cancel existing orders by AssetPair before placing new orders. Default: False.</td>
 </tr>
 <tr>
 <td>cancelMode</td>
 <td>string</td>
 <td>body</td>
+<td>null</td>
 <td>Strategy for canceling orders if the &quot;cancelPreviousOrders&quot; parameter is activated. <code>bothSides</code>, <code>sellSide</code>, <code>buySide</code>.</td>
 </tr>
 <tr>
@@ -2079,6 +2302,7 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>array of BulkOrder</td>
 <td>body</td>
 <td>List of new orders to place.</td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -2089,6 +2313,7 @@ The method also allows you to replace orders in the order book. You can replace 
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -2096,24 +2321,28 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>orderAction</td>
 <td>string</td>
 <td>body</td>
-<td>Order side: <code>Sell</code> or <code>Buy</code>.</td>
+<td>-</td>
+<td>order side: <code>Sell</code> or <code>Buy</code>.</td>
 </tr>
 <tr>
 <td>volume</td>
 <td><a href="#decimal-type">decimal</a></td>
 <td>body</td>
+<td>-</td>
 <td>Order volume (in base asset).</td>
 </tr>
 <tr>
 <td>price</td>
 <td><a href="#decimal-type">decimal</a></td>
 <td>body</td>
+<td>-</td>
 <td>Order price(in quote asset for one unit of base asset).</td>
 </tr>
 <tr>
 <td>oldId</td>
 <td>string</td>
 <td>body</td>
+<td>null</td>
 <td>Identifier of the order to be replaced. If the parameter is specified, the new order will replace the existing order with the specified ID. If there is no order with the specified ID, then the new order will not be placed.</td>
 </tr>
 </tbody></table>
@@ -2132,7 +2361,7 @@ The method also allows you to replace orders in the order book. You can replace 
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='response-6'>Response</h3>
+</span></code></pre></div><h3 id='response-7'>Response</h3>
 <p>Response description:</p>
 
 <table><thead>
@@ -2235,16 +2464,17 @@ The method also allows you to replace orders in the order book. You can replace 
 <span class="p">}</span>
 </code></pre></div><h2 id='mass-cancel-orders'>Mass cancel orders</h2>
 <p>Cancel all active orders or filter order to cancel by AssetPair or Side.</p>
-<h3 id='request-10'>Request</h3>
+<h3 id='request-11'>Request</h3>
 <p><strong>gRPC:</strong> <code>hft.PrivateService.CancelAllOrders</code></p>
 
 <p><strong>Rest API:</strong> <code>DELETE /api/orders</code></p>
-<h3 id='query-parameters-4'>Query Parameters</h3>
+<h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -2252,16 +2482,18 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>assetPairId</td>
 <td>string</td>
 <td>query</td>
+<td>null</td>
 <td><em>(Optional)</em> Symbol unique identifier (All asset pairs by default).</td>
 </tr>
 <tr>
 <td>side</td>
 <td>string</td>
 <td>query</td>
+<td>null</td>
 <td><em>(Optional)</em> Order side <code>Buy</code> or <code>Sell</code> (both sides by default).</td>
 </tr>
 </tbody></table>
-<h3 id='response-7'>Response</h3>
+<h3 id='response-8'>Response</h3>
 <p>No content</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="err">DELETE</span><span class="w"> </span><span class="err">/api/orders</span><span class="w">
 
@@ -2287,16 +2519,17 @@ The method also allows you to replace orders in the order book. You can replace 
 <span class="p">}</span>
 </code></pre></div><h2 id='cancel-orders-by-id'>Cancel orders by ID</h2>
 <p>Cancel a specific order by order ID.</p>
-<h3 id='request-11'>Request</h3>
+<h3 id='request-12'>Request</h3>
 <p><strong>gRPC:</strong> <code>hft.PrivateService.CancelAllOrders</code></p>
 
 <p><strong>Rest API:</strong> <code>DELETE /api/orders/{orderId}</code></p>
-<h3 id='query-parameters-5'>Query Parameters</h3>
+<h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
 <th>Type</th>
 <th>Place</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -2304,10 +2537,11 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>orderId</td>
 <td>string</td>
 <td>path</td>
+<td>-</td>
 <td>Unique Order ID.</td>
 </tr>
 </tbody></table>
-<h3 id='response-8'>Response</h3>
+<h3 id='response-9'>Response</h3>
 <p>No content</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="err">DELETE</span><span class="w"> </span><span class="err">/api/orders/</span><span class="p">{</span><span class="err">orderId</span><span class="p">}</span><span class="w">
 
@@ -2347,12 +2581,14 @@ The method also allows you to replace orders in the order book. You can replace 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>assetPairIds</td>
 <td>array of string</td>
+<td>null</td>
 <td>Filter by Symbol unique ID. If the array is empty then the server return prices by all symbols.</td>
 </tr>
 </tbody></table>
@@ -2487,12 +2723,14 @@ The method also allows you to replace orders in the order book. You can replace 
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>assetPairId</td>
 <td>string</td>
+<td>null</td>
 <td><em>(Optional)</em> Identificator of specific symbol. By default return all symbols.</td>
 </tr>
 </tbody></table>
