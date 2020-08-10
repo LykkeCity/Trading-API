@@ -208,5 +208,5 @@ API type | methods | Request rate limits
 -------- | ------- | -------------------
 `gRPC API` | hft.PrivateService.* | 300 request per minute per method
 `gRPC API` | hft.PublicService.* | 1000 request per minute per method
-`Rest API` | general limit | 120 request per minute per method
 `Rest API` | /api/orders/* | 300 request per minute per method
+`Rest API` | /api/* | 120 request per minute per method
