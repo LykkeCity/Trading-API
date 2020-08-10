@@ -1,5 +1,13 @@
 # Change Log
 
+## 2020-08-10 | The new method in Private API
+
+Added a new method [Get order by Id](#get-order-by-id) to search an order by ID.
+
+Added to documentation details about default values to existing methods.
+
+Added tp documentation information about [Request Rate Limits](#request-limits)
+
 ## 2020-07-01 | The release of a new HFT API.
 
 The new release of the updated APIs now supports **gRPC protocol**. This protocol uses HTTP 2.0 Standard, WebSocket, and ProtoBuf, which helps to reduce latency, allows more efficient use of the CPU and provides access to network resources on the client's side.

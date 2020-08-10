@@ -14,8 +14,8 @@ Get a list of supported assets with parameters.
 
 Array of assets:
 
-Parameter | Default | Description
---------- | ------- | -----------
+Parameter | Type | Description
+--------- | ---- | -----------
 assetId | string | Asset unique identifier.
 name | string | Asset name.
 symbol | string | Asset symbol.
