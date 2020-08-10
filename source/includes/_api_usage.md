@@ -197,10 +197,16 @@ Cancelled | Order is cancelled by the User.
 Replaced | Order is replaced (canceled) by the user.
 Rejected | Order rejected by the System.
 
-## Request limits
+## Request rate limits
 
-HTTP methods:
+API has a request rate limits.
+If client hit limit then API return error: `429 Too Many Requests`
 
-/api/orders/* - 1000 requests/min
+**Rate Limit settings:**
 
-all other endpoints - 300 requests/min
+API type | methods | Request rate limits
+-------- | ------- | -------------------
+`gRPC API` | hft.PrivateService.* | 300 request per minute per method
+`gRPC API` | hft.PublicService.* | 1000 request per minute per method
+`Rest API` | general limit | 120 request per minute per method
+`Rest API` | /api/orders/* | 300 request per minute per method
