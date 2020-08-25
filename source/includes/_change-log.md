@@ -1,5 +1,9 @@
 # Change Log
 
+## 2020-08-25 | Side property in the Trade
+
+Added ```Side``` property for the ```Trade```.
+
 ## 2020-08-10 | The new method in Private API
 
 Added a new method [Get order by Id](#get-order-by-id) to search an order by ID.

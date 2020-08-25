@@ -207,6 +207,7 @@ message Trade {
     string baseAssetId = 9;
     string quoteAssetId = 10;
     TradeFee fee = 11;
+    Side side = 12;
 }
 
 message TradeFee {
