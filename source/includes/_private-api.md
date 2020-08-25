@@ -117,6 +117,7 @@ quoteVolume | [decimal](#decimal-type) | Trade volume in quote asset.
 baseAssetId | string | Base asset ID.
 quoteAssetId | string | Quote asset ID.
 fee | TradeFee | *(optional)* Trade Fee description.
+side | string | Trade side: `Sell` or `Buy`.
 
 **TradeFee**
 
@@ -146,7 +147,8 @@ GET /api/trades/order/{orderId}
       "quoteVolume": 0.9576,
       "baseAssetId": "BTC",
       "quoteAssetId": "USD",
-      "fee": null
+      "fee": null,
+      "side": "buy"
     },
     {
       "id": "ebceb096-7766-437a-8e98-e1f6532f0268",
@@ -159,7 +161,8 @@ GET /api/trades/order/{orderId}
       "quoteVolume": 0.085,
       "baseAssetId": "a4954205-48eb-4286-9c82-07792169f4db",
       "quoteAssetId": "USD",
-      "fee": null
+      "fee": null,
+      "side": "buy"
     }]
 }
 ```
@@ -199,6 +202,7 @@ message Trade {
     string baseAssetId = 9;
     string quoteAssetId = 10;
     TradeFee fee = 11;
+    Side side = 12;
 }
 
 message TradeFee {
