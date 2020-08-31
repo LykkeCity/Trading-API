@@ -1,5 +1,9 @@
 # Change Log
 
+## 2020-09-02 | Public trades stream, fixes
+
+Added public stream for trades. Fixed an issue with orderbook updates stream.
+
 ## 2020-08-25 | Side property in the Trade
 
 Added ```Side``` property for the ```Trade```.

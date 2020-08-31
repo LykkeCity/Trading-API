@@ -75,6 +75,7 @@ quoteVolume | [decimal](#decimal-type) | Trade volume in quote asset.
 baseAssetId | string | Base asset ID.
 quoteAssetId | string | Quote asset ID.
 fee | TradeFee | *(optional)* Trade Fee description.
+side | string | Trade side: `Sell` or `Buy`.
 
 **TradeFee**
 
