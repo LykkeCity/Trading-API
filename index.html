@@ -226,6 +226,9 @@
             <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#2020-09-02-public-trades-stream-fixes" class="toc-h2 toc-link" data-title="2020-09-02 | Public trades stream, fixes">2020-09-02 | Public trades stream, fixes</a>
+                  </li>
+                  <li>
                     <a href="#2020-08-25-side-property-in-the-trade" class="toc-h2 toc-link" data-title="2020-08-25 | Side property in the Trade">2020-08-25 | Side property in the Trade</a>
                   </li>
                   <li>
@@ -346,6 +349,9 @@
                   <li>
                     <a href="#follow-order-book-ticker" class="toc-h2 toc-link" data-title="Follow Order Book Ticker">Follow Order Book Ticker</a>
                   </li>
+                  <li>
+                    <a href="#get-public-trades" class="toc-h2 toc-link" data-title="Get public trades">Get public trades</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -386,7 +392,9 @@
 <p>If you are interested in API trading, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!</p>
 
 <p>For more information about Lykke, please visit <a href="http://lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">www.lykke.com</a>.</p>
-<h1 id='change-log'>Change Log</h1><h2 id='2020-08-25-side-property-in-the-trade'>2020-08-25 | Side property in the Trade</h2>
+<h1 id='change-log'>Change Log</h1><h2 id='2020-09-02-public-trades-stream-fixes'>2020-09-02 | Public trades stream, fixes</h2>
+<p>Added public stream for trades. Fixed an issue with orderbook updates stream.</p>
+<h2 id='2020-08-25-side-property-in-the-trade'>2020-08-25 | Side property in the Trade</h2>
 <p>Added <code>Side</code> property for the <code>Trade</code>.</p>
 <h2 id='2020-08-10-the-new-method-in-private-api'>2020-08-10 | The new method in Private API</h2>
 <p>Added a new method <a href="#get-order-by-id">Get order by Id</a> to search an order by ID.</p>
@@ -2822,6 +2830,91 @@ The method also allows you to replace orders in the order book. You can replace 
         <span class="kt">string</span> <span class="na">v</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</code></pre></div><h2 id='get-public-trades'>Get public trades</h2>
+<p>Get current public trades online.</p>
+
+<p>After subscribing you will get 50 latest trades for provided asset pair. The first packet in the stream will always contain a complete snapshot with the 50 latest trades. The following packages in the data stream will come after the trade happen.</p>
+<h3 id='request-4'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PublicService.GetPublicTradeUpdates</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>-</td>
+<td>Filter by Symbol unique ID.</td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response</h3>
+<p>Array of trades by symbols:</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Trade ID.</td>
+</tr>
+<tr>
+<td>assetPairId</td>
+<td>string</td>
+<td>Symbol unique identifier.</td>
+</tr>
+<tr>
+<td>dateTime</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Timestamp of the trade.</td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Bid price.</td>
+</tr>
+<tr>
+<td>price</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Ask price.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>Trade side: <code>Sell</code> or <code>Buy</code>.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PublicService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetPublicTradeUpdates</span> <span class="p">(</span><span class="n">PublicTradesUpdatesRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">stream</span> <span class="n">PublicTradeUpdate</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">PublicTradesUpdatesRequest</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">PublicTradeUpdate</span> <span class="p">{</span>
+    <span class="k">repeated</span> <span class="n">PublicTrade</span> <span class="na">trades</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">PublicTrade</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">google.protobuf.Timestamp</span> <span class="na">dateTime</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">price</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">string</span> <span class="na">side</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div><h1 id='private-stream-apis'>Private Stream APIs</h1>
 <p><strong>Streaming API</strong> allows you to subscribe to events from the server and receive them in streaming mode upon the occurrence of the event.</p>
 
@@ -2951,6 +3044,11 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>fee</td>
 <td>TradeFee</td>
 <td><em>(optional)</em> Trade Fee description.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>Trade side: <code>Sell</code> or <code>Buy</code>.</td>
 </tr>
 </tbody></table>
 
