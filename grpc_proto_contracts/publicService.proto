@@ -19,9 +19,10 @@ service PublicService {
 	rpc GetTickers (TickersRequest) returns (TickersResponse);
 	rpc GetPrices (PricesRequest) returns (PricesResponse);
 
-    rpc GetPriceUpdates (PriceUpdatesRequest) returns (stream PriceUpdate);
-    rpc GetTickerUpdates (google.protobuf.Empty) returns (stream TickerUpdate);
-    rpc GetOrderbookUpdates (OrderbookUpdatesRequest) returns (stream Orderbook);
+	rpc GetPriceUpdates (PriceUpdatesRequest) returns (stream PriceUpdate);
+	rpc GetTickerUpdates (google.protobuf.Empty) returns (stream TickerUpdate);
+	rpc GetOrderbookUpdates (OrderbookUpdatesRequest) returns (stream Orderbook);
+	rpc GetPublicTradeUpdates (PublicTradesUpdatesRequest) returns (stream PublicTradeUpdate);
 }
 
 message AssetPairRequest {
@@ -50,6 +51,10 @@ message PriceUpdatesRequest {
 }
 
 message OrderbookUpdatesRequest {
+    string assetPairId = 1;
+}
+
+message PublicTradesUpdatesRequest {
     string assetPairId = 1;
 }
 
@@ -117,6 +122,19 @@ message Orderbook {
         string p = 1;
         string v = 2;
     }
+}
+
+message PublicTradeUpdate {
+    repeated PublicTrade trades = 1;
+}
+
+message PublicTrade {
+    string id = 1;
+    string assetPairId = 2;
+    google.protobuf.Timestamp dateTime = 3;
+    string volume = 4;
+    string price = 5;
+    string side = 6;
 }
 
 message PriceUpdate {

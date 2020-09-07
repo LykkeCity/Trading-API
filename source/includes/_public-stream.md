@@ -156,3 +156,57 @@ message Orderbook {
     }
 }
 ```
+
+## Get public trades
+
+Get current public trades online.
+
+After subscribing you will get 50 latest trades for provided asset pair. The first packet in the stream will always contain a complete snapshot with the 50 latest trades. The following packages in the data stream will come after the trade happen.
+
+### Request
+
+**gRPC:** `hft.PublicService.GetPublicTradeUpdates`
+
+### Query Parameters
+
+Parameter | Type | Default | Description
+--------- | ---- | ------- | -----------
+assetPairId | string | - | Filter by Symbol unique ID.
+
+### Response
+
+Array of trades by symbols:
+
+Property | Type | Description
+-------- | ---- | -----------
+id | string | Trade ID.
+assetPairId | string | Symbol unique identifier.
+dateTime | [TimeStamp](#timestamp-type) | Timestamp of the trade.
+volume | [decimal](#decimal-type) | Bid price.
+price | [decimal](#decimal-type) | Ask price.
+side | string | Trade side: `Sell` or `Buy`.
+
+```protobuf
+package hft;
+
+service PublicService {
+  rpc GetPublicTradeUpdates (PublicTradesUpdatesRequest) returns (stream PublicTradeUpdate);
+}
+
+message PublicTradesUpdatesRequest {
+    string assetPairId = 1;
+}
+
+message PublicTradeUpdate {
+    repeated PublicTrade trades = 1;
+}
+
+message PublicTrade {
+    string id = 1;
+    string assetPairId = 2;
+    google.protobuf.Timestamp dateTime = 3;
+    string volume = 4;
+    string price = 5;
+    string side = 6;
+}
+```
