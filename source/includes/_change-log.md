@@ -1,5 +1,9 @@
 # Change Log
 
+## 2020-10-23 | Public trades endpoint
+
+Added public trades rest api and grpc endpoints.
+
 ## 2020-09-02 | Public trades stream, fixes
 
 Added public stream for trades. Fixed an issue with orderbook updates stream.

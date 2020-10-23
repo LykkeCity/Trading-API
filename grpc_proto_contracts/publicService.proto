@@ -18,11 +18,12 @@ service PublicService {
 	rpc GetOrderbooks (OrderbookRequest) returns (OrderbookResponse);
 	rpc GetTickers (TickersRequest) returns (TickersResponse);
 	rpc GetPrices (PricesRequest) returns (PricesResponse);
+    rpc GetPublicTrades (PublicTradesRequest) returns (PublicTradeUpdate);
 
 	rpc GetPriceUpdates (PriceUpdatesRequest) returns (stream PriceUpdate);
 	rpc GetTickerUpdates (google.protobuf.Empty) returns (stream TickerUpdate);
 	rpc GetOrderbookUpdates (OrderbookUpdatesRequest) returns (stream Orderbook);
-	rpc GetPublicTradeUpdates (PublicTradesUpdatesRequest) returns (stream PublicTradeUpdate);
+    rpc GetPublicTradeUpdates (PublicTradesUpdatesRequest) returns (stream PublicTradeUpdate);
 }
 
 message AssetPairRequest {
@@ -44,6 +45,12 @@ message TickersRequest {
 
 message PricesRequest {
     repeated string assetPairIds = 1;
+}
+
+message PublicTradesRequest {
+    string assetPairId = 1;
+    int32 offset = 2;
+    int32 take = 3;
 }
 
 message PriceUpdatesRequest {
