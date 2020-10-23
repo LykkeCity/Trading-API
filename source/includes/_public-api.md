@@ -570,4 +570,89 @@ message PriceUpdate {
 }
 ```
 
+## Get public trades
 
+Gets last trades not related to the specific account.
+
+### Request
+
+**gRPC:** `hft.PublicService.GetPublicTrades`
+
+**Rest API:**
+
+`GET /api/trades/public/{assetPairId}`
+
+### Query Parameters
+
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+offset | uint | query | 0 | *(optional)* Skip the specified number of elements.
+take | uint | query | 100 |*(optional)* Take the specified number of elements.
+
+### Response
+
+Array of trades:
+
+Property | Type | Description
+-------- | ---- | -----------
+id | string | Trade ID.
+assetPairId | string | Trade asset pair ID (symbol).
+timestamp | [TimeStamp](#timestamp-type) | Trade tamestamp.
+volume | [decimal](#decimal-type) | Trade volume in base asset.
+price | [decimal](#decimal-type) | Trade price.
+side | string | Trade side: `Sell` or `Buy`.
+
+
+
+```json
+GET /api/trades/public/{assetPairId}
+
+> Response 200 (application/json) - success response
+
+{
+  "payload": [
+    {
+      "id": "b3a25228-5384-4b5f-95c3-3eb31f7e9aee",
+      "assetPairId": "BTCUSD",
+      "timestamp": 1592938116360,
+      "volume": 0.0001,
+      "price": 9575.823,
+      "side": "buy"
+    },
+    {
+      "id": "ebceb096-7766-437a-8e98-e1f6532f0268",
+      "assetPairId": "BTGUSD",
+      "timestamp": 1592938016360,
+      "volume": 0.01,
+      "price": 8.5,
+      "side": "buy"
+    }]
+}
+```
+
+```protobuf
+package hft;
+
+service PublicService {
+  rpc GetPublicTrades (PublicTradesRequest) returns (PublicTradeUpdate);
+}
+
+message PublicTradesRequest {
+    string assetPairId = 1;
+    int32 offset = 2;
+    int32 take = 3;
+}
+
+message PublicTradeUpdate {
+    repeated PublicTrade trades = 1;
+}
+
+message PublicTrade {
+    string id = 1;
+    string assetPairId = 2;
+    google.protobuf.Timestamp dateTime = 3;
+    string volume = 4;
+    string price = 5;
+    string side = 6;
+}
+```
