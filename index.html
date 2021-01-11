@@ -226,6 +226,9 @@
             <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#2021-01-11-multiple-orderbook-updates" class="toc-h2 toc-link" data-title="2021-01-11 | Multiple orderbook updates">2021-01-11 | Multiple orderbook updates</a>
+                  </li>
+                  <li>
                     <a href="#2020-10-23-public-trades-endpoint" class="toc-h2 toc-link" data-title="2020-10-23 | Public trades endpoint">2020-10-23 | Public trades endpoint</a>
                   </li>
                   <li>
@@ -398,7 +401,9 @@
 <p>If you are interested in API trading, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!</p>
 
 <p>For more information about Lykke, please visit <a href="http://lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">www.lykke.com</a>.</p>
-<h1 id='change-log'>Change Log</h1><h2 id='2020-10-23-public-trades-endpoint'>2020-10-23 | Public trades endpoint</h2>
+<h1 id='change-log'>Change Log</h1><h2 id='2021-01-11-multiple-orderbook-updates'>2021-01-11 | Multiple orderbook updates</h2>
+<p>Added <code>assetPairIds</code> for orderbook updates stream request to get updates for multiple orderbooks.</p>
+<h2 id='2020-10-23-public-trades-endpoint'>2020-10-23 | Public trades endpoint</h2>
 <p>Added public trades rest api and grpc endpoints.</p>
 <h2 id='2020-09-02-public-trades-stream-fixes'>2020-09-02 | Public trades stream, fixes</h2>
 <p>Added public stream for trades. Fixed an issue with orderbook updates stream.</p>
@@ -2881,9 +2886,17 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>assetPairId</td>
 <td>string</td>
 <td>null</td>
-<td><em>(Optional)</em> Identificator of specific symbol. By default return all symbols.</td>
+<td><em>(Optional)</em></td>
+</tr>
+<tr>
+<td>assetPairIds</td>
+<td>string</td>
+<td>Array of string</td>
+<td><em>(Optional)</em></td>
 </tr>
 </tbody></table>
+
+<p>Identificator of specific symbol. By default return all symbols.</p>
 <h3 id='request-3'>Request</h3>
 <p><strong>gRPC:</strong> <code>hft.PublicService.GetOrderbookUpdates</code></p>
 <h3 id='response-3'>Response</h3>
@@ -2946,6 +2959,7 @@ The method also allows you to replace orders in the order book. You can replace 
 
 <span class="kd">message</span> <span class="nc">OrderbookUpdatesRequest</span> <span class="p">{</span>
     <span class="kt">string</span> <span class="na">assetPairId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">repeated</span> <span class="kt">string</span> <span class="na">assetPairIds</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">message</span> <span class="nc">Orderbook</span> <span class="p">{</span>
