@@ -1,5 +1,9 @@
 # Change Log
 
+## 2021-01-11 | Multiple orderbook updates
+
+Added ```assetPairIds``` for orderbook updates stream request to get updates for multiple orderbooks.
+
 ## 2020-10-23 | Public trades endpoint
 
 Added public trades rest api and grpc endpoints.

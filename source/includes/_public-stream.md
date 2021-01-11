@@ -109,7 +109,9 @@ Please note that if a level is deleted at a specific price, a packet containing 
 
 Parameter | Type | Default | Description
 --------- | ---- | ------- | -----------
-assetPairId | string | null | *(Optional)* Identificator of specific symbol. By default return all symbols.
+assetPairId | string | null | *(Optional)* 
+assetPairIds|string|Array of string|*(Optional)*
+Identificator of specific symbol. By default return all symbols.
 
 ### Request
 
@@ -142,6 +144,7 @@ service PublicService {
 
 message OrderbookUpdatesRequest {
     string assetPairId = 1;
+    repeated string assetPairIds = 2;
 }
 
 message Orderbook {

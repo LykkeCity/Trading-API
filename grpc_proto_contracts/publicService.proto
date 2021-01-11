@@ -59,6 +59,7 @@ message PriceUpdatesRequest {
 
 message OrderbookUpdatesRequest {
     string assetPairId = 1;
+    repeated string assetPairIds = 2;
 }
 
 message PublicTradesUpdatesRequest {
