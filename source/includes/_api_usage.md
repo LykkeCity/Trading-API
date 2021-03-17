@@ -123,7 +123,7 @@ message Response {
 ## Authorization
 
 You can create your API keys in [here](https://wallet.lykke.com/?utm_source=github&utm_medium=api_doc&utm_campaign=api_documentation). You can also check our step by step guide [here](https://support.lykke.com/hc/en-us/articles/360000552605-How-do-I-create-an-API-Wallet-).
-To use the API keys, you should just add a header `Authorisation: Bearer <your API Key>` with the bearer token on your request.
+To use the API keys, you should just add a header `Authorization: Bearer <your API Key>` with the bearer token on your request.
 
 > Request Header
 
