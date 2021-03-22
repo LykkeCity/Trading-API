@@ -92,7 +92,7 @@ symbol | string | Asset symbol.
 accuracy | uint | Maximum number of digits after the decimal point which are supported by the asset.
 
 ```json
-GET /api/assets/{assetId}
+GET /api/assets/BTC
 
 > Response 200 (application/json) - success response
 
@@ -246,7 +246,7 @@ minVolume | [decimal](#decimal-type) | Minimum order volume in base currency.
 minOppositeVolume | [decimal](#decimal-type) | Minimum order volume in quote currency.
 
 ```json
-GET /api/assetpairs/{assetPairId}
+GET /api/assetpairs/BTCUSD
 
 > Response 200 (application/json) - success response
 
@@ -331,7 +331,7 @@ v | [decimal](#decimal-type) | Order volume indicated in the base asset.
 
 ```json
 GET /api/orderbooks
-GET /api/orderbooks?assetPairId={assetPairId}&depth={depth}
+GET /api/orderbooks?assetPairId=BTCUSD&depth=2
 
 > Response 200 (application/json) - success response
 
@@ -524,7 +524,7 @@ ask | [decimal](#decimal-type) | Ask price.
 
 ```json
 GET /api/prices
-GET /api/prices?assetPairId={assetPairId}&depth={depth}
+GET /api/prices?assetPairIds=BTCEUR&assetPairIds=BTCUSD
 
 > Response 200 (application/json) - success response
 
@@ -600,12 +600,12 @@ assetPairId | string | Trade asset pair ID (symbol).
 timestamp | [TimeStamp](#timestamp-type) | Trade tamestamp.
 volume | [decimal](#decimal-type) | Trade volume in base asset.
 price | [decimal](#decimal-type) | Trade price.
-side | string | Trade side: `Sell` or `Buy`.
+side | string | Trade side: `buy` or `sell`.
 
 
 
 ```json
-GET /api/trades/public/{assetPairId}
+GET /api/trades/public/BTCUSD
 
 > Response 200 (application/json) - success response
 
@@ -621,10 +621,10 @@ GET /api/trades/public/{assetPairId}
     },
     {
       "id": "ebceb096-7766-437a-8e98-e1f6532f0268",
-      "assetPairId": "BTGUSD",
+      "assetPairId": "BTCUSD",
       "timestamp": 1592938016360,
       "volume": 0.01,
-      "price": 8.5,
+      "price": 9602.743,
       "side": "buy"
     }]
 }
