@@ -359,7 +359,7 @@
                     <a href="#follow-order-book-ticker" class="toc-h2 toc-link" data-title="Follow Order Book Ticker">Follow Order Book Ticker</a>
                   </li>
                   <li>
-                    <a href="#get-public-trades" class="toc-h2 toc-link" data-title="Get public trades">Get public trades</a>
+                    <a href="#get-public-trades-updates" class="toc-h2 toc-link" data-title="Get public trades updates">Get public trades updates</a>
                   </li>
               </ul>
           </li>
@@ -809,7 +809,7 @@ If client hit limit then API return error: <code>429 Too Many Requests</code></p
 <td>Maximum number of digits after the decimal point which are supported by the asset.</td>
 </tr>
 </tbody></table>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/assets/</span><span class="p">{</span><span class="err">assetId</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/assets/BTC</span><span class="w">
 
 </span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
 
@@ -1036,7 +1036,7 @@ If client hit limit then API return error: <code>429 Too Many Requests</code></p
 <td>Minimum order volume in quote currency.</td>
 </tr>
 </tbody></table>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/assetpairs/</span><span class="p">{</span><span class="err">assetPairId</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/assetpairs/BTCUSD</span><span class="w">
 
 </span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
 
@@ -1163,7 +1163,7 @@ If client hit limit then API return error: <code>429 Too Many Requests</code></p
 </tr>
 </tbody></table>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/orderbooks</span><span class="w">
-</span><span class="err">GET</span><span class="w"> </span><span class="err">/api/orderbooks?assetPairId=</span><span class="p">{</span><span class="err">assetPairId</span><span class="p">}</span><span class="err">&amp;depth=</span><span class="p">{</span><span class="err">depth</span><span class="p">}</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/api/orderbooks?assetPairId=BTCUSD&amp;depth=</span><span class="mi">2</span><span class="w">
 
 </span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
 
@@ -1414,7 +1414,7 @@ If client hit limit then API return error: <code>429 Too Many Requests</code></p
 </tr>
 </tbody></table>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/prices</span><span class="w">
-</span><span class="err">GET</span><span class="w"> </span><span class="err">/api/prices?assetPairId=</span><span class="p">{</span><span class="err">assetPairId</span><span class="p">}</span><span class="err">&amp;depth=</span><span class="p">{</span><span class="err">depth</span><span class="p">}</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/api/prices?assetPairIds=BTCEUR&amp;assetPairIds=BTCUSD</span><span class="w">
 
 </span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
 
@@ -1526,10 +1526,10 @@ If client hit limit then API return error: <code>429 Too Many Requests</code></p
 <tr>
 <td>side</td>
 <td>string</td>
-<td>Trade side: <code>Sell</code> or <code>Buy</code>.</td>
+<td>Trade side: <code>buy</code> or <code>sell</code>.</td>
 </tr>
 </tbody></table>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/trades/public/</span><span class="p">{</span><span class="err">assetPairId</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/trades/public/BTCUSD</span><span class="w">
 
 </span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
 
@@ -1545,10 +1545,10 @@ If client hit limit then API return error: <code>429 Too Many Requests</code></p
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ebceb096-7766-437a-8e98-e1f6532f0268"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTGUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetPairId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1592938016360</span><span class="p">,</span><span class="w">
       </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">9602.743</span><span class="p">,</span><span class="w">
       </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2461,7 +2461,7 @@ The method also allows you to replace orders in the order book. You can replace 
 </tr>
 </tbody></table>
 
-<p><strong>BulkOrder:</strong></p>
+<p><strong>BulkOrder (REST):</strong></p>
 
 <table><thead>
 <tr>
@@ -2477,7 +2477,7 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>string</td>
 <td>body</td>
 <td>-</td>
-<td>order side: <code>Sell</code> or <code>Buy</code>.</td>
+<td>order side: <code>buy</code> or <code>sell</code>.</td>
 </tr>
 <tr>
 <td>volume</td>
@@ -2973,7 +2973,7 @@ The method also allows you to replace orders in the order book. You can replace 
         <span class="kt">string</span> <span class="na">v</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h2 id='get-public-trades'>Get public trades</h2>
+</code></pre></div><h2 id='get-public-trades-updates'>Get public trades updates</h2>
 <p>Get current public trades online.</p>
 
 <p>After subscribing you will get 50 latest trades for provided asset pair. The first packet in the stream will always contain a complete snapshot with the 50 latest trades. The following packages in the data stream will come after the trade happen.</p>
