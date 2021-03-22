@@ -585,11 +585,11 @@ cancelPreviousOrders | bool | body | false | Cancel existing orders by AssetPair
 cancelMode | string | body | null | Strategy for canceling orders if the "cancelPreviousOrders" parameter is activated. `bothSides`, `sellSide`, `buySide`.
 orders | array of BulkOrder | body | List of new orders to place.
 
-**BulkOrder:**
+**BulkOrder (REST):**
 
 Parameter | Type | Place | Default | Description
 --------- | ---- | ----- | ------- | -----------
-orderAction | string | body | - | order side: `Sell` or `Buy`.
+orderAction | string | body | - | order side: `buy` or `sell`.
 volume | [decimal](#decimal-type) | body | - | Order volume (in base asset).
 price | [decimal](#decimal-type) | body | - | Order price(in quote asset for one unit of base asset).
 oldId | string | body | null | Identifier of the order to be replaced. If the parameter is specified, the new order will replace the existing order with the specified ID. If there is no order with the specified ID, then the new order will not be placed.

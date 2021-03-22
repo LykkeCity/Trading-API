@@ -160,7 +160,7 @@ message Orderbook {
 }
 ```
 
-## Get public trades
+## Get public trades updates
 
 Get current public trades online.
 
