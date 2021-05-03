@@ -587,7 +587,7 @@ Gets last trades not related to the specific account.
 Parameter | Type | Place | Default | Description
 --------- | ---- | ----- | ------- | -----------
 offset | uint | query | 0 | *(optional)* Skip the specified number of elements.
-take | uint | query | 100 |*(optional)* Take the specified number of elements.
+take | uint | query | 1000 |*(optional)* Take the specified number of elements.
 
 ### Response
 

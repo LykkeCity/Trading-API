@@ -1,5 +1,9 @@
 # Change Log
 
+## 2021-05-03 | PageSize
+
+Increased ```take``` parameter to 1000 in pagination requests.
+
 ## 2021-01-11 | Multiple orderbook updates
 
 Added ```assetPairIds``` for orderbook updates stream request to get updates for multiple orderbooks.
