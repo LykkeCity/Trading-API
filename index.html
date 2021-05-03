@@ -226,6 +226,9 @@
             <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#2021-05-03-pagesize" class="toc-h2 toc-link" data-title="2021-05-03 | PageSize">2021-05-03 | PageSize</a>
+                  </li>
+                  <li>
                     <a href="#2021-01-11-multiple-orderbook-updates" class="toc-h2 toc-link" data-title="2021-01-11 | Multiple orderbook updates">2021-01-11 | Multiple orderbook updates</a>
                   </li>
                   <li>
@@ -401,7 +404,9 @@
 <p>If you are interested in API trading, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!</p>
 
 <p>For more information about Lykke, please visit <a href="http://lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">www.lykke.com</a>.</p>
-<h1 id='change-log'>Change Log</h1><h2 id='2021-01-11-multiple-orderbook-updates'>2021-01-11 | Multiple orderbook updates</h2>
+<h1 id='change-log'>Change Log</h1><h2 id='2021-05-03-pagesize'>2021-05-03 | PageSize</h2>
+<p>Increased <code>take</code> parameter to 1000 in pagination requests.</p>
+<h2 id='2021-01-11-multiple-orderbook-updates'>2021-01-11 | Multiple orderbook updates</h2>
 <p>Added <code>assetPairIds</code> for orderbook updates stream request to get updates for multiple orderbooks.</p>
 <h2 id='2020-10-23-public-trades-endpoint'>2020-10-23 | Public trades endpoint</h2>
 <p>Added public trades rest api and grpc endpoints.</p>
@@ -1484,7 +1489,7 @@ If client hit limit then API return error: <code>429 Too Many Requests</code></p
 <td>take</td>
 <td>uint</td>
 <td>query</td>
-<td>100</td>
+<td>1000</td>
 <td><em>(optional)</em> Take the specified number of elements.</td>
 </tr>
 </tbody></table>
@@ -1699,7 +1704,7 @@ If client hit limit then API return error: <code>429 Too Many Requests</code></p
 <td>take</td>
 <td>uint</td>
 <td>query</td>
-<td>100</td>
+<td>1000</td>
 <td><em>(optional)</em> Take the specified number of elements.</td>
 </tr>
 <tr>
@@ -1946,7 +1951,7 @@ If client hit limit then API return error: <code>429 Too Many Requests</code></p
 <td>take</td>
 <td>uint</td>
 <td>query</td>
-<td>100</td>
+<td>1000</td>
 <td><em>(optional)</em> Take the specified number of elements.</td>
 </tr>
 </tbody></table>
