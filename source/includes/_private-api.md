@@ -90,7 +90,7 @@ Parameter | Type | Place | Default | Description
 assetPairId | string | query | null| *(optional)* Symbol unique identifier.
 side | string | query | null | *(optional)* Side of trade: `buy` or `sell`.
 offset | uint | query | 0 | *(optional)* Skip the specified number of elements.
-take | uint | query | 100 |*(optional)* Take the specified number of elements.
+take | uint | query | 1000 |*(optional)* Take the specified number of elements.
 from | [TimeStamp](#timestamp-type) | query | null | *(optional)* From timestamp.
 to | [TimeStamp](#timestamp-type) | query | null | *(optional)* To timestamp.
 
@@ -236,7 +236,7 @@ Parameter | Type | Place | Default | Description
 --------- | ---- | ----- | ------- | -----------
 assetPairId | string | query | null | *(optional)* Symbol unique identifier.
 offset | uint | query | 0 | *(optional)* Skip the specified number of elements.
-take | uint | query | 100 | *(optional)* Take the specified number of elements.
+take | uint | query | 1000 | *(optional)* Take the specified number of elements.
 
 
 ### Response
