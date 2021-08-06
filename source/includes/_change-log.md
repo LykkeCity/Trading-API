@@ -15,7 +15,7 @@ For testing and rollout purposes, at the moment, the only supported blockchain i
 * LTC
 * XLM
 * ERC20
-* XTZ
+* XTZ (FA1.2 and FA2)
 * DOT
 * DOGE
 
