@@ -1,5 +1,28 @@
 # Change Log
 
+## 2021-08-05 | API Blockchain Gateway
+
+In this new upgrade, we introduce the possibility of performing blockchain withdrawals and deposits. 
+
+To be able to use this feature, it is necessary to have a KYC-approved account in Lykke Wallet. Before making a deposit you need to create your deposit addresses, calling the method '/api/operations/deposits/addresses'.
+
+To keep things secure, we have introduced a whitelist of addresses for you to manage. In this list, you will enter the details of the addresses that will be interacting with your API wallet. It is important to highlight, that any address addition, will become effective in 48 hours.
+
+For testing and rollout purposes, at the moment, the only supported blockchain is ETC. However, very soon we plan to add the following assets:
+* BTC
+* ETH
+* BCH
+* LTC
+* XLM
+* ERC20
+* XTZ (FA1.2 and FA2)
+* DOT
+* DOGE
+
+** Warning: since this is a new feature, there might be errors/bugs that were not contemplated during the testing phase. If you find any, please do let us know by contacting support@lykke.com
+
+** Warning: Before making a deposit you need to create your deposit addresses, calling the method '/api/operations/deposits/addresses'.
+
 ## 2021-05-03 | PageSize
 
 Increased ```take``` parameter to 1000 in pagination requests.
