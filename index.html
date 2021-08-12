@@ -226,6 +226,9 @@
             <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#2021-08-05-api-blockchain-gateway" class="toc-h2 toc-link" data-title="2021-08-05 | API Blockchain Gateway">2021-08-05 | API Blockchain Gateway</a>
+                  </li>
+                  <li>
                     <a href="#2021-05-03-pagesize" class="toc-h2 toc-link" data-title="2021-05-03 | PageSize">2021-05-03 | PageSize</a>
                   </li>
                   <li>
@@ -404,7 +407,28 @@
 <p>If you are interested in API trading with no trading fees, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!</p>
 
 <p>For more information about Lykke, please visit <a href="http://lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">www.lykke.com</a>.</p>
-<h1 id='change-log'>Change Log</h1><h2 id='2021-05-03-pagesize'>2021-05-03 | PageSize</h2>
+<h1 id='change-log'>Change Log</h1><h2 id='2021-08-05-api-blockchain-gateway'>2021-08-05 | API Blockchain Gateway</h2>
+<p>In this new upgrade, we introduce the possibility of performing blockchain withdrawals and deposits. </p>
+
+<p>To be able to use this feature, it is necessary to have a KYC-approved account in Lykke Wallet. Before making a deposit you need to create your deposit addresses, calling the method &#39;/api/operations/deposits/addresses&#39;.</p>
+
+<p>To keep things secure, we have introduced a whitelist of addresses for you to manage. In this list, you will enter the details of the addresses that will be interacting with your API wallet. It is important to highlight, that any address addition, will become effective in 48 hours.</p>
+
+<p>For testing and rollout purposes, at the moment, the only supported blockchain is ETC. However, very soon we plan to add the following assets:
+* BTC
+* ETH
+* BCH
+* LTC
+* XLM
+* ERC20
+* XTZ (FA1.2 and FA2)
+* DOT
+* DOGE</p>
+
+<p>** Warning: since this is a new feature, there might be errors/bugs that were not contemplated during the testing phase. If you find any, please do let us know by contacting support@lykke.com</p>
+
+<p>** Warning: Before making a deposit you need to create your deposit addresses, calling the method &#39;/api/operations/deposits/addresses&#39;.</p>
+<h2 id='2021-05-03-pagesize'>2021-05-03 | PageSize</h2>
 <p>Increased <code>take</code> parameter to 1000 in pagination requests.</p>
 <h2 id='2021-01-11-multiple-orderbook-updates'>2021-01-11 | Multiple orderbook updates</h2>
 <p>Added <code>assetPairIds</code> for orderbook updates stream request to get updates for multiple orderbooks.</p>
