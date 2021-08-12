@@ -350,6 +350,18 @@
                   <li>
                     <a href="#cancel-orders-by-id" class="toc-h2 toc-link" data-title="Cancel orders by ID">Cancel orders by ID</a>
                   </li>
+                  <li>
+                    <a href="#get-the-history-of-withdrawals-and-deposits" class="toc-h2 toc-link" data-title="Get the history of withdrawals and deposits">Get the history of withdrawals and deposits</a>
+                  </li>
+                  <li>
+                    <a href="#create-deposit-addresses" class="toc-h2 toc-link" data-title="Create deposit addresses">Create deposit addresses</a>
+                  </li>
+                  <li>
+                    <a href="#get-deposit-address-for-a-given-asset" class="toc-h2 toc-link" data-title="Get deposit address for a given Asset">Get deposit address for a given Asset</a>
+                  </li>
+                  <li>
+                    <a href="#withdrawal" class="toc-h2 toc-link" data-title="Withdrawal">Withdrawal</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2748,7 +2760,241 @@ The method also allows you to replace orders in the order book. You can replace 
     <span class="kt">bool</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><h1 id='public-stream-apis'>Public Stream APIs</h1>
+</code></pre></div><h2 id='get-the-history-of-withdrawals-and-deposits'>Get the history of withdrawals and deposits</h2>
+<p>Get the API wallet history of withdrawals and deposits </p>
+<h3 id='request-13'>Request</h3>
+<p><strong>Rest API:</strong> <code>GET /api/operations</code></p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Place</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>offset</td>
+<td>uint</td>
+<td>query</td>
+<td>0</td>
+<td><em>(optional)</em> Skip the specified number of elements.</td>
+</tr>
+<tr>
+<td>take</td>
+<td>uint</td>
+<td>query</td>
+<td>1000</td>
+<td><em>(optional)</em> Take the specified number of elements.</td>
+</tr>
+</tbody></table>
+<h3 id='response-10'>Response</h3>
+<p>The history of API wallet operations.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>historicalId</td>
+<td>string</td>
+<td>Operation unique identifier</td>
+</tr>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>Asset unique identifier.</td>
+</tr>
+<tr>
+<td>totalVolime</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Operation volume in assetid.</td>
+</tr>
+<tr>
+<td>fee</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Blockchain withdrawal fee.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Type of operation: &quot;withdrawal&quot; or &quot;deposit&quot;</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td><a href="#timestamp-type">TimeStamp</a></td>
+<td>Last balance update on current asset.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/operations</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"
+
+      "</span><span class="err">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdrawal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-05T11:38:16.289Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"additionalProp1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additionalProp2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additionalProp3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='create-deposit-addresses'>Create deposit addresses</h2>
+<p>Create deposit addresses for your API wallet. This method will create deposit addresses for the networks that are supported to perform API deposits and withdrawals.</p>
+<h3 id='request-14'>Request</h3>
+<p><strong>Rest API:</strong> <code>POST /api/operations/deposits/addresses</code></p>
+<h3 id='query-parameters-8'>Query Parameters</h3>
+<p>No parameters</p>
+<h3 id='response-11'>Response</h3>
+<p>No response</p>
+<h2 id='get-deposit-address-for-a-given-asset'>Get deposit address for a given Asset</h2>
+<p>Get the API deposit address for a given asset</p>
+<h3 id='request-15'>Request</h3>
+<p><strong>Rest API:</strong> <code>GET /api/operations/deposits/addresses/{assetId}</code></p>
+<h3 id='query-parameters-9'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>Asset unique identifier.</td>
+</tr>
+</tbody></table>
+<h3 id='response-12'>Response</h3>
+<p>The details of the deposit address for the requested asset.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Full blockchain address including addressExtension</td>
+</tr>
+<tr>
+<td>baseAddress</td>
+<td>string</td>
+<td>Blockchain address without extension.</td>
+</tr>
+<tr>
+<td>addressExtension</td>
+<td>string</td>
+<td>Blockchain address extension, also known as Memo/Tag.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>State of the deposit address, available states &quot;otFound&quot;,&quot;creating&quot;,&quot;active&quot;, and &quot;blocked&quot;</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/operations/deposits/addresses/</span><span class="p">{</span><span class="err">assetId</span><span class="p">}</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"baseAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"addressExtension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notFound"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"additionalProp1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additionalProp2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"additionalProp3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='withdrawal'>Withdrawal</h2>
+<p>Process the withdrawal of a given asset.</p>
+<h3 id='request-16'>Request</h3>
+<p><strong>Rest API:</strong> <code>POST /api/operations/withdrawals</code></p>
+<h3 id='query-parameters-10'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Request-ID</td>
+<td>string</td>
+<td>Unique Id for idempotency.</td>
+</tr>
+</tbody></table>
+<h3 id='response-13'>Response</h3>
+<p>The details of the deposit address for the requested asset.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetId</td>
+<td>string</td>
+<td>Asset unique identifier.</td>
+</tr>
+<tr>
+<td>volume</td>
+<td><a href="#decimal-type">decimal</a></td>
+<td>Volume amount to be withdrawn.</td>
+</tr>
+<tr>
+<td>destinationAddress</td>
+<td>string</td>
+<td>Blockchain destination address without extension.</td>
+</tr>
+<tr>
+<td>destinationAddressExtension</td>
+<td>string</td>
+<td>Blockchain destination address extension, also known as Memo/Tag.</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/operations/deposits/addresses/</span><span class="p">{</span><span class="err">assetId</span><span class="p">}</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"destinationAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"destinationAddressExtension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='public-stream-apis'>Public Stream APIs</h1>
 <p><strong>Streaming API</strong> allows you to subscribe to events from the server and receive them in streaming mode upon the occurrence of the event.</p>
 
 <p><strong>Streaming API</strong> is available only when working with the <strong>gRPC protocol</strong>. In the RestAPI protocol, streaming APIs are not available.</p>
