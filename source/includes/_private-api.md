@@ -784,3 +784,169 @@ message CancelOrderResponse {
     hft.common.Error error = 2;
 }
 ```
+
+## Get the history of withdrawals and deposits
+
+Get the API wallet history of withdrawals and deposits 
+
+### Request
+
+**Rest API:** `GET /api/operations`
+
+### Query Parameters
+
+Parameter | Type | Place | Default | Description
+--------- | ---- | ----- | ------- | -----------
+offset | uint | query | 0 | *(optional)* Skip the specified number of elements.
+take | uint | query | 1000 |*(optional)* Take the specified number of elements.
+
+### Response
+
+The history of API wallet operations.
+
+Property | Type | Description
+-------- | ---- | -----------
+historicalId| string | Operation unique identifier
+assetId | string | Asset unique identifier.
+totalVolime | [decimal](#decimal-type) | Operation volume in assetid.
+fee | [decimal](#decimal-type) | Blockchain withdrawal fee.
+type | string | Type of operation: "withdrawal" or "deposit"
+timestamp | [TimeStamp](#timestamp-type) | Last balance update on current asset.
+
+
+```json
+GET /api/operations
+
+> Response 200 (application/json) - success response
+
+{
+  "payload": [
+    {
+      "
+      
+      ": "string",
+      "assetId": "string",
+      "totalVolume": 0,
+      "fee": 0,
+      "type": "withdrawal",
+      "timestamp": "2021-08-05T11:38:16.289Z"
+    }
+  ],
+  "error": {
+    "code": "success",
+    "message": "string",
+    "fields": {
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    }
+  }
+}
+```
+
+## Create deposit addresses
+
+Create deposit addresses for your API wallet. This method will create deposit addresses for the networks that are supported to perform API deposits and withdrawals.
+
+
+### Request
+
+**Rest API:** `POST /api/operations/deposits/addresses`
+
+### Query Parameters
+
+No parameters
+
+### Response
+
+No response
+
+
+## Get deposit address for a given Asset
+
+Get the API deposit address for a given asset
+
+### Request
+
+**Rest API:** `GET /api/operations/deposits/addresses/{assetId}`
+
+### Query Parameters
+
+Parameter | Type | Description
+-------- | ---- | -----------
+assetId | string | Asset unique identifier.
+
+### Response
+
+The details of the deposit address for the requested asset.
+
+Property | Type | Description
+-------- | ---- | -----------
+address| string | Full blockchain address including addressExtension
+baseAddress | string | Blockchain address without extension.
+addressExtension | string | Blockchain address extension, also known as Memo/Tag.
+state | string | State of the deposit address, available states "otFound","creating","active", and "blocked"
+
+
+```json
+GET /api/operations/deposits/addresses/{assetId}
+
+> Response 200 (application/json) - success response
+
+{
+  "payload": {
+    "address": "string",
+    "baseAddress": "string",
+    "addressExtension": "string",
+    "state": "notFound"
+  },
+  "error": {
+    "code": "success",
+    "message": "string",
+    "fields": {
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    }
+  }
+}
+```
+
+
+## Withdrawal
+
+Process the withdrawal of a given asset.
+
+### Request
+
+**Rest API:** `POST /api/operations/withdrawals`
+
+### Query Parameters
+
+Parameter | Type | Description
+-------- | ---- | -----------
+X-Request-ID | string | Unique Id for idempotency.
+
+### Response
+
+The details of the deposit address for the requested asset.
+
+Property | Type | Description
+-------- | ---- | -----------
+assetId | string | Asset unique identifier.
+volume | [decimal](#decimal-type) | Volume amount to be withdrawn.
+destinationAddress | string | Blockchain destination address without extension.
+destinationAddressExtension | string | Blockchain destination address extension, also known as Memo/Tag.
+
+```json
+GET /api/operations/deposits/addresses/{assetId}
+
+> Response 200 (application/json) - success response
+
+{
+  "assetId": "string",
+  "volume": 0,
+  "destinationAddress": "string",
+  "destinationAddressExtension": "string"
+}
+```
