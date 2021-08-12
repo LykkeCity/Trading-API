@@ -15,6 +15,7 @@ enum ErrorCode {
     runtimeError = 1001;
     itemNotFound = 1100;
     invalidField = 1101;
+    actionForbidden = 1102;
     //meErrors
     meBadRequest = 2000;
     meLowBalance = 2001;

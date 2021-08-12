@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
 import "common.proto";
 
 option csharp_namespace = "Lykke.HftApi.ApiContract";
@@ -23,6 +24,11 @@ service PrivateService {
 
 	rpc GetBalanceUpdates (google.protobuf.Empty) returns (stream BalanceUpdate);
 	rpc GetTradeUpdates (google.protobuf.Empty) returns (stream TradeUpdate);
+	
+	rpc GetOperationsHistory (GetOperationsHistoryRequest) returns (GetOperationsHistoryResponse);
+    rpc CreateDepositAddresses(google.protobuf.Empty) returns (CreateDepositAddressesResponse);
+    rpc GetDepositAddress(GetDepositAddressRequest) returns (GetDepositAddressResponse);
+    rpc CreateWithdrawal(CreateWithdrawalRequest) returns (CreateWithdrawalResponse);
 }
 
 message LimitOrderRequest {
@@ -98,6 +104,11 @@ message TradesRequest {
     oneof optional_to {
         google.protobuf.Timestamp to = 6;
     }
+}
+
+message GetOperationsHistoryRequest {
+    int32 offset = 1;
+    int32 take = 2;
 }
 
 message OrderTradesRequest {
@@ -219,6 +230,57 @@ message BalanceUpdate {
     repeated Balance balances = 1;
 }
 
+message OrderUpdate {
+    repeated Order orders = 1;
+}
+
 message TradeUpdate {
     repeated Trade trades = 1;
+}
+
+message GetOperationsHistoryResponse {
+    repeated OperationHistory operations = 1;
+}
+
+message OperationHistory {
+    string historicalId = 1;
+    string assetId = 2;
+    string totalVolume = 3;
+    string fee = 4;
+    string type = 5;
+    google.protobuf.Timestamp timestamp = 6;
+    google.protobuf.StringValue blockchainHash = 7;
+}
+
+message CreateDepositAddressesResponse {
+    hft.common.Error error = 1;
+}
+
+message GetDepositAddressRequest {
+    string assetId = 1;
+}
+
+message GetDepositAddressResponse {
+    DepositAddress payload = 1;
+    hft.common.Error error = 2;
+}
+
+message DepositAddress {
+    google.protobuf.StringValue address = 1;
+    google.protobuf.StringValue baseAddress = 2;
+    google.protobuf.StringValue addressExtension = 3;
+    string state = 4;
+}
+
+message CreateWithdrawalRequest {
+    string requestId = 1;
+    string assetId = 2;
+    string volume = 3;
+    string destinationAddress = 4;
+    google.protobuf.StringValue destinationAddressExtension = 5;
+}
+
+message CreateWithdrawalResponse {
+    string payload = 1;
+    hft.common.Error error = 2;
 }
