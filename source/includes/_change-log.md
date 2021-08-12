@@ -1,6 +1,6 @@
 # Change Log
 
-## 2021-08-05 | API Blockchain Gateway
+## 2021-08-12 | API Blockchain Gateway
 
 In this new upgrade, we introduce the possibility of performing blockchain withdrawals and deposits. 
 
