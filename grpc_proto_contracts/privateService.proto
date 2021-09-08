@@ -26,9 +26,9 @@ service PrivateService {
 	rpc GetTradeUpdates (google.protobuf.Empty) returns (stream TradeUpdate);
 	
 	rpc GetOperationsHistory (GetOperationsHistoryRequest) returns (GetOperationsHistoryResponse);
-    rpc CreateDepositAddresses(google.protobuf.Empty) returns (CreateDepositAddressesResponse);
-    rpc GetDepositAddress(GetDepositAddressRequest) returns (GetDepositAddressResponse);
-    rpc CreateWithdrawal(CreateWithdrawalRequest) returns (CreateWithdrawalResponse);
+  rpc CreateDepositAddresses(google.protobuf.Empty) returns (CreateDepositAddressesResponse);
+  rpc GetDepositAddress(GetDepositAddressRequest) returns (GetDepositAddressResponse);
+  rpc CreateWithdrawal(CreateWithdrawalRequest) returns (CreateWithdrawalResponse);
 }
 
 message LimitOrderRequest {
