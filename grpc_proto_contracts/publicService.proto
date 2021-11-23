@@ -23,7 +23,7 @@ service PublicService {
 	rpc GetPriceUpdates (PriceUpdatesRequest) returns (stream PriceUpdate);
 	rpc GetTickerUpdates (google.protobuf.Empty) returns (stream TickerUpdate);
 	rpc GetOrderbookUpdates (OrderbookUpdatesRequest) returns (stream Orderbook);
-    rpc GetPublicTradeUpdates (PublicTradesUpdatesRequest) returns (stream PublicTradeUpdate);
+  rpc GetPublicTradeUpdates (PublicTradesUpdatesRequest) returns (stream PublicTradeUpdate);
 }
 
 message AssetPairRequest {
