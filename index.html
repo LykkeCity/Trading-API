@@ -226,6 +226,9 @@
             <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#2021-11-23-all-deposit-addresses-endpoint" class="toc-h2 toc-link" data-title="2021-11-23 | All deposit addresses endpoint">2021-11-23 | All deposit addresses endpoint</a>
+                  </li>
+                  <li>
                     <a href="#2021-08-12-api-blockchain-gateway" class="toc-h2 toc-link" data-title="2021-08-12 | API Blockchain Gateway">2021-08-12 | API Blockchain Gateway</a>
                   </li>
                   <li>
@@ -357,6 +360,9 @@
                     <a href="#create-deposit-addresses" class="toc-h2 toc-link" data-title="Create deposit addresses">Create deposit addresses</a>
                   </li>
                   <li>
+                    <a href="#get-deposit-addresses-for-all-assets" class="toc-h2 toc-link" data-title="Get deposit addresses for all assets">Get deposit addresses for all assets</a>
+                  </li>
+                  <li>
                     <a href="#get-deposit-address-for-a-given-asset" class="toc-h2 toc-link" data-title="Get deposit address for a given Asset">Get deposit address for a given Asset</a>
                   </li>
                   <li>
@@ -419,7 +425,9 @@
 <p>If you are interested in API trading with no trading fees, please sign up in <a href="https://wallet.lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">here</a> and start trading with Lykke!</p>
 
 <p>For more information about Lykke, please visit <a href="http://lykke.com/?utm_source=github&amp;utm_medium=api_doc&amp;utm_campaign=api_documentation">www.lykke.com</a>.</p>
-<h1 id='change-log'>Change Log</h1><h2 id='2021-08-12-api-blockchain-gateway'>2021-08-12 | API Blockchain Gateway</h2>
+<h1 id='change-log'>Change Log</h1><h2 id='2021-11-23-all-deposit-addresses-endpoint'>2021-11-23 | All deposit addresses endpoint</h2>
+<p>Added new endpoint to get deposit addresses for all assets</p>
+<h2 id='2021-08-12-api-blockchain-gateway'>2021-08-12 | API Blockchain Gateway</h2>
 <p>In this new upgrade, we introduce the possibility of performing blockchain withdrawals and deposits. </p>
 
 <p>To be able to use this feature, it is necessary to have a KYC-approved account in Lykke Wallet. Before making a deposit you need to create your deposit addresses, calling the method &#39;/api/operations/deposits/addresses&#39;.</p>
@@ -2763,6 +2771,8 @@ The method also allows you to replace orders in the order book. You can replace 
 </code></pre></div><h2 id='get-the-history-of-withdrawals-and-deposits'>Get the history of withdrawals and deposits</h2>
 <p>Get the API wallet history of withdrawals and deposits </p>
 <h3 id='request-13'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.GetOperationsHistory</code></p>
+
 <p><strong>Rest API:</strong> <code>GET /api/operations</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
@@ -2800,7 +2810,7 @@ The method also allows you to replace orders in the order book. You can replace 
 </tr>
 </thead><tbody>
 <tr>
-<td>historicalId</td>
+<td>operationId</td>
 <td>string</td>
 <td>Operation unique identifier</td>
 </tr>
@@ -2837,39 +2847,143 @@ The method also allows you to replace orders in the order book. You can replace 
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"
-
-      "</span><span class="err">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"totalVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"operationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6eaaf5fe-cba9-4838-b439-22f8b14c91a2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e58aa37d-dd46-4bdb-bac1-a6d0d44e6dc9"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdrawal"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-05T11:38:16.289Z"</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1592928606187</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"additionalProp1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"additionalProp2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"additionalProp3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='create-deposit-addresses'>Create deposit addresses</h2>
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetOperationsHistory</span> <span class="p">(</span><span class="n">GetOperationsHistoryRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">GetOperationsHistoryResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">GetOperationsHistoryRequest</span> <span class="p">{</span>
+  <span class="kt">int32</span> <span class="na">offset</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">int32</span> <span class="na">take</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">GetOperationsHistoryResponse</span> <span class="p">{</span>
+  <span class="k">repeated</span> <span class="n">OperationHistory</span> <span class="na">operations</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">OperationHistory</span> <span class="p">{</span>
+  <span class="kt">string</span> <span class="na">operationId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">totalVolume</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">fee</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">type</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="n">google.protobuf.Timestamp</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+  <span class="n">google.protobuf.StringValue</span> <span class="na">blockchainHash</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='create-deposit-addresses'>Create deposit addresses</h2>
 <p>Create deposit addresses for your API wallet. This method will create deposit addresses for the networks that are supported to perform API deposits and withdrawals.</p>
 <h3 id='request-14'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.CreateDepositAddresses</code></p>
+
 <p><strong>Rest API:</strong> <code>POST /api/operations/deposits/addresses</code></p>
 <h3 id='query-parameters-8'>Query Parameters</h3>
 <p>No parameters</p>
 <h3 id='response-11'>Response</h3>
 <p>No response</p>
-<h2 id='get-deposit-address-for-a-given-asset'>Get deposit address for a given Asset</h2>
-<p>Get the API deposit address for a given asset</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">/api/operations/deposits/addresses</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">CreateDepositAddresses</span><span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">CreateDepositAddressesResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">CreateDepositAddressesResponse</span> <span class="p">{</span>
+  <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='get-deposit-addresses-for-all-assets'>Get deposit addresses for all assets</h2>
+<p>Get the API deposit addresses for all assets</p>
 <h3 id='request-15'>Request</h3>
-<p><strong>Rest API:</strong> <code>GET /api/operations/deposits/addresses/{assetId}</code></p>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.GetDepositAddresses</code></p>
+
+<p><strong>Rest API:</strong> <code>GET /api/operations/deposits/addresses</code></p>
 <h3 id='query-parameters-9'>Query Parameters</h3>
+<p>No parameters</p>
+<h3 id='response-12'>Response</h3>
+<p>The details of the deposit addresses for all assets.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Full blockchain address including addressExtension</td>
+</tr>
+<tr>
+<td>baseAddress</td>
+<td>string</td>
+<td>Blockchain address without extension.</td>
+</tr>
+<tr>
+<td>addressExtension</td>
+<td>string</td>
+<td>Blockchain address extension, also known as Memo/Tag.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>State of the deposit address, available states &quot;otFound&quot;,&quot;creating&quot;,&quot;active&quot;, and &quot;blocked&quot;</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/operations/deposits/addresses</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"660ceb1f-5699-42d9-930b-53800ecdda2a"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XTZ"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tz1aPNqUwcd9121pngKHE8RtbkjcAq2DjJFE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tz1aPNqUwcd9121pngKHE8RtbkjcAq2DjJFE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"addressExtension"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetDepositAddresses</span><span class="p">(</span><span class="n">google.protobuf.Empty</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">GetDepositAddressesResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">GetDepositAddressesResponse</span> <span class="p">{</span>
+  <span class="k">repeated</span> <span class="n">DepositAddress</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">DepositAddress</span> <span class="p">{</span>
+  <span class="n">google.protobuf.StringValue</span> <span class="na">address</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">google.protobuf.StringValue</span> <span class="na">baseAddress</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="n">google.protobuf.StringValue</span> <span class="na">addressExtension</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">state</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">symbol</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='get-deposit-address-for-a-given-asset'>Get deposit address for a given Asset</h2>
+<p>Get the API deposit address for a given asset</p>
+<h3 id='request-16'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.GetDepositAddress</code></p>
+
+<p><strong>Rest API:</strong> <code>GET /api/operations/deposits/addresses/{assetId}</code></p>
+<h3 id='query-parameters-10'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2883,7 +2997,7 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>Asset unique identifier.</td>
 </tr>
 </tbody></table>
-<h3 id='response-12'>Response</h3>
+<h3 id='response-13'>Response</h3>
 <p>The details of the deposit address for the requested asset.</p>
 
 <table><thead>
@@ -2920,26 +3034,44 @@ The method also allows you to replace orders in the order book. You can replace 
 
 </span><span class="p">{</span><span class="w">
   </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"baseAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"addressExtension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notFound"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"additionalProp1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"additionalProp2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"additionalProp3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"660ceb1f-5699-42d9-930b-53800ecdda2a"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XTZ"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tz1aPNqUwcd9121pngKHE8RtbkjcAq2DjJFE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"baseAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tz1aPNqUwcd9121pngKHE8RtbkjcAq2DjJFE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"addressExtension"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='withdrawal'>Withdrawal</h2>
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">GetDepositAddress</span><span class="p">(</span><span class="n">GetDepositAddressRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">GetDepositAddressResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">GetDepositAddressRequest</span> <span class="p">{</span>
+  <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">GetDepositAddressResponse</span> <span class="p">{</span>
+  <span class="n">DepositAddress</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">DepositAddress</span> <span class="p">{</span>
+  <span class="n">google.protobuf.StringValue</span> <span class="na">address</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">google.protobuf.StringValue</span> <span class="na">baseAddress</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="n">google.protobuf.StringValue</span> <span class="na">addressExtension</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">state</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">symbol</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='withdrawal'>Withdrawal</h2>
 <p>Process the withdrawal of a given asset.</p>
-<h3 id='request-16'>Request</h3>
+<h3 id='request-17'>Request</h3>
+<p><strong>gRPC:</strong> <code>hft.PrivateService.CreateWithdrawal</code></p>
+
 <p><strong>Rest API:</strong> <code>POST /api/operations/withdrawals</code></p>
-<h3 id='query-parameters-10'>Query Parameters</h3>
+<h3 id='query-parameters-11'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2953,8 +3085,8 @@ The method also allows you to replace orders in the order book. You can replace 
 <td>Unique Id for idempotency.</td>
 </tr>
 </tbody></table>
-<h3 id='response-13'>Response</h3>
-<p>The details of the deposit address for the requested asset.</p>
+<h3 id='response-14'>Response</h3>
+<p>Unique identifier of the withdrawal.</p>
 
 <table><thead>
 <tr>
@@ -2964,37 +3096,37 @@ The method also allows you to replace orders in the order book. You can replace 
 </tr>
 </thead><tbody>
 <tr>
-<td>assetId</td>
+<td>payload</td>
 <td>string</td>
-<td>Asset unique identifier.</td>
-</tr>
-<tr>
-<td>volume</td>
-<td><a href="#decimal-type">decimal</a></td>
-<td>Volume amount to be withdrawn.</td>
-</tr>
-<tr>
-<td>destinationAddress</td>
-<td>string</td>
-<td>Blockchain destination address without extension.</td>
-</tr>
-<tr>
-<td>destinationAddressExtension</td>
-<td>string</td>
-<td>Blockchain destination address extension, also known as Memo/Tag.</td>
+<td>Unique identifier of the withdrawal.</td>
 </tr>
 </tbody></table>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">/api/operations/deposits/addresses/</span><span class="p">{</span><span class="err">assetId</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">/api/operations/withdrawals</span><span class="w">
 
 </span><span class="err">&gt;</span><span class="w"> </span><span class="err">Response</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">(application/json)</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"destinationAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"destinationAddressExtension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fa85f64-5717-4562-b3fc-2c963f66afa6"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='public-stream-apis'>Public Stream APIs</h1>
+</span></code></pre></div><div class="highlight"><pre class="highlight protobuf tab-protobuf"><code><span class="kn">package</span> <span class="nn">hft</span><span class="p">;</span>
+
+<span class="kd">service</span> <span class="n">PrivateService</span> <span class="p">{</span>
+  <span class="k">rpc</span> <span class="n">CreateWithdrawal</span><span class="p">(</span><span class="n">CreateWithdrawalRequest</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">CreateWithdrawalResponse</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">CreateWithdrawalRequest</span> <span class="p">{</span>
+  <span class="kt">string</span> <span class="na">requestId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">assetId</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">volume</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="na">destinationAddress</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="n">google.protobuf.StringValue</span> <span class="na">destinationAddressExtension</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">message</span> <span class="nc">CreateWithdrawalResponse</span> <span class="p">{</span>
+  <span class="kt">string</span> <span class="na">payload</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">hft.common.Error</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h1 id='public-stream-apis'>Public Stream APIs</h1>
 <p><strong>Streaming API</strong> allows you to subscribe to events from the server and receive them in streaming mode upon the occurrence of the event.</p>
 
 <p><strong>Streaming API</strong> is available only when working with the <strong>gRPC protocol</strong>. In the RestAPI protocol, streaming APIs are not available.</p>
