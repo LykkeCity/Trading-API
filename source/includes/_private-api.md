@@ -791,6 +791,8 @@ Get the API wallet history of withdrawals and deposits
 
 ### Request
 
+**gRPC:** `hft.PrivateService.GetOperationsHistory`
+
 **Rest API:** `GET /api/operations`
 
 ### Query Parameters
@@ -806,7 +808,7 @@ The history of API wallet operations.
 
 Property | Type | Description
 -------- | ---- | -----------
-historicalId| string | Operation unique identifier
+operationId | string | Operation unique identifier
 assetId | string | Asset unique identifier.
 totalVolime | [decimal](#decimal-type) | Operation volume in assetid.
 fee | [decimal](#decimal-type) | Blockchain withdrawal fee.
@@ -822,25 +824,42 @@ GET /api/operations
 {
   "payload": [
     {
-      "
-      
-      ": "string",
-      "assetId": "string",
-      "totalVolume": 0,
+      "operationId": "6eaaf5fe-cba9-4838-b439-22f8b14c91a2",
+      "assetId": "e58aa37d-dd46-4bdb-bac1-a6d0d44e6dc9",
+      "totalVolume": 1,
       "fee": 0,
-      "type": "withdrawal",
-      "timestamp": "2021-08-05T11:38:16.289Z"
+      "type": "deposit",
+      "timestamp": 1592928606187
     }
   ],
-  "error": {
-    "code": "success",
-    "message": "string",
-    "fields": {
-      "additionalProp1": "string",
-      "additionalProp2": "string",
-      "additionalProp3": "string"
-    }
-  }
+  "error": null
+}
+```
+
+```protobuf
+package hft;
+
+service PrivateService {
+  rpc GetOperationsHistory (GetOperationsHistoryRequest) returns (GetOperationsHistoryResponse);
+}
+
+message GetOperationsHistoryRequest {
+  int32 offset = 1;
+  int32 take = 2;
+}
+
+message GetOperationsHistoryResponse {
+  repeated OperationHistory operations = 1;
+}
+
+message OperationHistory {
+  string operationId = 1;
+  string assetId = 2;
+  string totalVolume = 3;
+  string fee = 4;
+  string type = 5;
+  google.protobuf.Timestamp timestamp = 6;
+  google.protobuf.StringValue blockchainHash = 7;
 }
 ```
 
@@ -848,8 +867,9 @@ GET /api/operations
 
 Create deposit addresses for your API wallet. This method will create deposit addresses for the networks that are supported to perform API deposits and withdrawals.
 
-
 ### Request
+
+**gRPC:** `hft.PrivateService.CreateDepositAddresses`
 
 **Rest API:** `POST /api/operations/deposits/addresses`
 
@@ -861,12 +881,99 @@ No parameters
 
 No response
 
+```json
+POST /api/operations/deposits/addresses
+
+> Response 200 (application/json) - success response
+```
+
+```protobuf
+package hft;
+
+service PrivateService {
+  rpc CreateDepositAddresses(google.protobuf.Empty) returns (CreateDepositAddressesResponse);
+}
+
+message CreateDepositAddressesResponse {
+  hft.common.Error error = 1;
+}
+```
+
+## Get deposit addresses for all assets
+
+Get the API deposit addresses for all assets
+
+### Request
+
+**gRPC:** `hft.PrivateService.GetDepositAddresses`
+
+**Rest API:** `GET /api/operations/deposits/addresses`
+
+### Query Parameters
+
+No parameters
+
+### Response
+
+The details of the deposit addresses for all assets.
+
+Property | Type | Description
+-------- | ---- | -----------
+address| string | Full blockchain address including addressExtension
+baseAddress | string | Blockchain address without extension.
+addressExtension | string | Blockchain address extension, also known as Memo/Tag.
+state | string | State of the deposit address, available states "otFound","creating","active", and "blocked"
+
+
+```json
+GET /api/operations/deposits/addresses
+
+> Response 200 (application/json) - success response
+
+{
+  "payload": [
+    {
+      "assetId": "660ceb1f-5699-42d9-930b-53800ecdda2a",
+      "symbol": "XTZ",
+      "address": "tz1aPNqUwcd9121pngKHE8RtbkjcAq2DjJFE",
+      "baseAddress": "tz1aPNqUwcd9121pngKHE8RtbkjcAq2DjJFE",
+      "addressExtension": null,
+      "state": "Active"
+    }
+  ]
+}
+```
+
+
+```protobuf
+package hft;
+
+service PrivateService {
+  rpc GetDepositAddresses(google.protobuf.Empty) returns (GetDepositAddressesResponse);
+}
+
+message GetDepositAddressesResponse {
+  repeated DepositAddress payload = 1;
+  hft.common.Error error = 2;
+}
+
+message DepositAddress {
+  google.protobuf.StringValue address = 1;
+  google.protobuf.StringValue baseAddress = 2;
+  google.protobuf.StringValue addressExtension = 3;
+  string state = 4;
+  string assetId = 5;
+  string symbol = 6;
+}
+```
 
 ## Get deposit address for a given Asset
 
 Get the API deposit address for a given asset
 
 ### Request
+
+**gRPC:** `hft.PrivateService.GetDepositAddress`
 
 **Rest API:** `GET /api/operations/deposits/addresses/{assetId}`
 
@@ -895,20 +1002,39 @@ GET /api/operations/deposits/addresses/{assetId}
 
 {
   "payload": {
-    "address": "string",
-    "baseAddress": "string",
-    "addressExtension": "string",
-    "state": "notFound"
-  },
-  "error": {
-    "code": "success",
-    "message": "string",
-    "fields": {
-      "additionalProp1": "string",
-      "additionalProp2": "string",
-      "additionalProp3": "string"
-    }
+    "assetId": "660ceb1f-5699-42d9-930b-53800ecdda2a",
+    "symbol": "XTZ",
+    "address": "tz1aPNqUwcd9121pngKHE8RtbkjcAq2DjJFE",
+    "baseAddress": "tz1aPNqUwcd9121pngKHE8RtbkjcAq2DjJFE",
+    "addressExtension": null,
+    "state": "Active"
   }
+}
+```
+
+```protobuf
+package hft;
+
+service PrivateService {
+  rpc GetDepositAddress(GetDepositAddressRequest) returns (GetDepositAddressResponse);
+}
+
+message GetDepositAddressRequest {
+  string assetId = 1;
+}
+
+message GetDepositAddressResponse {
+  DepositAddress payload = 1;
+  hft.common.Error error = 2;
+}
+
+message DepositAddress {
+  google.protobuf.StringValue address = 1;
+  google.protobuf.StringValue baseAddress = 2;
+  google.protobuf.StringValue addressExtension = 3;
+  string state = 4;
+  string assetId = 5;
+  string symbol = 6;
 }
 ```
 
@@ -918,6 +1044,8 @@ GET /api/operations/deposits/addresses/{assetId}
 Process the withdrawal of a given asset.
 
 ### Request
+
+**gRPC:** `hft.PrivateService.CreateWithdrawal`
 
 **Rest API:** `POST /api/operations/withdrawals`
 
@@ -929,24 +1057,39 @@ X-Request-ID | string | Unique Id for idempotency.
 
 ### Response
 
-The details of the deposit address for the requested asset.
+Unique identifier of the withdrawal.
 
 Property | Type | Description
 -------- | ---- | -----------
-assetId | string | Asset unique identifier.
-volume | [decimal](#decimal-type) | Volume amount to be withdrawn.
-destinationAddress | string | Blockchain destination address without extension.
-destinationAddressExtension | string | Blockchain destination address extension, also known as Memo/Tag.
+payload | string | Unique identifier of the withdrawal.
 
 ```json
-GET /api/operations/deposits/addresses/{assetId}
+POST /api/operations/withdrawals
 
 > Response 200 (application/json) - success response
 
 {
-  "assetId": "string",
-  "volume": 0,
-  "destinationAddress": "string",
-  "destinationAddressExtension": "string"
+  "payload": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
+```
+
+```protobuf
+package hft;
+
+service PrivateService {
+  rpc CreateWithdrawal(CreateWithdrawalRequest) returns (CreateWithdrawalResponse);
+}
+
+message CreateWithdrawalRequest {
+  string requestId = 1;
+  string assetId = 2;
+  string volume = 3;
+  string destinationAddress = 4;
+  google.protobuf.StringValue destinationAddressExtension = 5;
+}
+
+message CreateWithdrawalResponse {
+  string payload = 1;
+  hft.common.Error error = 2;
 }
 ```

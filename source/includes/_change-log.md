@@ -1,5 +1,8 @@
 # Change Log
 
+## 2021-11-23 | All deposit addresses endpoint
+Added new endpoint to get deposit addresses for all assets
+
 ## 2021-08-12 | API Blockchain Gateway
 
 In this new upgrade, we introduce the possibility of performing blockchain withdrawals and deposits. 

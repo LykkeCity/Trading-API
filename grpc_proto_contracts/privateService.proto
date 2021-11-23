@@ -24,10 +24,11 @@ service PrivateService {
 
 	rpc GetBalanceUpdates (google.protobuf.Empty) returns (stream BalanceUpdate);
 	rpc GetTradeUpdates (google.protobuf.Empty) returns (stream TradeUpdate);
-	
+
 	rpc GetOperationsHistory (GetOperationsHistoryRequest) returns (GetOperationsHistoryResponse);
   rpc CreateDepositAddresses(google.protobuf.Empty) returns (CreateDepositAddressesResponse);
   rpc GetDepositAddress(GetDepositAddressRequest) returns (GetDepositAddressResponse);
+  rpc GetDepositAddresses(google.protobuf.Empty) returns (GetDepositAddressesResponse);
   rpc CreateWithdrawal(CreateWithdrawalRequest) returns (CreateWithdrawalResponse);
 }
 
@@ -243,7 +244,7 @@ message GetOperationsHistoryResponse {
 }
 
 message OperationHistory {
-    string historicalId = 1;
+    string operationId = 1;
     string assetId = 2;
     string totalVolume = 3;
     string fee = 4;
@@ -265,11 +266,18 @@ message GetDepositAddressResponse {
     hft.common.Error error = 2;
 }
 
+message GetDepositAddressesResponse {
+    repeated DepositAddress payload = 1;
+    hft.common.Error error = 2;
+}
+
 message DepositAddress {
     google.protobuf.StringValue address = 1;
     google.protobuf.StringValue baseAddress = 2;
     google.protobuf.StringValue addressExtension = 3;
     string state = 4;
+    string assetId = 5;
+    string symbol = 6;
 }
 
 message CreateWithdrawalRequest {
